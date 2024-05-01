@@ -1,5 +1,6 @@
 import numpy as np
 import json
+import os
 
 def fuzzy_and(values):
     #return np.min(values)
@@ -96,8 +97,17 @@ def evolve_state_over_time(initial_state_memberships, input_fuzzified, transitio
 
     return history
 
+def save_results_to_file(folder_path, data, input_filename):
+    output_filename = f"{input_filename}Result.json"
+    os.makedirs(folder_path, exist_ok=True)
+    with open(os.path.join(folder_path, output_filename), 'w') as f:
+        json.dump(data, f, indent=4)
+
 # Simulate the evolution of state memberships
-config_file = './use_cases/gear/gear1.json'
+file_path = './use_cases/gear/'
+file_name = 'gear1.json'
+config_file = file_path + file_name
 history = evolve_state_over_time_from_file(config_file)
 for step, state_memberships in enumerate(history):
     print(f"Step {step}: {state_memberships}")
+save_results_to_file(file_path+'computed/FMMFSM', history, file_name)
