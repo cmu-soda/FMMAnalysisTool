@@ -1,52 +1,25 @@
-def transition_state(current_state, action):
-    transitions = {
-        'P': {
-            'up1': 'P',
-            'up2': 'P',
-            'up3': 'P',
-            'down1': 'R',
-            'down2': 'N',
-            'down3': 'D'
-        },
-        'R': {
-            'up1': 'P',
-            'up2': 'P',
-            'up3': 'P',
-            'down1': 'N',
-            'down2': 'D',
-            'down3': 'D'
-        },
-        'N': {
-            'up1': 'R',
-            'up2': 'P',
-            'up3': 'P',
-            'down1': 'D',
-            'down2': 'D',
-            'down3': 'D'
-        },
-        'D': {
-            'up1': 'N',
-            'up2': 'R',
-            'up3': 'P',
-            'down1': 'D',
-            'down2': 'D',
-            'down3': 'D'
-        }
-    }
-    # Determine the next state based on the current state and action taken
+import json
+
+def load_configurations(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data['initial_state'], data['transitions'], data['action_schedule']
+
+def transition_state(transitions, current_state, action):
     return transitions[current_state][action]
 
-def simulate_actions(initial_state, actions):
+def simulate_actions_from_file(config_file):
+    initial_state, transitions, action_schedule = load_configurations(config_file)
     current_state = initial_state
+    total_steps = 0
     print(f"Initial state: {current_state}")
 
-    for action, steps in actions:
+    for action, steps in action_schedule:
         for step in range(steps):
-            current_state = transition_state(current_state, action)
-            print(f"After step {step + 1} with action '{action}': {current_state}")
+            current_state = transition_state(transitions, current_state, action)
+            total_steps += 1
+            print(f"After total step {total_steps} with action '{action}': {current_state}")
 
 # Example usage
-initial_state = 'P'
-input_schedule = [('down1', 2), ('down2', 1), ('up1', 3), ('up2', 2), ('down3', 1), ('up3', 1), ('up1', 2), ('down1', 5), ('up2', 1)]
-
-simulate_actions(initial_state, input_schedule)
+config_file = './use_cases/gear/gearSys.json'
+simulate_actions_from_file(config_file)
