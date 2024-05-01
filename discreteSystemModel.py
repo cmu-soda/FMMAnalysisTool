@@ -47,6 +47,6 @@ def simulate_actions(initial_state, actions):
 
 # Example usage
 initial_state = 'P'
-actions = [('down1', 2), ('down2', 1), ('up1', 3), ('up2', 2), ('down3', 1), ('up3', 1), ('up1', 2)]
+input_schedule = [('down1', 2), ('down2', 1), ('up1', 3), ('up2', 2), ('down3', 1), ('up3', 1), ('up1', 2), ('down1', 5), ('up2', 1)]
 
-simulate_actions(initial_state, actions)
+simulate_actions(initial_state, input_schedule)
