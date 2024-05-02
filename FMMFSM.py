@@ -104,8 +104,8 @@ def save_results_to_file(folder_path, data, input_filename):
         json.dump(data, f, indent=4)
 
 # Simulate the evolution of state memberships
-file_path = './use_cases/gear/'
-file_name = 'gear1.json'
+file_path = './use_cases/cruise/'
+file_name = 'cruise.json'
 config_file = file_path + file_name
 history = evolve_state_over_time_from_file(config_file)
 for step, state_memberships in enumerate(history):
