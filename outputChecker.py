@@ -84,6 +84,10 @@ The human thinks that an automation state
 where there is blocking is possible enough (above a specified threshold) to cause trouble.
 '''
 
+# gear shifter example
+#fuzzy_data_path = './use_cases/gear/computed/FMMFSM/gear1.jsonResult.json'
+#system_data_path = './use_cases/gear/computed/System/gearSysBinary.json'
+# cruise example
 fuzzy_data_path = './use_cases/cruise/computed/FMMFSM/cruise.jsonResult.json'
 system_data_path = './use_cases/cruise/computed/System/cruiseSysBinary.json'
 fuzzy_data = load_json_file(fuzzy_data_path)
