@@ -45,6 +45,6 @@ def save_results(folder_path, input_file, readable_data, binary_data):
 
 # Example usage
 file_path = './use_cases/gear/'
-file_name = 'gear2Sys.json'
+file_name = 'gear3Sys.json'
 config_file = file_path + file_name
 simulate_actions_from_file(config_file, file_path)
