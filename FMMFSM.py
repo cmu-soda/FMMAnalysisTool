@@ -157,7 +157,7 @@ def save_results_to_file(folder_path, data, input_filename):
 
 # Simulate the evolution of state memberships
 file_path = './use_cases/gear/'
-file_name = 'gear1.json'
+file_name = 'gear2.json'
 config_file = file_path + file_name
 history = evolve_state_over_time_from_file(config_file)
 for step, state_memberships in enumerate(history):
