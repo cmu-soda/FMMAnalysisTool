@@ -1,4 +1,5 @@
 import json
+import os
 
 def load_json_file(file_path):
     with open(file_path, 'r') as file:
@@ -84,38 +85,56 @@ The human thinks that an automation state
 where there is blocking is possible enough (above a specified threshold) to cause trouble.
 '''
 
-# gear shifter example
-#fuzzy_data_path = './use_cases/gear/computed/FMMFSM/gear1.jsonResult.json'
-#system_data_path = './use_cases/gear/computed/System/gearSysBinary.json'
-# cruise example
-fuzzy_data_path = './use_cases/cruise/computed/FMMFSM/cruise.jsonResult.json'
-system_data_path = './use_cases/cruise/computed/System/cruiseSysBinary.json'
-fuzzy_data = load_json_file(fuzzy_data_path)
-system_data = load_json_file(system_data_path)
+def save_results(results, output_directory, filename):
+    os.makedirs(output_directory, exist_ok=True)
+    file_path = os.path.join(output_directory, filename)
+    with open(file_path, 'w') as file:
+        file.write(results)
 
-dominant_error_state = dominant_error_state_check(fuzzy_data, system_data)
+def main():
+    # Paths and data loading
+    fuzzy_data_path = './use_cases/gear/computed/FMMFSM/gear1.jsonResult.json'
+    system_data_path = './use_cases/gear/computed/System/gear1SysBinary.json'
+    fuzzy_data = load_json_file(fuzzy_data_path)
+    system_data = load_json_file(system_data_path)
 
-print("Dominant Error State Check:")
-for idx, result in enumerate(dominant_error_state):
-    if result is True:
-        print(f"Step {idx + 1}: True")
+    base_directory = os.path.dirname(fuzzy_data_path)
+    result_directory = os.path.join(base_directory, 'result')
+    filename = os.path.basename(fuzzy_data_path).replace('.jsonResult.json', 'RESULT.txt')
+
+    # Perform checks
+    dominant_error_state = dominant_error_state_check(fuzzy_data, system_data)
+    nondeterministic_confusions = nondeterministic_confusion_check(fuzzy_data)
+    vacuous_confusions = vacuous_confusion_check(fuzzy_data)
+
+    # Prepare and print results
+    results = "Dominant Error State Check:\n"
+    for idx, result in enumerate(dominant_error_state):
+        if result is True:
+            results += f"Step {idx}: True\n"
+        else:
+            results += f"Step {idx}: False, Fuzzy Max State: {result[1]}, Binary True State: {result[2]}\n"
+    print(results)  # Print to terminal
+
+    nondet_results = "\nNondeterministic Confusion Check:\n"
+    if nondeterministic_confusions:
+        for step, states in nondeterministic_confusions:
+            nondet_results += f"Step {step-1} shows nondeterministic confusion with states: {states}\n"
     else:
-        print(f"Step {idx + 1}: False, Fuzzy Max State: {result[1]}, Binary True State: {result[2]}")
+        nondet_results += "No nondeterministic confusion found.\n"
+    print(nondet_results)  # Print to terminal
 
-nondeterministic_confusions = nondeterministic_confusion_check(fuzzy_data)
+    vacuous_results = "\nVacuous Confusion Check:\n"
+    if vacuous_confusions:
+        for step, states in vacuous_confusions:
+            vacuous_results += f"Step {step-1} shows vacuous confusion with state memberships: {states}\n"
+    else:
+        vacuous_results += "No vacuous confusion found.\n"
+    print(vacuous_results)  # Print to terminal
 
-print("\nNondeterministic Confusion Check:")
-if nondeterministic_confusions:
-    for step, states in nondeterministic_confusions:
-        print(f"Step {step} shows nondeterministic confusion with states: {states}")
-else:
-    print("No nondeterministic confusion found.")
+    # Save all results
+    full_results = results + nondet_results + vacuous_results
+    save_results(full_results, result_directory, filename)
 
-vacuous_confusions = vacuous_confusion_check(fuzzy_data)
-
-print("\nVacuous Confusion Check:")
-if vacuous_confusions:
-    for step, states in vacuous_confusions:
-        print(f"Step {step} shows vacuous confusion with state memberships: {states}")
-else:
-    print("No vacuous confusion found.")
+if __name__ == "__main__":
+    main()
