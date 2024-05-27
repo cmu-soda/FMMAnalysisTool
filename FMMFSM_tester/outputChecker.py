@@ -93,8 +93,8 @@ def save_results(results, output_directory, filename):
 
 def main():
     # Paths and data loading
-    fuzzy_data_path = './FMMFSM_tester/use_cases/gear/computed/FMMFSM/gear3.jsonResult.json'
-    system_data_path = './FMMFSM_tester/use_cases/gear/computed/System/gear3SysBinary.json'
+    fuzzy_data_path = './FMMFSM_tester/use_cases/cruise/computed/FMMFSM/cruise.jsonResult.json'
+    system_data_path = './FMMFSM_tester/use_cases/cruise/computed/System/cruiseSysBinary.json'
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 
