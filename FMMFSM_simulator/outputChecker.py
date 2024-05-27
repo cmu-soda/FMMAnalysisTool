@@ -1,0 +1,121 @@
+import json
+import os
+
+def load_json_file(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+
+'''
+Check for dominant error state:
+The human thinks the state category the automation is most possibly in 
+does not match the states actual category.
+'''
+def dominant_error_state_check(fuzzy_data, system_data):
+    results = []
+    for fuzzy, binary in zip(fuzzy_data, system_data):
+        # Find the state with the highest membership in the fuzzy data
+        max_state = max(fuzzy, key=fuzzy.get)
+        max_value = fuzzy[max_state]
+
+        # Check if the corresponding binary state is set to 1
+        if binary[max_state] == 1:
+            results.append(True)
+        else:
+            # Find the actual binary state set to 1 for comparison
+            true_state = next((state for state in binary if binary[state] == 1), None)
+            results.append((False, {max_state: max_value}, {true_state: fuzzy[true_state]}))
+    
+    return results
+
+'''
+Check for nondeterministic confusion:
+The human thinks two or more task categories are (effectively) equally the most possible.
+'''
+def nondeterministic_confusion_check(data, threshold=0.05):
+    confusion_steps = []
+    for index, step in enumerate(data):
+        # Find the maximum membership value
+        max_value = max(step.values())
+
+        # Find all states that are within the threshold of the maximum value
+        near_max_states = {state: value for state, value in step.items() 
+                           if max_value - value <= threshold * max_value}
+
+        # Check if multiple states are within this range
+        if len(near_max_states) > 1:
+            confusion_steps.append((index + 1, near_max_states))
+
+    return confusion_steps
+
+'''
+Check for vacuous confusion:
+The human does not have strong membership for any state category (task label).
+'''
+def vacuous_confusion_check(data, threshold=0.05):
+    confusion_steps = []
+    for index, step in enumerate(data):
+        max_value = max(step.values())
+        
+        # Check if the highest value is below the threshold
+        if max_value < threshold:
+            confusion_steps.append((index + 1, step))
+    
+    return confusion_steps
+
+'''
+TODO: Implement the following checks
+Check for dominant blocking state:
+The human thinks the most possible automation state(s) 
+does not allow for a specific action that would cause a system change.
+'''
+
+'''
+TODO: Implement the following checks
+Check for threshold error state:
+The human thinks that an automation state category (task label) that mismatches 
+the actual automation category 
+is possible enough (above an analyst specified threshold) to cause trouble.
+'''
+
+'''
+TODO: Implement the following checks
+Check for threshold blocking state:
+The human thinks that an automation state 
+where there is blocking is possible enough (above a specified threshold) to cause trouble.
+'''
+
+def save_results(results, output_directory, filename):
+    os.makedirs(output_directory, exist_ok=True)
+    file_path = os.path.join(output_directory, filename)
+    with open(file_path, 'w') as file:
+        file.write(results)
+    
+def check_and_save_results(fuzzy_data_file, system_data_file):
+    fuzzy_data = load_json_file(fuzzy_data_file)
+    system_data = load_json_file(system_data_file)
+
+    result_directory = os.path.join(os.path.dirname(fuzzy_data_file), 'results')
+    filename = os.path.basename(fuzzy_data_file).replace('Result.json', 'RESULT.txt')
+
+    dominant_error_state = dominant_error_state_check(fuzzy_data, system_data)
+    nondeterministic_confusions = nondeterministic_confusion_check(fuzzy_data)
+    vacuous_confusions = vacuous_confusion_check(fuzzy_data)
+
+    results = "Dominant Error State Check:\n" + "\n".join(
+        f"Step {idx}: {'True' if res is True else 'False, Fuzzy Max State: ' + str(res[1]) + ', Binary True State: ' + str(res[2])}" 
+        for idx, res in enumerate(dominant_error_state)
+    )
+
+    nondet_results = "\nNondeterministic Confusion Check:\n" + "\n".join(
+        f"Step {step-1} shows nondeterministic confusion with states: {states}" 
+        for step, states in nondeterministic_confusions
+    )
+
+    vacuous_results = "\nVacuous Confusion Check:\n" + "\n".join(
+        f"Step {step-1} shows vacuous confusion with state memberships: {states}" 
+        for step, states in vacuous_confusions
+    )
+
+    full_results = results + nondet_results + vacuous_results
+    save_results(full_results, result_directory, filename)

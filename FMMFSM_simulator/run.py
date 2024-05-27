@@ -3,6 +3,9 @@ import random
 import argparse
 import os
 import re
+from discreteSystemModel import simulate_actions_from_file
+from FMMFSM import evolve_state_over_time_from_file, save_results_to_file
+from outputChecker import check_and_save_results
 
 def load_configurations(file_path):
     with open(file_path, 'r') as file:
@@ -29,7 +32,8 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Monte Carlo simulation for FMMFSM")
     parser.add_argument("FMMFSM_config_file", help="Path to the input FMMFSM JSON configuration file")
     parser.add_argument("system_config_file", help="Path to the input system JSON configuration file")
-    parser.add_argument("--num", type=int, help="Total number of steps in the generated path", required=False)
+    parser.add_argument("--num", type=int, help="Total number of steps in the generated path", required=True)
+    parser.add_argument("--iter", type=int, help="Number of iterations to run", required=True)
     args = parser.parse_args()
     return args
 
@@ -44,16 +48,11 @@ def find_next_index(directory, base_filename):
                 max_index = index
     return max_index + 1
 
-def main():
-    args = parse_arguments()
-
+def run_simulation(index, args):
     FMMFSM_data = load_configurations(args.FMMFSM_config_file)
     system_data = load_configurations(args.system_config_file)
     
     input_options = list(FMMFSM_data['input_fuzzified'].keys())
-    if args.num is None:
-        print("Error: Please specify the total number of steps using the --num option.")
-        return
 
     random_schedule = generate_random_schedule(input_options, args.num)
     FMMFSM_data['input_schedule'] = random_schedule
@@ -72,6 +71,21 @@ def main():
     print(f"New configuration has been saved to {output_FMMFSM_path}")
     save_configurations(system_data, output_system_path)
     print(f"New system configuration has been saved to {output_system_path}")
+
+    simulate_actions_from_file(output_system_path, "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}")
+
+    history = evolve_state_over_time_from_file(output_FMMFSM_path)
+    save_results_to_file("./output/computed/"+f"{FMMFSM_base_filename}_{next_index}", history, output_FMMFSM_path)
+
+    fuzzy_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"+f"{FMMFSM_base_filename}_{next_index}FMMFSM_Result.json"
+    system_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"f"{system_base_filename}_{next_index}Binary.json"
+
+    check_and_save_results(fuzzy_data_file, system_data_file)
+
+def main():
+    args = parse_arguments()
+    for i in range(args.iter-1):
+        run_simulation(i, args)
 
 if __name__ == "__main__":
     main()
