@@ -64,11 +64,23 @@ def vacuous_confusion_check(data, threshold=0.05):
     return confusion_steps
 
 '''
-TODO: Implement the following checks
 Check for dominant blocking state:
 The human thinks the most possible automation state(s) 
 does not allow for a specific action that would cause a system change.
 '''
+def dominant_blocking_state_check(blocking_history, state_membership_history, system_data):
+    blocking_steps = []
+    for i, (blocking, state_memberships, system_state) in enumerate(zip(blocking_history, state_membership_history, system_data)):
+        B = blocking['B']
+        C = blocking['C']
+        if B > C:
+            current_state = max(state_memberships, key=state_memberships.get)
+            if i + 1 < len(system_data):
+                next_system_state = system_data[i + 1]
+                next_state = max(next_system_state, key=next_system_state.get)
+                if current_state != next_state:
+                    blocking_steps.append(i + 1)
+    return blocking_steps
 
 '''
 TODO: Implement the following checks
@@ -93,19 +105,23 @@ def save_results(results, output_directory, filename):
 
 def main():
     # Paths and data loading
-    fuzzy_data_path = './FMMFSM_tester/use_cases/cruise/computed/FMMFSM/cruise.jsonResult.json'
-    system_data_path = './FMMFSM_tester/use_cases/cruise/computed/System/cruiseSysBinary.json'
+    fuzzy_data_path = './FMMFSM_tester/use_cases/cruise/computed/FMMFSM/cruise2.jsonResult.json'
+    system_data_path = './FMMFSM_tester/use_cases/cruise/computed/System/cruise2SysBinary.json'
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
+
+    state_membership_history = fuzzy_data['state_membership_history']
+    blocking_history = fuzzy_data['blocking_history']
 
     base_directory = os.path.dirname(fuzzy_data_path)
     result_directory = os.path.join(base_directory, 'result')
     filename = os.path.basename(fuzzy_data_path).replace('.jsonResult.json', 'RESULT.txt')
 
     # Perform checks
-    dominant_error_state = dominant_error_state_check(fuzzy_data, system_data)
-    nondeterministic_confusions = nondeterministic_confusion_check(fuzzy_data)
-    vacuous_confusions = vacuous_confusion_check(fuzzy_data)
+    dominant_error_state = dominant_error_state_check(state_membership_history, system_data)
+    nondeterministic_confusions = nondeterministic_confusion_check(state_membership_history)
+    vacuous_confusions = vacuous_confusion_check(state_membership_history)
+    dominant_blocking_states = dominant_blocking_state_check(blocking_history, state_membership_history, system_data)
 
     # Prepare and print results
     results = "Dominant Error State Check:\n"
@@ -132,8 +148,16 @@ def main():
         vacuous_results += "No vacuous confusion found.\n"
     print(vacuous_results)  # Print to terminal
 
+    blocking_results = "\nDominant Blocking State Check:\n"
+    if dominant_blocking_states:
+        for step in dominant_blocking_states:
+            blocking_results += f"Step {step} shows dominant blocking state.\n"
+    else:
+        blocking_results += "No dominant blocking states found.\n"
+    print(blocking_results)  # Print to terminal
+
     # Save all results
-    full_results = results + nondet_results + vacuous_results
+    full_results = results + nondet_results + vacuous_results + blocking_results
     save_results(full_results, result_directory, filename)
 
 if __name__ == "__main__":

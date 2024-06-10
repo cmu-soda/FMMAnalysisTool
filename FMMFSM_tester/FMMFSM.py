@@ -3,11 +3,9 @@ import json
 import os
 
 def fuzzy_and(values):
-    #return np.min(values)
     return np.prod(values)
 
 def fuzzy_or(values):
-    #return np.max(values)
     return 1 - np.prod(1 - np.array(values))
 
 def calculate_next_state_membership(current_state_memberships, input_fuzzified, transition_probabilities, input_event):
@@ -42,14 +40,6 @@ def calculate_next_state_membership(current_state_memberships, input_fuzzified, 
                 # Append to the correct list based on the transition's target state (next_state)
                 transition_values[next_state].append(and_value)
 
-                '''
-                print(f"Calculating membership for state {next_state} from state {current_state}")
-                print(f"  Input condition: {input_condition}")
-                print(f"    Current state membership: {current_state_memberships[current_state]}")
-                print(f"    Input membership: {input_membership}")
-                print(f"    Transition probability from {current_state} with input {input_condition} to {next_state}: {transition_probability}")
-                '''
-
     # Apply fuzzy OR for each state based on accumulated values for that state
     for state in states:
         if transition_values[state]:
@@ -59,6 +49,30 @@ def calculate_next_state_membership(current_state_memberships, input_fuzzified, 
 
     return next_state_memberships
 
+def calculate_blocking_states(current_state_memberships, input_fuzzified, transition_probabilities, input_event):
+    states = list(current_state_memberships.keys())
+    
+    B_values = []
+    C_values = []
+
+    for current_state in states:
+        for input_condition in input_fuzzified[input_event].keys():
+            input_membership = input_fuzzified[input_event][input_condition]
+            
+            for next_state in states:
+                transition_probability = transition_probabilities[current_state][input_condition].get(next_state, 0)
+                
+                and_value = fuzzy_and([current_state_memberships[current_state], input_membership, transition_probability])
+                
+                if current_state == next_state:
+                    B_values.append(and_value)
+                else:
+                    C_values.append(and_value)
+
+    B = fuzzy_or(B_values)
+    C = fuzzy_or(C_values)
+
+    return B, C
 
 def load_configurations(file_path):
     with open(file_path, 'r') as file:
@@ -67,14 +81,21 @@ def load_configurations(file_path):
         data = json.loads(content)
     return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['input_schedule']
 
-def evolve_state_over_time_from_file(config_file):
-    initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule = load_configurations(config_file)
-
+def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule):
     current_state_memberships = initial_state_memberships
     history = [current_state_memberships]
+    blocking_history = []
 
     for input_event, steps in input_schedule:
         for _ in range(steps):
+            B, C = calculate_blocking_states(
+                current_state_memberships, 
+                input_fuzzified, 
+                transition_probabilities, 
+                input_event
+            )
+            blocking_history.append({'B': B, 'C': C})
+
             current_state_memberships = calculate_next_state_membership(
                 current_state_memberships, 
                 input_fuzzified, 
@@ -82,24 +103,8 @@ def evolve_state_over_time_from_file(config_file):
                 input_event
             )
             history.append(current_state_memberships)
-
-    return history
-
-def evolve_state_over_time(initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule):
-    current_state_memberships = initial_state_memberships
-    history = [current_state_memberships]
-
-    for input_event, steps in input_schedule:
-        for _ in range(steps):
-            current_state_memberships = calculate_next_state_membership(
-                current_state_memberships, 
-                input_fuzzified, 
-                transition_probabilities, 
-                input_event
-            )
-            history.append(current_state_memberships)
-
-    return history
+            
+    return history, blocking_history
 
 def save_results_to_file(folder_path, data, input_filename):
     output_filename = f"{input_filename}Result.json"
@@ -109,9 +114,27 @@ def save_results_to_file(folder_path, data, input_filename):
 
 # Simulate the evolution of state memberships
 file_path = './FMMFSM_tester/use_cases/cruise/'
-file_name = 'cruise.json'
+file_name = 'cruise2.json'
 config_file = file_path + file_name
-history = evolve_state_over_time_from_file(config_file)
-for step, state_memberships in enumerate(history):
-    print(f"Step {step}: {state_memberships}")
-save_results_to_file(file_path+'computed/FMMFSM', history, file_name)
+
+# Load configurations
+initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule = load_configurations(config_file)
+
+# Evolve state over time with blocking states
+history, blocking_history = evolve_state_over_time_with_blocking(
+    initial_state_memberships, 
+    input_fuzzified, 
+    transition_probabilities, 
+    input_schedule
+)
+
+# Print the history and blocking states
+for step, (state_memberships, blocking) in enumerate(zip(history, blocking_history)):
+    print(f"Step {step}: {state_memberships}, Blocking: {blocking}")
+
+# Save results to file
+results = {
+    'state_membership_history': history,
+    'blocking_history': blocking_history
+}
+save_results_to_file(file_path+'computed/FMMFSM', results, file_name)
