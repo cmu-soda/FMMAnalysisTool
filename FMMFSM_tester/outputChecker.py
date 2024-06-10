@@ -68,13 +68,13 @@ Check for dominant blocking state:
 The human thinks the most possible automation state(s) 
 does not allow for a specific action that would cause a system change.
 '''
-def dominant_blocking_state_check(blocking_history, state_membership_history, system_data):
+def dominant_blocking_state_check(blocking_history, system_data):
     blocking_steps = []
-    for i, (blocking, state_memberships, system_state) in enumerate(zip(blocking_history, state_membership_history, system_data)):
+    for i, (blocking, current_system_state) in enumerate(zip(blocking_history, system_data)):
         B = blocking['B']
         C = blocking['C']
         if B > C:
-            current_state = max(state_memberships, key=state_memberships.get)
+            current_state = max(current_system_state, key=current_system_state.get)
             if i + 1 < len(system_data):
                 next_system_state = system_data[i + 1]
                 next_state = max(next_system_state, key=next_system_state.get)
@@ -121,7 +121,7 @@ def main():
     dominant_error_state = dominant_error_state_check(state_membership_history, system_data)
     nondeterministic_confusions = nondeterministic_confusion_check(state_membership_history)
     vacuous_confusions = vacuous_confusion_check(state_membership_history)
-    dominant_blocking_states = dominant_blocking_state_check(blocking_history, state_membership_history, system_data)
+    dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
 
     # Prepare and print results
     results = "Dominant Error State Check:\n"
