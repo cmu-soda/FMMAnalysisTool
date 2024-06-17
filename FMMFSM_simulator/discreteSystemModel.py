@@ -16,6 +16,7 @@ def simulate_actions_from_file(config_file, file_path):
     history_readable = []
     history_binary = []
 
+    print(f"Initial state: {current_state}")
     history_readable.append(f"Initial state: {current_state}")
     history_binary.append({state: 1 if state == current_state else 0 for state in transitions.keys()})
 
@@ -24,10 +25,11 @@ def simulate_actions_from_file(config_file, file_path):
             current_state = transition_state(transitions, current_state, action)
             total_steps += 1
             output = f"After total step {total_steps} with action '{action}': {current_state}"
+            print(output)
             history_readable.append(output)
             history_binary.append({state: 1 if state == current_state else 0 for state in transitions.keys()})
 
-    save_results(file_path, config_file, history_readable, history_binary)
+    save_results(file_path+'computed/System/', config_file, history_readable, history_binary)
 
 def save_results(folder_path, input_file, readable_data, binary_data):
     base_name = os.path.splitext(os.path.basename(input_file))[0]

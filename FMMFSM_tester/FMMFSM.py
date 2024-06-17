@@ -102,10 +102,7 @@ def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzif
                 transition_probabilities, 
                 input_event
             )
-            history.append(current_state_memberships)
-
-
-            
+            history.append(current_state_memberships)            
     return history, blocking_history
 
 def save_results_to_file(folder_path, data, input_filename):
