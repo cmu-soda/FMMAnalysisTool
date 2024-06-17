@@ -3,9 +3,25 @@ import random
 import argparse
 import os
 import re
+import logging
+from datetime import datetime
+import sys
 from discreteSystemModel import simulate_actions_from_file
 from FMMFSM import evolve_state_over_time_from_file, save_results_to_file
 from outputChecker import check_and_save_results
+
+# Configure logging
+logging.basicConfig(filename='run_log.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
+def log_execution():
+    command = ' '.join(sys.argv)
+    logging.info(f"Command executed: {command}")
+
+def log_file_creation(file_path):
+    logging.info(f"File created: {file_path}")
+
+# Log the execution command
+log_execution()
 
 def load_configurations(file_path):
     with open(file_path, 'r') as file:
@@ -27,6 +43,7 @@ def generate_random_schedule(input_options, total_steps):
 def save_configurations(data, file_path):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
+    log_file_creation(file_path)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Monte Carlo simulation for FMMFSM")
@@ -68,9 +85,7 @@ def run_simulation(index, args):
     output_system_path = os.path.join(directory, f"{system_base_filename}_{next_index}.json")
     
     save_configurations(FMMFSM_data, output_FMMFSM_path)
-    print(f"New configuration has been saved to {output_FMMFSM_path}")
     save_configurations(system_data, output_system_path)
-    print(f"New system configuration has been saved to {output_system_path}")
 
     simulate_actions_from_file(output_system_path, "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}")
 
@@ -84,8 +99,14 @@ def run_simulation(index, args):
 
 def main():
     args = parse_arguments()
+    first_file_logged = False
     for i in range(args.iter):
         run_simulation(i, args)
+        if not first_file_logged:
+            logging.info(f"First file created: {find_next_index('./output/config/', os.path.splitext(os.path.basename(args.FMMFSM_config_file))[0]) - 1}")
+            first_file_logged = True
+    last_file_index = find_next_index('./output/config/', os.path.splitext(os.path.basename(args.FMMFSM_config_file))[0]) - 1
+    logging.info(f"Last file created: {last_file_index}")
 
 if __name__ == "__main__":
     main()
