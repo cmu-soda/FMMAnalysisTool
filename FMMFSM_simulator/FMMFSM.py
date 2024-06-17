@@ -81,7 +81,9 @@ def load_configurations(file_path):
         data = json.loads(content)
     return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['input_schedule']
 
-def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule):
+def evolve_state_over_time_from_file(config_file):
+    initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule = load_configurations(config_file)
+
     current_state_memberships = initial_state_memberships
     history = [current_state_memberships]
     blocking_history = []
@@ -102,8 +104,13 @@ def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzif
                 transition_probabilities, 
                 input_event
             )
-            history.append(current_state_memberships)            
-    return history, blocking_history
+            history.append(current_state_memberships)
+
+    results = {
+        'state_membership_history': history,
+        'blocking_history': blocking_history
+    }              
+    return results
 
 def save_results_to_file(folder_path, data, input_filename):
     base_filename = os.path.basename(input_filename)  # Get the filename from the full path

@@ -103,10 +103,7 @@ def save_results(results, output_directory, filename):
     with open(file_path, 'w') as file:
         file.write(results)
 
-def main():
-    # Paths and data loading
-    fuzzy_data_path = './FMMFSM_tester/use_cases/cruise/computed/FMMFSM/cruise2.jsonResult.json'
-    system_data_path = './FMMFSM_tester/use_cases/cruise/computed/System/cruise2SysBinary.json'
+def check_and_save_results(fuzzy_data_path, system_data_path):
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 
@@ -115,22 +112,19 @@ def main():
 
     base_directory = os.path.dirname(fuzzy_data_path)
     result_directory = os.path.join(base_directory, 'result')
-    filename = os.path.basename(fuzzy_data_path).replace('.jsonResult.json', 'RESULT.txt')
+    filename = os.path.basename(fuzzy_data_path).replace('FMMFSM_Result.json', 'Result.txt')  # Change here to ensure .txt extension
 
-    # Perform checks
     dominant_error_state = dominant_error_state_check(state_membership_history, system_data)
     nondeterministic_confusions = nondeterministic_confusion_check(state_membership_history)
     vacuous_confusions = vacuous_confusion_check(state_membership_history)
     dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
 
-    # Prepare and print results
     results = "Dominant Error State Check:\n"
     for idx, result in enumerate(dominant_error_state):
         if result is True:
             results += f"Step {idx}: True\n"
         else:
             results += f"Step {idx}: False, Fuzzy Max State: {result[1]}, Binary True State: {result[2]}\n"
-    print(results)  # Print to terminal
 
     nondet_results = "\nNondeterministic Confusion Check:\n"
     if nondeterministic_confusions:
@@ -138,7 +132,6 @@ def main():
             nondet_results += f"Step {step-1} shows nondeterministic confusion with states: {states}\n"
     else:
         nondet_results += "No nondeterministic confusion found.\n"
-    print(nondet_results)  # Print to terminal
 
     vacuous_results = "\nVacuous Confusion Check:\n"
     if vacuous_confusions:
@@ -146,7 +139,6 @@ def main():
             vacuous_results += f"Step {step-1} shows vacuous confusion with state memberships: {states}\n"
     else:
         vacuous_results += "No vacuous confusion found.\n"
-    print(vacuous_results)  # Print to terminal
 
     blocking_results = "\nDominant Blocking State Check:\n"
     if dominant_blocking_states:
@@ -154,9 +146,7 @@ def main():
             blocking_results += f"Step {step} shows dominant blocking state.\n"
     else:
         blocking_results += "No dominant blocking states found.\n"
-    print(blocking_results)  # Print to terminal
 
-    # Save all results
     full_results = results + nondet_results + vacuous_results + blocking_results
     save_results(full_results, result_directory, filename)
 

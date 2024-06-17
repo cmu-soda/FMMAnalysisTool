@@ -78,13 +78,13 @@ def run_simulation(index, args):
     save_results_to_file("./output/computed/"+f"{FMMFSM_base_filename}_{next_index}", history, output_FMMFSM_path)
 
     fuzzy_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"+f"{FMMFSM_base_filename}_{next_index}FMMFSM_Result.json"
-    system_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"f"{system_base_filename}_{next_index}Binary.json"
+    system_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"+f"{system_base_filename}_{next_index}Binary.json"
 
     check_and_save_results(fuzzy_data_file, system_data_file)
 
 def main():
     args = parse_arguments()
-    for i in range(args.iter-1):
+    for i in range(args.iter):
         run_simulation(i, args)
 
 if __name__ == "__main__":
