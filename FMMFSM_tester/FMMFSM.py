@@ -103,6 +103,8 @@ def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzif
                 input_event
             )
             history.append(current_state_memberships)
+
+
             
     return history, blocking_history
 
@@ -113,8 +115,8 @@ def save_results_to_file(folder_path, data, input_filename):
         json.dump(data, f, indent=4)
 
 # Simulate the evolution of state memberships
-file_path = './FMMFSM_tester/use_cases/gear/'
-file_name = 'gear1.json'
+file_path = './FMMFSM_tester/use_cases/degani/'
+file_name = 'degani2.json'
 config_file = file_path + file_name
 
 # Load configurations
@@ -131,6 +133,11 @@ history, blocking_history = evolve_state_over_time_with_blocking(
 # Print the history and blocking states
 for step, (state_memberships, blocking) in enumerate(zip(history, blocking_history)):
     print(f"Step {step}: {state_memberships}, Blocking: {blocking}")
+
+# Print the last state membership without blocking
+if len(history) > len(blocking_history):
+    last_state_memberships = history[-1]
+    print(f"Step {len(history) - 1}: {last_state_memberships}, Blocking: NA")
 
 # Save results to file
 results = {

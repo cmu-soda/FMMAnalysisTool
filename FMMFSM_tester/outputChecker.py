@@ -105,8 +105,8 @@ def save_results(results, output_directory, filename):
 
 def main():
     # Paths and data loading
-    fuzzy_data_path = './FMMFSM_tester/use_cases/cruise/computed/FMMFSM/cruise2.jsonResult.json'
-    system_data_path = './FMMFSM_tester/use_cases/cruise/computed/System/cruise2SysBinary.json'
+    fuzzy_data_path = './FMMFSM_tester/use_cases/degani/computed/FMMFSM/degani2.jsonResult.json'
+    system_data_path = './FMMFSM_tester/use_cases/degani/computed/System/degani2SysBinary.json'
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 

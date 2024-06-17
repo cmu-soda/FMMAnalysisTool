@@ -44,7 +44,7 @@ def save_results(folder_path, input_file, readable_data, binary_data):
         json.dump(binary_data, file, indent=4)
 
 # Example usage
-file_path = './FMMFSM_tester/use_cases/gear/'
-file_name = 'gear1Sys.json'
+file_path = './FMMFSM_tester/use_cases/degani/'
+file_name = 'degani2Sys.json'
 config_file = file_path + file_name
 simulate_actions_from_file(config_file, file_path)
