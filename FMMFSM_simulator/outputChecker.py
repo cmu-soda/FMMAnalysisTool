@@ -79,7 +79,7 @@ def dominant_blocking_state_check(blocking_history, system_data):
                 next_system_state = system_data[i + 1]
                 next_state = max(next_system_state, key=next_system_state.get)
                 if current_state != next_state:
-                    blocking_steps.append(i + 1)
+                    blocking_steps.append(i)
     return blocking_steps
 
 '''

@@ -79,7 +79,7 @@ def dominant_blocking_state_check(blocking_history, system_data):
                 next_system_state = system_data[i + 1]
                 next_state = max(next_system_state, key=next_system_state.get)
                 if current_state != next_state:
-                    blocking_steps.append(i + 1)
+                    blocking_steps.append(i)
     return blocking_steps
 
 '''
@@ -105,8 +105,8 @@ def save_results(results, output_directory, filename):
 
 def main():
     # Paths and data loading
-    fuzzy_data_path = './FMMFSM_tester/use_cases/degani/computed/FMMFSM/degani2.jsonResult.json'
-    system_data_path = './FMMFSM_tester/use_cases/degani/computed/System/degani2SysBinary.json'
+    fuzzy_data_path = './FMMFSM_tester/use_cases/degani/computed/FMMFSM/degani1.jsonResult.json'
+    system_data_path = './FMMFSM_tester/use_cases/degani/computed/System/degani1SysBinary.json'
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 
