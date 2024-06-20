@@ -149,6 +149,3 @@ def check_and_save_results(fuzzy_data_path, system_data_path):
 
     full_results = results + nondet_results + vacuous_results + blocking_results
     save_results(full_results, result_directory, filename)
-
-if __name__ == "__main__":
-    main()
