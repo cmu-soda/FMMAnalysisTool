@@ -1,0 +1,13 @@
+{
+    "initial_state": "Active",
+    "transitions": {
+      "Active": {
+        "Gas": "Active",
+        "NoGas": "Active"
+      },
+      "Inactive": {
+        "Gas": "Active",
+        "NoGas": "Inactive"
+      }
+    }
+}

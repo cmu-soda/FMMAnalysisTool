@@ -1,0 +1,35 @@
+{
+    "initial_state": "Active",
+    "transitions": {
+        "Active": {
+            "Gas": "Active",
+            "NoGas": "Active"
+        },
+        "Inactive": {
+            "Gas": "Active",
+            "NoGas": "Inactive"
+        }
+    },
+    "action_schedule": [
+        [
+            "Gas",
+            3
+        ],
+        [
+            "Gas",
+            3
+        ],
+        [
+            "NoGas",
+            1
+        ],
+        [
+            "NoGas",
+            2
+        ],
+        [
+            "NoGas",
+            1
+        ]
+    ]
+}

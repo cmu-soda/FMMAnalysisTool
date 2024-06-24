@@ -1,0 +1,105 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Inactive",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Inactive": 0.5208398032149031
+            },
+            "Binary True State": {
+                "Active": 0.44857820307304186
+            }
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 7,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "States": {
+                "Active": 0.49355352000194475,
+                "Inactive": 0.48616854218708416
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "States": {
+                "Active": 0.49593506152366384,
+                "Inactive": 0.4913058466179978
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "States": {
+                "Active": 0.4984202256367132,
+                "Inactive": 0.49570470578172243
+            }
+        }
+    ]
+}

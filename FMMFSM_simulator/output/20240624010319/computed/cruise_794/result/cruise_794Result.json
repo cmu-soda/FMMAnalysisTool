@@ -1,0 +1,105 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "NoGas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Gas",
+            "FMMFSM State": "Inactive",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Inactive": 0.5235503484040707
+            },
+            "Binary True State": {
+                "Active": 0.47527924764950347
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Gas",
+            "FMMFSM State": "Inactive",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Inactive": 0.5194489742703863
+            },
+            "Binary True State": {
+                "Active": 0.48544868156723875
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "NoGas",
+            "FMMFSM State": "Inactive",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Inactive": 0.5172178910838053
+            },
+            "Binary True State": {
+                "Active": 0.4931233639241529
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Inactive",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Inactive": 0.5410250048429204
+            },
+            "Binary True State": {
+                "Active": 0.4438110275317376
+            }
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 9,
+            "Action": "NoGas",
+            "FMMFSM State": "Inactive",
+            "States": {
+                "Active": 0.4931233639241529,
+                "Inactive": 0.5172178910838053
+            }
+        }
+    ]
+}
