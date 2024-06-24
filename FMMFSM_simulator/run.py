@@ -9,7 +9,6 @@ import sys
 from discreteSystemModel import simulate_actions_from_file
 from FMMFSM import evolve_state_over_time_from_file, save_results_to_file
 from outputChecker import check_and_save_results
-from datetime import datetime
 
 def setup_logging(log_filename):
     logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -168,16 +167,16 @@ def post_process_results(result_log_file):
 
 def main():
     args = parse_arguments()
+    experiment_timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+    experiment_directory = f'./output/{experiment_timestamp}/'
+    
+    os.makedirs(experiment_directory, exist_ok=True)
+    log_filename = os.path.join(experiment_directory, 'run_log.log')
+    setup_logging(log_filename)  # Set up logging for this experiment
+    log_execution()  # Log the execution command
+
     first_file_logged = False
     for i in range(args.iter):
-        experiment_timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
-        experiment_directory = f'./output/{experiment_timestamp}/'
-        
-        os.makedirs(experiment_directory, exist_ok=True)
-        log_filename = os.path.join(experiment_directory, 'run_log.log')
-        setup_logging(log_filename)  # Set up logging for this experiment
-        log_execution()  # Log the execution command
-        
         run_simulation(experiment_directory, args, i)
         if not first_file_logged:
             logging.info(f"First file created: {find_next_index(experiment_directory + 'config/', os.path.splitext(os.path.basename(args.FMMFSM_config_file))[0]) - 1}")
