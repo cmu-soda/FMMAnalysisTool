@@ -1,0 +1,102 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "down1",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "down1",
+            "FMMFSM State": "R",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "down1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "up1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "down1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.8591449644153555
+            },
+            "Binary True State": {
+                "R": 0.8290728191295829
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "down1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "up1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.94358301430335
+            },
+            "Binary True State": {
+                "R": 0.8452304466315463
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "P",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 5,
+            "Action": "down1",
+            "FMMFSM State": "P",
+            "States": {
+                "P": 0.8591449644153555,
+                "R": 0.8290728191295829
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "down1",
+            "FMMFSM State": "N",
+            "States": {
+                "R": 0.791029081553867,
+                "N": 0.8309395034728391
+            }
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "down2",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "down2",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "up1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.8269057110487412
+            },
+            "Binary True State": {
+                "R": 0.7977380306500819
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "N",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 6,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "States": {
+                "P": 0.8269057110487412,
+                "R": 0.7977380306500819
+            }
+        }
+    ]
+}
