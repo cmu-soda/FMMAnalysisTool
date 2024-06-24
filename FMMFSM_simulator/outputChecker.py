@@ -97,7 +97,10 @@ The human thinks that an automation state
 where there is blocking is possible enough (above a specified threshold) to cause trouble.
 '''
 
-def check_and_save_results(fuzzy_data_path, system_data_path):
+def get_fmmfsm_state(membership):
+    return max(membership, key=membership.get) if membership else None
+
+def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule):
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 
@@ -117,7 +120,19 @@ def check_and_save_results(fuzzy_data_path, system_data_path):
     results = {}
 
     dominant_error_state_results = [
-        {"Step": idx, "Result": "True"} if result is True else {"Step": idx, "Result": "False", "Fuzzy Max State": result[1], "Binary True State": result[2]}
+        {
+            "Step": idx,
+            "Action": expanded_schedule[idx] if idx < len(expanded_schedule) else None,
+            "FMMFSM State": get_fmmfsm_state(state_membership_history[idx]) if idx < len(state_membership_history) else None,
+            "Result": "True"
+        } if result is True else {
+            "Step": idx,
+            "Action": expanded_schedule[idx] if idx < len(expanded_schedule) else None,
+            "FMMFSM State": get_fmmfsm_state(state_membership_history[idx]) if idx < len(state_membership_history) else None,
+            "Result": "False",
+            "Fuzzy Max State": result[1],
+            "Binary True State": result[2]
+        }
         for idx, result in enumerate(dominant_error_state)
     ]
 
@@ -126,19 +141,19 @@ def check_and_save_results(fuzzy_data_path, system_data_path):
 
     if nondeterministic_confusions:
         results["Nondeterministic Confusion Check"] = [
-            {"Step": step - 1, "States": states}
+            {"Step": step - 1, "Action": expanded_schedule[step - 1] if step - 1 < len(expanded_schedule) else None, "FMMFSM State": get_fmmfsm_state(state_membership_history[step - 1]) if step - 1 < len(state_membership_history) else None, "States": states}
             for step, states in nondeterministic_confusions
         ]
 
     if vacuous_confusions:
         results["Vacuous Confusion Check"] = [
-            {"Step": step - 1, "State Memberships": states}
+            {"Step": step - 1, "Action": expanded_schedule[step - 1] if step - 1 < len(expanded_schedule) else None, "FMMFSM State": get_fmmfsm_state(state_membership_history[step - 1]) if step - 1 < len(state_membership_history) else None, "State Memberships": states}
             for step, states in vacuous_confusions
         ]
 
     if dominant_blocking_states:
         results["Dominant Blocking State Check"] = [
-            {"Step": step}
+            {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM State": get_fmmfsm_state(state_membership_history[step]) if step < len(state_membership_history) else None}
             for step in dominant_blocking_states
         ]
 
