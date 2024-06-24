@@ -51,6 +51,7 @@ def parse_arguments():
     parser.add_argument("system_config_file", help="Path to the input system JSON configuration file")
     parser.add_argument("--num", type=int, help="Total number of steps in the generated path", required=True)
     parser.add_argument("--iter", type=int, help="Number of iterations to run", required=True)
+    parser.add_argument("--postp", action="store_true", help="Enable post-processing to remove steps after blocking states are found")
     args = parser.parse_args()
     return args
 
@@ -76,7 +77,7 @@ def run_simulation(index, args):
     system_data['action_schedule'] = random_schedule
     
     directory = './output/config/'
-    os.makedirs(os.path.dirname(directory), exist_ok=True)
+    os.makedirs(directory, exist_ok=True)
     FMMFSM_base_filename = os.path.splitext(os.path.basename(args.FMMFSM_config_file))[0]
     system_base_filename = os.path.splitext(os.path.basename(args.system_config_file))[0]
     next_index = find_next_index(directory, FMMFSM_base_filename)
@@ -94,8 +95,65 @@ def run_simulation(index, args):
 
     fuzzy_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"+f"{FMMFSM_base_filename}_{next_index}FMMFSM_Result.json"
     system_data_file = "./output/computed/"+f"{FMMFSM_base_filename}_{next_index}/"+f"{system_base_filename}_{next_index}Binary.json"
+    result_log_file = "./output/computed/" + f"{FMMFSM_base_filename}_{next_index}/" + f"result/{FMMFSM_base_filename}_{next_index}Result.json"
 
     check_and_save_results(fuzzy_data_file, system_data_file)
+    
+    if args.postp:
+        post_process_results(result_log_file)
+
+def post_process_results(result_log_file):
+    logging.info("Starting post-processing")
+    
+    with open(result_log_file, 'r') as file:
+        fuzzy_data = json.load(file)
+    
+    # Identify the first blocking state step
+    blocking_history = fuzzy_data.get('Dominant Blocking State Check', [])
+    first_blocking_state_step = next((step['Step'] for step in blocking_history if 'Step' in step), None)
+
+    logging.info(f"First blocking state step: {first_blocking_state_step}")
+
+    # Truncate all relevant data up to and including the first blocking state step if it exists
+    truncated_results = {}
+
+    if first_blocking_state_step is not None:
+        if 'Dominant Error State Check' in fuzzy_data:
+            truncated_results['Dominant Error State Check'] = [
+                result for result in fuzzy_data['Dominant Error State Check']
+                if result['Step'] <= first_blocking_state_step
+            ]
+
+        if 'Dominant Blocking State Check' in fuzzy_data:
+            truncated_results['Dominant Blocking State Check'] = [
+                result for result in fuzzy_data['Dominant Blocking State Check']
+                if result['Step'] <= first_blocking_state_step
+            ]
+
+        if 'Nondeterministic Confusion Check' in fuzzy_data:
+            truncated_results['Nondeterministic Confusion Check'] = [
+                result for result in fuzzy_data['Nondeterministic Confusion Check']
+                if result['Step'] <= first_blocking_state_step
+            ]
+
+        if 'Vacuous Confusion Check' in fuzzy_data:
+            truncated_results['Vacuous Confusion Check'] = [
+                result for result in fuzzy_data['Vacuous Confusion Check']
+                if result['Step'] <= first_blocking_state_step
+            ]
+    else:
+        # If no blocking state is found, use the full results
+        truncated_results = fuzzy_data
+
+    result_directory = os.path.dirname(result_log_file)
+    os.makedirs(result_directory, exist_ok=True)  # Ensure the directory exists
+    result_filename = os.path.basename(result_log_file).replace('Result.json', 'PostProcessed_Result.json')
+    result_path = os.path.join(result_directory, result_filename)
+
+    with open(result_path, 'w') as result_file:
+        json.dump(truncated_results, result_file, indent=4)
+    
+    logging.info(f"Post-processed file saved to: {result_path}")
 
 def main():
     args = parse_arguments()
