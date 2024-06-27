@@ -5,31 +5,33 @@ Nondeterministic Confusion Check: 0.00% of files contain this error
 Vacuous Confusion Check: 0.00% of files contain this error
 Dominant Blocking State Check: 30.00% of files contain this error
 
-Errors by FMMFSM State:
-State L1 - Dominant Error State Check: 10 errors
-State L1 - Dominant Blocking State Check: 4 errors
+Total Number of Each Error Type:
+Dominant Error State Check: 10 occurrences
+Nondeterministic Confusion Check: 0 occurrences
+Vacuous Confusion Check: 0 occurrences
+Dominant Blocking State Check: 4 occurrences
 
-Errors by Action:
-Action increase - Dominant Error State Check: 7 errors
-Action increase - Dominant Blocking State Check: 3 errors
-Action down2 - Dominant Error State Check: 1 errors
-Action down2 - Dominant Blocking State Check: 1 errors
-Action up2 - Dominant Error State Check: 2 errors
+Dominant Error Check by Previous State and Previous Action:
+Previous State L1, Previous Action increase -> State L1: 10 errors
+
+Dominant Blocking State Check by State and Action:
+State L1, Action increase: 3 errors
+State L1, Action down2: 1 errors
 
 
 Errors by Files:
 
 Dominant Error State Check:
-  computed/degani_6/result/degani_6Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_6/result/degani_6Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_6/result/degani_6Result.json - FMMFSM State: L1, Action: down2, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_4/result/degani_4Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
-  computed/degani_4/result/degani_4Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
-  computed/degani_4/result/degani_4Result.json - FMMFSM State: L1, Action: up2, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
-  computed/degani_5/result/degani_5Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_5/result/degani_5Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_5/result/degani_5Result.json - FMMFSM State: L1, Action: increase, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
-  computed/degani_5/result/degani_5Result.json - FMMFSM State: L1, Action: up2, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_6/result/degani_6Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_6/result/degani_6Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_6/result/degani_6Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_4/result/degani_4Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
+  computed/degani_4/result/degani_4Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
+  computed/degani_4/result/degani_4Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9109}, Binary True State: {'L2': 0.0}
+  computed/degani_5/result/degani_5Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_5/result/degani_5Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_5/result/degani_5Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
+  computed/degani_5/result/degani_5Result.json - Previous State: L1, Previous Action: increase, FMMFSM State: L1, Fuzzy Max State: {'L1': 0.9}, Binary True State: {'L2': 0.0}
 
 Dominant Blocking State Check:
   computed/degani_6/result/degani_6Result.json - FMMFSM State: L1, Action: increase
