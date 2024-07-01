@@ -54,7 +54,10 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
     previous_state_action_errors = defaultdict(lambda: defaultdict(int))
     previous_state_action_confusions = defaultdict(lambda: defaultdict(int))
     blocking_errors = defaultdict(int)
+    compound_errors_count = 0
+    compound_errors_by_previous = defaultdict(lambda: defaultdict(int))
     error_files = defaultdict(list)
+    compound_error_files = defaultdict(list)
     files_with_errors = {error_type: set() for error_type in error_types.keys()}
 
     for result_file in result_files:
@@ -64,46 +67,83 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
             for error_type in error_types.keys():
                 if error_type in results:
                     has_error = False
+                    compound_error = False
+                    previous_state = "N/A"
+                    previous_action = "N/A"
                     for idx, entry in enumerate(results[error_type]):
-                        if entry.get("Result") != "True":
-                            has_error = True
-                            error_types[error_type] += 1
-                            state = entry.get("FMMFSM State")
-                            action = entry.get("Action")
-                            error_info = {"file": relative_path, "state": state, "action": action}
-                            if error_type == "Dominant Error State Check":
-                                error_info["Fuzzy Max State"] = entry.get("Fuzzy Max State")
-                                error_info["Binary True State"] = entry.get("Binary True State")
+                        if error_type == "Dominant Error State Check":
+                            if entry.get("Result") == "False":
+                                if not compound_error:
+                                    error_types[error_type] += 1
+                                    has_error = True
+                                    compound_error = True
+                                    error_info = {
+                                        "file": relative_path,
+                                        "state": entry.get("FMMFSM State"),
+                                        "action": entry.get("Action"),
+                                        "is_compound_error": False,
+                                        "Previous State": previous_state,
+                                        "Previous Action": previous_action,
+                                        "Fuzzy Max State": entry.get("Fuzzy Max State"),
+                                        "Binary True State": entry.get("Binary True State")
+                                    }
+                                    previous_state = entry.get("FMMFSM State")
+                                    previous_action = entry.get("Action")
+                                    error_files[error_type].append(error_info)
+                                    
+                                    # Track the previous state and action errors for the initial error
+                                    if idx > 0:
+                                        prev_entry = results[error_type][idx - 1]
+                                        prev_state = prev_entry.get("FMMFSM State")
+                                        prev_action = prev_entry.get("Action")
+                                        previous_state_action_errors[(prev_state, prev_action)][entry.get("FMMFSM State")] += 1
+                                else:
+                                    compound_errors_count += 1
+                                    compound_errors_by_previous[(previous_state, previous_action)][entry.get("FMMFSM State")] += 1
+                                    error_info = {
+                                        "file": relative_path,
+                                        "state": entry.get("FMMFSM State"),
+                                        "action": entry.get("Action"),
+                                        "is_compound_error": True,
+                                        "Previous State": previous_state,
+                                        "Previous Action": previous_action,
+                                        "Fuzzy Max State": entry.get("Fuzzy Max State"),
+                                        "Binary True State": entry.get("Binary True State")
+                                    }
+                                    compound_error_files[error_type].append(error_info)
+                                if entry.get("FMMFSM State"):
+                                    state_errors[entry.get("FMMFSM State")][error_type] += 1
+                                if entry.get("Action"):
+                                    action_errors[entry.get("Action")][error_type] += 1
+                            else:
+                                compound_error = False
+                        else:
+                            if entry.get("Result") != "True":
+                                has_error = True
+                                error_types[error_type] += 1
+                                state = entry.get("FMMFSM State")
+                                action = entry.get("Action")
+                                error_info = {"file": relative_path, "state": state, "action": action}
+                                if error_type == "Nondeterministic Confusion Check":
+                                    error_info["States"] = entry.get("States")
 
-                                # Get previous state and action if possible
-                                if idx > 0:
-                                    previous_entry = results[error_type][idx - 1]
-                                    previous_state = previous_entry.get("FMMFSM State")
-                                    previous_action = previous_entry.get("Action")
-                                    previous_state_action_errors[(previous_state, previous_action)][state] += 1
-                                    error_info["Previous State"] = previous_state
-                                    error_info["Previous Action"] = previous_action
+                                    # Get previous state and action if possible
+                                    if idx > 0:
+                                        previous_entry = results[error_type][idx - 1]
+                                        previous_state = previous_entry.get("FMMFSM State")
+                                        previous_action = previous_entry.get("Action")
+                                        previous_state_action_confusions[(previous_state, previous_action)][state] += 1
+                                        error_info["Previous State"] = previous_state
+                                        error_info["Previous Action"] = previous_action
+                                
+                                elif error_type == "Dominant Blocking State Check":
+                                    blocking_errors[(state, action)] += 1
 
-                            elif error_type == "Nondeterministic Confusion Check":
-                                error_info["States"] = entry.get("States")
-
-                                # Get previous state and action if possible
-                                if idx > 0:
-                                    previous_entry = results[error_type][idx - 1]
-                                    previous_state = previous_entry.get("FMMFSM State")
-                                    previous_action = previous_entry.get("Action")
-                                    previous_state_action_confusions[(previous_state, previous_action)][state] += 1
-                                    error_info["Previous State"] = previous_state
-                                    error_info["Previous Action"] = previous_action
-                            
-                            elif error_type == "Dominant Blocking State Check":
-                                blocking_errors[(state, action)] += 1
-
-                            error_files[error_type].append(error_info)
-                            if state:
-                                state_errors[state][error_type] += 1
-                            if action:
-                                action_errors[action][error_type] += 1
+                                error_files[error_type].append(error_info)
+                                if state:
+                                    state_errors[state][error_type] += 1
+                                if action:
+                                    action_errors[action][error_type] += 1
                     if has_error:
                         files_with_errors[error_type].add(relative_path)
 
@@ -114,6 +154,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
         result_lines.append(f"{error_type}: {percentage:.2f}% of files contain this error\n")
 
     result_lines.append("\nTotal Number of Each Error Type:\n")
+    result_lines.append(f"Dominant Error State Check (Compound Errors): {compound_errors_count}\n")
     for error_type, count in error_types.items():
         result_lines.append(f"{error_type}: {count} occurrences\n")
 
@@ -122,6 +163,12 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
         for (prev_state, prev_action), errors in previous_state_action_errors.items():
             for state, count in errors.items():
                 result_lines.append(f"Previous State {prev_state}, Previous Action {prev_action} -> State {state}: {count} errors\n")
+
+    if compound_errors_by_previous:
+        result_lines.append("\nCompound Errors by Previous State and Previous Action:\n")
+        for (prev_state, prev_action), errors in compound_errors_by_previous.items():
+            for state, count in errors.items():
+                result_lines.append(f"Previous State {prev_state}, Previous Action {prev_action} -> State {state}: {count} compound errors\n")
 
     if blocking_errors:
         result_lines.append("\nDominant Blocking State Check by State and Action:\n")
@@ -140,12 +187,26 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
                 binary_true_state = error_info.get("Binary True State")
                 previous_state = error_info.get("Previous State", "N/A")
                 previous_action = error_info.get("Previous Action", "N/A")
-                result_lines.append(f"  {file} - Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
+                compound_status = "Compound Error" if error_info["is_compound_error"] else "Initial Error"
+                result_lines.append(f"  {file} - {compound_status}, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
             elif error_type == "Nondeterministic Confusion Check":
                 states = error_info.get("States")
                 result_lines.append(f"  {file} - FMMFSM State: {state}, States: {states}\n")
             else:
                 result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}\n")
+
+    result_lines.append("\nDominant Error State Check (Compound Errors) by Files:\n")
+    for error_type, files in compound_error_files.items():
+        for error_info in files:
+            file = error_info["file"]
+            state = error_info["state"]
+            action = error_info["action"]
+            if error_type == "Dominant Error State Check":
+                fuzzy_max_state = error_info.get("Fuzzy Max State")
+                binary_true_state = error_info.get("Binary True State")
+                previous_state = error_info.get("Previous State", "N/A")
+                previous_action = error_info.get("Previous Action", "N/A")
+                result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
 
     result_text = ''.join(result_lines)
     print(result_text)
