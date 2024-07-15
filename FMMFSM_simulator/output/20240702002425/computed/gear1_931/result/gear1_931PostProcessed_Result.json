@@ -1,0 +1,159 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "down2",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "up2",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.5410154722810716
+            },
+            "Binary True State": {
+                "R": 0.5208289783959501
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "down3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 11,
+            "Action": "up1",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 12,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.5553470904975708
+            },
+            "Binary True State": {
+                "R": 0.41168900180096923
+            }
+        },
+        {
+            "Step": 13,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 14,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 15,
+            "Action": "up3",
+            "FMMFSM State": "D",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "D": 0.42889272193385386
+            },
+            "Binary True State": {
+                "N": 0.3931056808761577
+            }
+        },
+        {
+            "Step": 16,
+            "Action": "up3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 17,
+            "Action": "up3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 18,
+            "Action": "down3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 19,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 20,
+            "Action": null,
+            "FMMFSM State": "D",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 6,
+            "Action": "up2",
+            "FMMFSM State": "P",
+            "States": {
+                "P": 0.5410154722810716,
+                "R": 0.5208289783959501
+            }
+        }
+    ]
+}

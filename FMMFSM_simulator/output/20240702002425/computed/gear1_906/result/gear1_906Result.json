@@ -1,0 +1,168 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "down2",
+            "FMMFSM State": "N",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "down2",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 11,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 12,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 13,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.2837451079295328
+            },
+            "Binary True State": {
+                "N": 0.27207813429825967
+            }
+        },
+        {
+            "Step": 14,
+            "Action": "down1",
+            "FMMFSM State": "P",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "P": 0.42003527217783576
+            },
+            "Binary True State": {
+                "R": 0.2575919267481299
+            }
+        },
+        {
+            "Step": 15,
+            "Action": "down1",
+            "FMMFSM State": "R",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "R": 0.3144484490839502
+            },
+            "Binary True State": {
+                "N": 0.30488082666105365
+            }
+        },
+        {
+            "Step": 16,
+            "Action": "down1",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 17,
+            "Action": "up3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 18,
+            "Action": "up3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 19,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 20,
+            "Action": null,
+            "FMMFSM State": "N",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 13,
+            "Action": "up1",
+            "FMMFSM State": "P",
+            "States": {
+                "P": 0.2837451079295328,
+                "N": 0.27207813429825967
+            }
+        },
+        {
+            "Step": 15,
+            "Action": "down1",
+            "FMMFSM State": "R",
+            "States": {
+                "R": 0.3144484490839502,
+                "N": 0.30488082666105365
+            }
+        }
+    ]
+}
