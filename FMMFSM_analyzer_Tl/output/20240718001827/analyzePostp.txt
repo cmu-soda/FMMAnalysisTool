@@ -1,0 +1,119 @@
+Total result files found: 10
+Total files analyzed: 10
+Dominant Error State Check: 90.00% of files contain this error
+Nondeterministic Confusion Check: 80.00% of files contain this error
+Vacuous Confusion Check: 0.00% of files contain this error
+Dominant Blocking State Check: 0.00% of files contain this error
+Dominant Task Labels Blocking State Check: 10.00% of files contain this error
+Task Label Mismatch Check: 100.00% of files contain this error
+
+Total Number of Each Error Type:
+Dominant Error State Check (Compound Errors): 22
+Dominant Error State Check: 9 occurrences
+Nondeterministic Confusion Check: 8 occurrences
+Vacuous Confusion Check: 0 occurrences
+Dominant Blocking State Check: 0 occurrences
+Dominant Task Labels Blocking State Check: 1 occurrences
+Task Label Mismatch Check: 36 occurrences
+
+Dominant Error Check by Previous State and Previous Action:
+Previous State Active, Previous Action NoGas -> State Inactive: 9 errors
+
+Compound Errors by Previous State and Previous Action:
+Previous State Inactive, Previous Action NoGas -> State Inactive: 20 compound errors
+Previous State Inactive, Previous Action Gas -> State Inactive: 2 compound errors
+
+Dominant Task Labels Blocking State Check by State and Action:
+State Active, Action Gas: 1 errors
+
+Task Label Mismatch Check by FMMFSM Task Label and System Task Label:
+FMMFSM Task Label Parking, System Task Label Driving: 36 errors
+
+
+Errors by Files:
+
+Dominant Error State Check:
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5045172609159083}, Binary True State: {'Active': 0.4829128965767564}
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5154574516999193}, Binary True State: {'Active': 0.4766397874553582}
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.45241076225152255}, Binary True State: {'Active': 0.4304672100000002}
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.48550124228005886}, Binary True State: {'Active': 0.47414893795725055}
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5557666580225824}, Binary True State: {'Active': 0.5416841979208968}
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5451434777736626}, Binary True State: {'Active': 0.48390006328392654}
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.522660837225785}, Binary True State: {'Active': 0.490166886719299}
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5451434777736626}, Binary True State: {'Active': 0.48390006328392654}
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5695728770238517}, Binary True State: {'Active': 0.5038966832828636}
+
+Nondeterministic Confusion Check:
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - FMMFSM State: Inactive, Action: NoGas, States: {'Active': 0.4829128965767564, 'Inactive': 0.5045172609159083}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - FMMFSM State: Inactive, Action: NoGas, States: {'Active': 0.4304672100000002, 'Inactive': 0.45241076225152255}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - FMMFSM State: Inactive, Action: NoGas, States: {'Active': 0.47414893795725055, 'Inactive': 0.48550124228005886}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - FMMFSM State: Inactive, Action: NoGas, States: {'Active': 0.5416841979208968, 'Inactive': 0.5557666580225824}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM State: Active, Action: NoGas, States: {'Active': 0.5376667369821406, 'Inactive': 0.5192977148626994}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_4/result/cruise_4PostProcessed_Result.json - FMMFSM State: Active, Action: None, States: {'Active': 0.5674515939365001, 'Inactive': 0.5437085456321858}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM State: Active, Action: NoGas, States: {'Active': 0.5376667369821406, 'Inactive': 0.5192977148626994}, Previous State: N/A, Previous Action: N/A
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - FMMFSM State: Active, Action: NoGas, States: {'Active': 0.5598852036476263, 'Inactive': 0.5440446093489628}, Previous State: N/A, Previous Action: N/A
+
+Task Label Mismatch Check:
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_4/result/cruise_4PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_4/result/cruise_4PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - FMMFSM Task Label: Parking, System Task Label: Driving
+
+Dominant Task Labels Blocking State Check:
+  computed/cruise_4/result/cruise_4PostProcessed_Result.json - FMMFSM State: Active, Action: Gas
+
+Dominant Error State Check (Compound Errors) by Files:
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5284447613893967}, Binary True State: {'Active': 0.4346216069190807}
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5489395709450018}, Binary True State: {'Active': 0.3911594462271726}
+  computed/cruise_7/result/cruise_7PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5665832257094162}, Binary True State: {'Active': 0.3520435016044554}
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5385526774234022}, Binary True State: {'Active': 0.4289758087098223}
+  computed/cruise_0/result/cruise_0PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.55834765126133}, Binary True State: {'Active': 0.38607822783884016}
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.475982683391484}, Binary True State: {'Active': 0.38742048900000015}
+  computed/cruise_9/result/cruise_9PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.49628418789597784}, Binary True State: {'Active': 0.34867844010000015}
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5098961462353824}, Binary True State: {'Active': 0.4267340441615255}
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5308105461929948}, Binary True State: {'Active': 0.38406063974537297}
+  computed/cruise_8/result/cruise_8PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5158019388803583}, Binary True State: {'Active': 0.41336809141496766}
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5798300761764581}, Binary True State: {'Active': 0.4875157781288071}
+  computed/cruise_1/result/cruise_1PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.6003140229123737}, Binary True State: {'Active': 0.43876420031592644}
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5671539877627056}, Binary True State: {'Active': 0.4355100569555339}
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5860048669069496}, Binary True State: {'Active': 0.39195905125998054}
+  computed/cruise_6/result/cruise_6PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.6022317808662898}, Binary True State: {'Active': 0.3527631461339825}
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5460584223584084}, Binary True State: {'Active': 0.4411501980473691}
+  computed/cruise_3/result/cruise_3PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5341522903747147}, Binary True State: {'Active': 0.46083560043738503}
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5671539877627056}, Binary True State: {'Active': 0.4355100569555339}
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5507490579630484}, Binary True State: {'Active': 0.45888975752959393}
+  computed/cruise_5/result/cruise_5PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: NoGas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5397522324334039}, Binary True State: {'Active': 0.47550756033188957}
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: Gas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5593754407435161}, Binary True State: {'Active': 0.5133315011042276}
+  computed/cruise_2/result/cruise_2PostProcessed_Result.json - Compound Error, Previous State: Inactive, Previous Action: Gas, FMMFSM State: Inactive, Fuzzy Max State: {'Inactive': 0.5521362491154992}, Binary True State: {'Active': 0.5197063996241318}

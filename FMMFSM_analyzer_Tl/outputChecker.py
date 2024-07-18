@@ -74,13 +74,44 @@ def dominant_blocking_state_check(blocking_history, system_data):
         B = blocking['B']
         C = blocking['C']
         if B > C:
-            current_state = max(current_system_state, key=current_system_state.get)
+            current_task_label = current_system_state['task_label']
             if i + 1 < len(system_data):
-                next_system_state = system_data[i + 1]
-                next_state = max(next_system_state, key=next_system_state.get)
-                if current_state != next_state:
+                next_task_label = system_data[i + 1]['task_label']
+                if current_task_label != next_task_label:
                     blocking_steps.append(i)
     return blocking_steps
+
+'''
+Check for dominant task labels blocking state:
+The human thinks the most possible task label(s) 
+does not allow for a specific action that would cause a system change.
+'''
+def dominant_task_labels_blocking_state_check(blocking_history, task_membership_history):
+    blocking_steps = []
+    for i, blocking in enumerate(blocking_history):
+        B_task = blocking['B_task']
+        C_task = blocking['C_task']
+        if B_task > C_task:
+            current_task_label = max(task_membership_history[i], key=task_membership_history[i].get)
+            if i + 1 < len(task_membership_history):
+                next_task_label = max(task_membership_history[i + 1], key=task_membership_history[i + 1].get)
+                if current_task_label != next_task_label:
+                    blocking_steps.append(i)
+    return blocking_steps
+
+'''
+Check for task label mismatch:
+The human thinks the task label category the automation is most possibly in 
+does not match the system task label.
+'''
+def task_label_mismatch_check(task_membership_history, system_data):
+    mismatch_steps = []
+    for i, task_membership in enumerate(task_membership_history):
+        fmmfsm_task_label = max(task_membership, key=task_membership.get)
+        system_task_label = system_data[i]['task_label']
+        if fmmfsm_task_label != system_task_label:
+            mismatch_steps.append((i, fmmfsm_task_label, system_task_label))
+    return mismatch_steps
 
 '''
 TODO: Implement the following checks
@@ -106,6 +137,7 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
 
     state_membership_history = fuzzy_data['state_membership_history']
     blocking_history = fuzzy_data['blocking_history']
+    task_membership_history = fuzzy_data['task_membership_history']
 
     base_directory = os.path.dirname(fuzzy_data_path)
     result_directory = os.path.join(base_directory, 'result')
@@ -116,6 +148,8 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
     nondeterministic_confusions = nondeterministic_confusion_check(state_membership_history)
     vacuous_confusions = vacuous_confusion_check(state_membership_history)
     dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
+    dominant_task_labels_blocking_states = dominant_task_labels_blocking_state_check(blocking_history, task_membership_history)
+    task_label_mismatches = task_label_mismatch_check(task_membership_history, system_data)
 
     results = {}
 
@@ -155,6 +189,18 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
         results["Dominant Blocking State Check"] = [
             {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM State": get_fmmfsm_state(state_membership_history[step]) if step < len(state_membership_history) else None}
             for step in dominant_blocking_states
+        ]
+
+    if dominant_task_labels_blocking_states:
+        results["Dominant Task Labels Blocking State Check"] = [
+            {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM State": get_fmmfsm_state(state_membership_history[step]) if step < len(state_membership_history) else None}
+            for step in dominant_task_labels_blocking_states
+        ]
+
+    if task_label_mismatches:
+        results["Task Label Mismatch Check"] = [
+            {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM Task Label": fmmfsm_task_label, "System Task Label": system_task_label}
+            for step, fmmfsm_task_label, system_task_label in task_label_mismatches
         ]
 
     result_path = os.path.join(result_directory, filename)
