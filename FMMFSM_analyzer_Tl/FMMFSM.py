@@ -167,28 +167,3 @@ def save_results_to_file(folder_path, data, input_filename):
 
     with open(output_file_path, 'w') as f:
         json.dump(data, f, indent=4)
-
-# Example usage for testing
-def test_simulation():
-    config_file = './config/cruise.json'
-    results_folder = './'
-    results = evolve_state_over_time_from_file(config_file)
-
-    # Print the results to the terminal
-    print("\nState Membership History:")
-    for step, memberships in enumerate(results['state_membership_history']):
-        print(f"Step {step}: {memberships}")
-    
-    print("\nBlocking History:")
-    for step, blocking in enumerate(results['blocking_history']):
-        print(f"Step {step}: {blocking}")
-
-    print("\nTask Membership History:")
-    for step, task_memberships in enumerate(results['task_membership_history']):
-        print(f"Step {step}: {task_memberships}")
-
-    # Optionally save the results
-    save_results_to_file(results_folder, results, config_file)
-
-# Run the test
-test_simulation()

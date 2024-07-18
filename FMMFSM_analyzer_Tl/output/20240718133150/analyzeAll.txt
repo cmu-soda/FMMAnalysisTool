@@ -1,0 +1,59 @@
+Total result files found: 20
+Total files analyzed: 20
+Dominant Error State Check: 0.00% of files contain this error
+Nondeterministic Confusion Check: 50.00% of files contain this error
+Vacuous Confusion Check: 0.00% of files contain this error
+Dominant Blocking State Check: 0.00% of files contain this error
+Dominant Task Labels Blocking State Check: 0.00% of files contain this error
+Task Label Mismatch Check: 0.00% of files contain this error
+
+Total Number of Each Error Type:
+Dominant Error State Check (Compound Errors): 0
+Dominant Error State Check: 0 occurrences
+Nondeterministic Confusion Check: 35 occurrences
+Vacuous Confusion Check: 0 occurrences
+Dominant Blocking State Check: 0 occurrences
+Dominant Task Labels Blocking State Check: 0 occurrences
+Task Label Mismatch Check: 0 occurrences
+
+
+Errors by Files:
+
+Nondeterministic Confusion Check:
+  computed/file_19/result/file_19Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.8953369417367688, 'File_pub': 0.859573390743053}, Previous State: N/A, Previous Action: N/A
+  computed/file_19/result/file_19Result.json - FMMFSM State: File_pub, Action: Select_folder, States: {'File_pri': 0.7936391899964056, 'File_pub': 0.8208857558062668}, Previous State: File_pri, Previous Action: Toggle
+  computed/file_19/result/file_19Result.json - FMMFSM State: Folder_pub, Action: Select_folder, States: {'Folder_pri': 0.8393323088098384, 'Folder_pub': 0.8551379757897073}, Previous State: File_pub, Previous Action: Select_folder
+  computed/file_19/result/file_19Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8755223787791374, 'Folder_pub': 0.8835738688870014}, Previous State: Folder_pub, Previous Action: Select_folder
+  computed/file_17/result/file_17Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.9026423544285563, 'Folder_pub': 0.8661158042410763}, Previous State: N/A, Previous Action: N/A
+  computed/file_17/result/file_17Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8977049138773538, 'File_pub': 0.880299146736969}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file_17/result/file_17Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.9043910100736244, 'File_pub': 0.8960493008723034}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_17/result/file_17Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8224591994641555, 'File_pub': 0.8288148736764485}, Previous State: File_pri, Previous Action: Toggle
+  computed/file_10/result/file_10Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.899268996940881, 'File_pub': 0.8595327997774526}, Previous State: N/A, Previous Action: N/A
+  computed/file_10/result/file_10Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9007118202421996, 'File_pub': 0.8807045216520843}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_10/result/file_10Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9015549642840035, 'File_pub': 0.8916560824273894}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_10/result/file_10Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9020412600396728, 'File_pub': 0.897184907421814}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_18/result/file_18Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.8992156277026276, 'Folder_pub': 0.85952049854089}, Previous State: N/A, Previous Action: N/A
+  computed/file_18/result/file_18Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.902512742056855, 'Folder_pub': 0.8830993692452997}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_18/result/file_18Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9041996522343132, 'Folder_pub': 0.8949206968972954}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_18/result/file_18Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9050680300522272, 'Folder_pub': 0.900681414382956}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_0/result/file_0Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9004812229012503, 'File_pub': 0.8638666328930629}, Previous State: N/A, Previous Action: N/A
+  computed/file_0/result/file_0Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9013441317317118, 'File_pub': 0.8829888120013538}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_0/result/file_0Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9018827740612144, 'File_pub': 0.8928205350910493}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_0/result/file_0Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9022108977842893, 'File_pub': 0.8977694848159217}, Previous State: File_pri, Previous Action: Select_file
+  computed/file_8/result/file_8Result.json - FMMFSM State: Folder_pub, Action: Select_file, States: {'Folder_pri': 0.8746112859159751, 'Folder_pub': 0.898642586990065}, Previous State: N/A, Previous Action: N/A
+  computed/file_8/result/file_8Result.json - FMMFSM State: File_pub, Action: Select_file, States: {'File_pri': 0.8844831007717076, 'File_pub': 0.8958918445843714}, Previous State: Folder_pub, Previous Action: Select_file
+  computed/file_8/result/file_8Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8980904117449159, 'File_pub': 0.9035458734718248}, Previous State: File_pub, Previous Action: Select_file
+  computed/file_6/result/file_6Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8442223102212854, 'File_pub': 0.8707978286002807}, Previous State: N/A, Previous Action: N/A
+  computed/file_14/result/file_14Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9021050533850489, 'Folder_pub': 0.8645440094375567}, Previous State: N/A, Previous Action: N/A
+  computed/file_14/result/file_14Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.903903088816226, 'Folder_pub': 0.8856564334076348}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_14/result/file_14Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9048748092817531, 'Folder_pub': 0.8961816133147412}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_14/result/file_14Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9053960416205724, 'Folder_pub': 0.9012925339246477}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_12/result/file_12Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9031080262990223, 'Folder_pub': 0.8678003373618853}, Previous State: N/A, Previous Action: N/A
+  computed/file_12/result/file_12Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9043991902706119, 'Folder_pub': 0.8873096935546241}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_12/result/file_12Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9051200611726422, 'Folder_pub': 0.896992424616043}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_12/result/file_12Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9055171745968328, 'Folder_pub': 0.901683772193699}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file_5/result/file_5Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.8900547696830564, 'File_pub': 0.8468950175970571}, Previous State: N/A, Previous Action: N/A
+  computed/file_5/result/file_5Result.json - FMMFSM State: File_pub, Action: Toggle, States: {'File_pri': 0.7833287519889252, 'File_pub': 0.8162422775561953}, Previous State: File_pri, Previous Action: Toggle
+  computed/file_5/result/file_5Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.7557391171373377, 'File_pub': 0.7306320511119755}, Previous State: File_pub, Previous Action: Toggle
+
+Dominant Error State Check (Compound Errors) by Files:

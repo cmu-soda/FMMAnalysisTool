@@ -49,9 +49,3 @@ def save_results(folder_path, input_file, readable_data, binary_data, task_label
         for i, entry in enumerate(binary_data):
             entry['task_label'] = task_label_data[i]
         json.dump(binary_data, file, indent=4)
-
-# Example usage
-config_file = './config/cruiseSys.json'
-results_folder = './'
-
-simulate_actions_from_file(config_file, results_folder)
