@@ -93,10 +93,40 @@ def calculate_task_memberships(current_state_memberships, task_labels):
 
     return task_memberships
 
+def calculate_task_based_blocking_states(current_state_memberships, input_fuzzified, transition_probabilities, input_event, task_labels, current_task_memberships):
+    states = list(current_state_memberships.keys())
+    
+    B_values = []
+    C_values = []
+
+    for task_label_p, task_membership_p in current_task_memberships.items():
+        #print(f"Task Label P: {task_label_p}, Membership: {task_membership_p}")
+        for state_q, state_membership_q in current_state_memberships.items():
+            #print(f"  State Q: {state_q}, Membership: {state_membership_q}")
+            for input_sigma, input_membership_sigma in input_fuzzified[input_event].items():
+                #print(f"    Input Sigma: {input_sigma}, Membership: {input_membership_sigma}")
+                next_state_memberships = {state: transition_probabilities[state_q][input_sigma].get(state, 0) for state in states}
+                next_task_memberships = calculate_task_memberships(next_state_memberships, task_labels)
+                    
+                for next_task_label, next_task_membership in next_task_memberships.items():
+                    and_value = fuzzy_and([task_membership_p, state_membership_q, input_membership_sigma, next_task_membership])
+                    if next_task_label == task_label_p:
+                        #print(f"      Task Label: {next_task_label}, B AND Value: {and_value}")
+                        B_values.append(and_value)
+                    else:
+                        #print(f"      Task Label: {next_task_label}, C AND Value: {and_value}")
+                        C_values.append(and_value)
+
+    B_task = fuzzy_or(B_values)
+    C_task = fuzzy_or(C_values)
+
+    #print(f"B_task: {B_task}, C_task: {C_task}")
+
+    return B_task, C_task
+
 def load_configurations(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
-        print(content)
         data = json.loads(content)
     return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['input_schedule'], data['task_labels']
 
@@ -111,7 +141,9 @@ def evolve_state_over_time_from_file(config_file):
     for input_event, steps in input_schedule:
         for _ in range(steps):
             B, C = calculate_blocking_states(current_state_memberships, input_fuzzified, transition_probabilities, input_event)
-            blocking_history.append({'B': B, 'C': C})
+            current_task_memberships = calculate_task_memberships(current_state_memberships, task_labels)
+            B_task, C_task = calculate_task_based_blocking_states(current_state_memberships, input_fuzzified, transition_probabilities, input_event, task_labels, current_task_memberships)
+            blocking_history.append({'B': B, 'C': C, 'B_task': B_task, 'C_task': C_task})
 
             current_state_memberships = calculate_next_state_membership(current_state_memberships, input_fuzzified, transition_probabilities, input_event)
             history.append(current_state_memberships)
@@ -135,10 +167,3 @@ def save_results_to_file(folder_path, data, input_filename):
 
     with open(output_file_path, 'w') as f:
         json.dump(data, f, indent=4)
-
-config_file = './config/cruise.json'
-results = evolve_state_over_time_from_file(config_file)
-
-print("Task Membership History:")
-for step, task_memberships in enumerate(results['task_membership_history']):
-    print(f"Step {step}: {task_memberships}")
