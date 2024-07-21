@@ -1,0 +1,150 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Select_folder",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.8943682365073102,
+                "Folder_pub": 0.8511933738491728
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.9000544215408623,
+                "Folder_pub": 0.8785749649034547
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.9027076614271017,
+                "Folder_pub": 0.8923095106286615
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.9040301310999339,
+                "Folder_pub": 0.8990628996776698
+            }
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9487176468838491,
+                "Insecure": 0.9189687797206728
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9536186417393208,
+                "Insecure": 0.9391416489878153
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9559894433148888,
+                "Insecure": 0.949093602455898
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9571665045539751,
+                "Insecure": 0.9539029241314725
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Secure": 0.9577523687948241,
+                "Insecure": 0.9562106317751804
+            }
+        }
+    ]
+}

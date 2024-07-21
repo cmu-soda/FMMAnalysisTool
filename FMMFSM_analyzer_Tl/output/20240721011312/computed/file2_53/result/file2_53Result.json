@@ -1,0 +1,110 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.5833950911079113
+            },
+            "Binary True State": {
+                "File_pub": 0.024340386770584588
+            }
+        },
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.5339776178689287
+            },
+            "Binary True State": {
+                "File_pri": 0.012229980334432677
+            }
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.492264823119001
+            },
+            "Binary True State": {
+                "File_pub": 0.011652717203906149
+            }
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.45711941512754184
+            },
+            "Binary True State": {
+                "File_pri": 0.011493287732370683
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.42737440203026167
+            },
+            "Binary True State": {
+                "File_pub": 0.011297478433245356
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Secure": 0.838342266145627,
+                "Insecure": 0.8774334952779544
+            }
+        }
+    ]
+}

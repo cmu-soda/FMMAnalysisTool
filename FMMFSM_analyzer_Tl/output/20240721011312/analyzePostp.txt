@@ -1,0 +1,544 @@
+Total result files found: 100
+Total files analyzed: 100
+Dominant Error State Check: 32.00% of files contain this error
+Nondeterministic Confusion Check: 49.00% of files contain this error
+Vacuous Confusion Check: 0.00% of files contain this error
+Dominant Blocking State Check: 0.00% of files contain this error
+Dominant Task Labels Blocking State Check: 0.00% of files contain this error
+Task Label Mismatch Check: 0.00% of files contain this error
+Task Label Nondeterministic Confusion Check: 74.00% of files contain this error
+
+Total Number of Each Error Type:
+Dominant Error State Check (Compound Errors): 69
+Dominant Error State Check: 37 occurrences
+Nondeterministic Confusion Check: 148 occurrences
+Vacuous Confusion Check: 0 occurrences
+Dominant Blocking State Check: 0 occurrences
+Dominant Task Labels Blocking State Check: 0 occurrences
+Task Label Mismatch Check: 0 occurrences
+Task Label Nondeterministic Confusion Check: 247 occurrences
+
+Dominant Error Check by Previous State and Previous Action:
+Previous State File_pri, Previous Action Toggle -> State Folder_pub: 31 errors
+Previous State File_pub, Previous Action Toggle -> State Folder_pri: 6 errors
+
+Compound Errors by Previous State and Previous Action:
+Previous State Folder_pub, Previous Action Toggle -> State Folder_pri: 41 compound errors
+Previous State Folder_pub, Previous Action Toggle -> State Folder_pub: 23 compound errors
+Previous State Folder_pri, Previous Action Toggle -> State Folder_pub: 4 compound errors
+Previous State Folder_pri, Previous Action Toggle -> State Folder_pri: 1 compound errors
+
+Task Label Nondeterministic Confusion Check by FMMFSM Task Labels:
+Task Labels ('Secure', 'Insecure'): 247 errors
+
+
+Errors by Files:
+
+Nondeterministic Confusion Check:
+  computed/file2_15/result/file2_15PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8486930678946594, 'Folder_pub': 0.8070869831305727}, Previous State: N/A, Previous Action: N/A
+  computed/file2_12/result/file2_12PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.901187314738051, 'File_pub': 0.8640236569071184}, Previous State: N/A, Previous Action: N/A
+  computed/file2_12/result/file2_12PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9014591272870426, 'File_pub': 0.8827953331975503}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_12/result/file2_12PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9013032360099046, 'File_pub': 0.8920394141773181}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_12/result/file2_12PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9012392369745583, 'File_pub': 0.8966687333921101}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_24/result/file2_24PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9021154562308373, 'Folder_pub': 0.8634541821090947}, Previous State: N/A, Previous Action: N/A
+  computed/file2_24/result/file2_24PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9036078966542006, 'Folder_pub': 0.8846780696120572}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_24/result/file2_24PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9044229700584608, 'Folder_pub': 0.8953303163623458}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_24/result/file2_24PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9048641684563468, 'Folder_pub': 0.9005364812616771}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_23/result/file2_23PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9001635971747984, 'File_pub': 0.8620877315238737}, Previous State: N/A, Previous Action: N/A
+  computed/file2_23/result/file2_23PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.9005447370437258, 'File_pub': 0.8813223304917658}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_23/result/file2_23PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.8831343701168598, 'Folder_pub': 0.8731493907638113}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_23/result/file2_23PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8975488896466532, 'Folder_pub': 0.8927247053788923}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_48/result/file2_48PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9001635971747984, 'File_pub': 0.8620877315238737}, Previous State: N/A, Previous Action: N/A
+  computed/file2_48/result/file2_48PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9005447370437258, 'File_pub': 0.8813223304917658}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_48/result/file2_48PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9007994389776384, 'File_pub': 0.8912378179675947}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_48/result/file2_48PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9009797629805608, 'File_pub': 0.896257857371236}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_77/result/file2_77PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.7690597867010658, 'Folder_pub': 0.7337898959713283}, Previous State: N/A, Previous Action: N/A
+  computed/file2_70/result/file2_70PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9025904652942129, 'Folder_pub': 0.8653256891865806}, Previous State: N/A, Previous Action: N/A
+  computed/file2_70/result/file2_70PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9038445664667099, 'Folder_pub': 0.8856350284127313}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_70/result/file2_70PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9045408182934563, 'Folder_pub': 0.8958026089348374}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_70/result/file2_70PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9049227920528169, 'Folder_pub': 0.9007656930707927}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_79/result/file2_79PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.9015686364605778, 'Folder_pub': 0.8617383900961877}, Previous State: N/A, Previous Action: N/A
+  computed/file2_79/result/file2_79PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8960253803401236, 'File_pub': 0.8766187847393239}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_79/result/file2_79PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.9028773834578709, 'File_pub': 0.8934733245172592}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_79/result/file2_79PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.885107241132941, 'Folder_pub': 0.8802781102991393}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_46/result/file2_46PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8881003779215634, 'File_pub': 0.854356073919481}, Previous State: N/A, Previous Action: N/A
+  computed/file2_46/result/file2_46PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.8943918979528276, 'File_pub': 0.8770878187337321}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_25/result/file2_25PostProcessed_Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8052036874410391, 'File_pub': 0.8307685325063356}, Previous State: N/A, Previous Action: N/A
+  computed/file2_13/result/file2_13PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.8888682705840764, 'Folder_pub': 0.8555971454595539}, Previous State: N/A, Previous Action: N/A
+  computed/file2_13/result/file2_13PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.7902084956724724, 'Folder_pub': 0.8155801582822224}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_78/result/file2_78PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.5860198518291873, 'Folder_pub': 0.6150440839210917}, Previous State: N/A, Previous Action: N/A
+  computed/file2_47/result/file2_47PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.8813706247860169, 'Folder_pub': 0.8382648463740505}, Previous State: N/A, Previous Action: N/A
+  computed/file2_47/result/file2_47PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8904116761746694, 'File_pub': 0.8690693706936723}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_47/result/file2_47PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.8999839087577783, 'File_pub': 0.8894951987215118}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_47/result/file2_47PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8835424856359708, 'Folder_pub': 0.8781371731519917}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_71/result/file2_71PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8991972507593029, 'File_pub': 0.8600533894393287}, Previous State: N/A, Previous Action: N/A
+  computed/file2_71/result/file2_71PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9000103465911025, 'File_pub': 0.8801975960434019}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_71/result/file2_71PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9005225814316387, 'File_pub': 0.8906551026797611}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_71/result/file2_71PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9008380980672974, 'File_pub': 0.8959622834553415}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_85/result/file2_85PostProcessed_Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.8986136971746098, 'File_pub': 0.8583483952755556}, Previous State: N/A, Previous Action: N/A
+  computed/file2_85/result/file2_85PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Toggle, States: {'Folder_pri': 0.6388082609930232, 'Folder_pub': 0.670166431252779}, Previous State: File_pri, Previous Action: Toggle
+  computed/file2_85/result/file2_85PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.6260826098357399, 'Folder_pub': 0.6016210232752826}, Previous State: Folder_pub, Previous Action: Toggle
+  computed/file2_85/result/file2_85PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.5169077687166836, 'File_pub': 0.4997243109215841}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_49/result/file2_49PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8975132635336163, 'File_pub': 0.8555163024374207}, Previous State: N/A, Previous Action: N/A
+  computed/file2_49/result/file2_49PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8995761617782445, 'File_pub': 0.8782702000959574}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_49/result/file2_49PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9003393143290856, 'File_pub': 0.889713360918332}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_49/result/file2_49PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9007458041829153, 'File_pub': 0.8954914257744271}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_76/result/file2_76PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9025904652942129, 'Folder_pub': 0.8653256891865806}, Previous State: N/A, Previous Action: N/A
+  computed/file2_76/result/file2_76PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.9038445664667099, 'Folder_pub': 0.8856350284127313}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_76/result/file2_76PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.897223962962003, 'File_pub': 0.8885136291941673}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_76/result/file2_76PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9035122016069931, 'File_pub': 0.8993433131191481}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_5/result/file2_5PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8714181400544154, 'Folder_pub': 0.8315125739145494}, Previous State: N/A, Previous Action: N/A
+  computed/file2_4/result/file2_4PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.898647228950017, 'Folder_pub': 0.8564808209275958}, Previous State: N/A, Previous Action: N/A
+  computed/file2_4/result/file2_4PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9019254485736794, 'Folder_pub': 0.8810953305807727}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_4/result/file2_4PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.903600979511371, 'Folder_pub': 0.8935525585708644}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_4/result/file2_4PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8205086463903605, 'Folder_pub': 0.8281661452505441}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_54/result/file2_54PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8952881839035398, 'File_pub': 0.8583994423446254}, Previous State: N/A, Previous Action: N/A
+  computed/file2_54/result/file2_54PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9024344624861498, 'File_pub': 0.8842379768905085}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_54/result/file2_54PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.90218444759332, 'File_pub': 0.8932022273301561}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_54/result/file2_54PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9017237494470149, 'File_pub': 0.897300976186888}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_65/result/file2_65PostProcessed_Result.json - FMMFSM State: File_pub, Action: Select_file, States: {'File_pri': 0.8545118390168012, 'File_pub': 0.8896729790983613}, Previous State: N/A, Previous Action: N/A
+  computed/file2_65/result/file2_65PostProcessed_Result.json - FMMFSM State: File_pub, Action: Select_file, States: {'File_pri': 0.8821937049787821, 'File_pub': 0.8996921333505791}, Previous State: File_pub, Previous Action: Select_file
+  computed/file2_65/result/file2_65PostProcessed_Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8921473847933763, 'File_pub': 0.9008171810206873}, Previous State: File_pub, Previous Action: Select_file
+  computed/file2_91/result/file2_91PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Select_folder, States: {'Folder_pri': 0.8645660412133247, 'Folder_pub': 0.8930601510053863}, Previous State: N/A, Previous Action: N/A
+  computed/file2_91/result/file2_91PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8851923243023173, 'Folder_pub': 0.8992350274174372}, Previous State: Folder_pub, Previous Action: Select_folder
+  computed/file2_96/result/file2_96PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.897964949583047, 'File_pub': 0.8552347570843304}, Previous State: N/A, Previous Action: N/A
+  computed/file2_96/result/file2_96PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8993637824991326, 'File_pub': 0.8776320820581932}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_96/result/file2_96PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9001851480844985, 'File_pub': 0.8893362529729489}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_96/result/file2_96PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9006622407214608, 'File_pub': 0.8952953650523016}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_62/result/file2_62PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.9025904652942129, 'Folder_pub': 0.8653256891865806}, Previous State: N/A, Previous Action: N/A
+  computed/file2_62/result/file2_62PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.8965313535845252, 'File_pub': 0.8784356880974344}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_62/result/file2_62PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.8874760602965001, 'Folder_pub': 0.8783730435572666}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_62/result/file2_62PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.899554123139135, 'Folder_pub': 0.8951872159973683}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_31/result/file2_31PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8952881839035398, 'File_pub': 0.8583994423446254}, Previous State: N/A, Previous Action: N/A
+  computed/file2_31/result/file2_31PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9024344624861498, 'File_pub': 0.8842379768905085}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_31/result/file2_31PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.90218444759332, 'File_pub': 0.8932022273301561}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_31/result/file2_31PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9017237494470149, 'File_pub': 0.897300976186888}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_63/result/file2_63PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.5932998097035711, 'Folder_pub': 0.6218902125931551}, Previous State: N/A, Previous Action: N/A
+  computed/file2_64/result/file2_64PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9021154562308373, 'Folder_pub': 0.8634541821090947}, Previous State: N/A, Previous Action: N/A
+  computed/file2_64/result/file2_64PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9036078966542006, 'Folder_pub': 0.8846780696120572}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_64/result/file2_64PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9044229700584608, 'Folder_pub': 0.8953303163623458}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_64/result/file2_64PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9048641684563468, 'Folder_pub': 0.9005364812616771}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_52/result/file2_52PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8686247844390708, 'Folder_pub': 0.8924195119846153}, Previous State: N/A, Previous Action: N/A
+  computed/file2_99/result/file2_99PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.8888682705840764, 'Folder_pub': 0.8555971454595539}, Previous State: N/A, Previous Action: N/A
+  computed/file2_99/result/file2_99PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.7902084956724724, 'Folder_pub': 0.8155801582822224}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_39/result/file2_39PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9025904652942129, 'Folder_pub': 0.8653256891865806}, Previous State: N/A, Previous Action: N/A
+  computed/file2_39/result/file2_39PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9038445664667099, 'Folder_pub': 0.8856350284127313}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_39/result/file2_39PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.9045408182934563, 'Folder_pub': 0.8958026089348374}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_39/result/file2_39PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8223021823531351, 'Folder_pub': 0.8289609231365749}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_30/result/file2_30PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.898647228950017, 'Folder_pub': 0.8564808209275958}, Previous State: N/A, Previous Action: N/A
+  computed/file2_30/result/file2_30PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9019254485736794, 'Folder_pub': 0.8810953305807727}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_30/result/file2_30PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.903600979511371, 'Folder_pub': 0.8935525585708644}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_30/result/file2_30PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8205086463903605, 'Folder_pub': 0.8281661452505441}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_80/result/file2_80PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.8951599045290394, 'Folder_pub': 0.8541205428496855}, Previous State: N/A, Previous Action: N/A
+  computed/file2_80/result/file2_80PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9004509314647734, 'Folder_pub': 0.8801006160792673}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_80/result/file2_80PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.9029056329296408, 'Folder_pub': 0.8930699117229149}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_80/result/file2_80PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.820111241458034, 'Folder_pub': 0.8276067733025737}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_89/result/file2_89PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8991972507593029, 'File_pub': 0.8600533894393287}, Previous State: N/A, Previous Action: N/A
+  computed/file2_89/result/file2_89PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9000103465911025, 'File_pub': 0.8801975960434019}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_89/result/file2_89PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9005225814316387, 'File_pub': 0.8906551026797611}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_89/result/file2_89PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9008380980672974, 'File_pub': 0.8959622834553415}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_45/result/file2_45PostProcessed_Result.json - FMMFSM State: File_pub, Action: Select_folder, States: {'File_pri': 0.8545118390168012, 'File_pub': 0.8896729790983613}, Previous State: N/A, Previous Action: N/A
+  computed/file2_45/result/file2_45PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Select_folder, States: {'Folder_pri': 0.8657180255886522, 'Folder_pub': 0.883819282161934}, Previous State: File_pub, Previous Action: Select_folder
+  computed/file2_45/result/file2_45PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.888914679973398, 'Folder_pub': 0.897733047399021}, Previous State: Folder_pub, Previous Action: Select_folder
+  computed/file2_81/result/file2_81PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.9005821040897432, 'Folder_pub': 0.8595720451911368}, Previous State: N/A, Previous Action: N/A
+  computed/file2_81/result/file2_81PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Toggle, States: {'Folder_pri': 0.7936858457096047, 'Folder_pub': 0.8249527664455185}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_81/result/file2_81PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.7585730381712383, 'Folder_pub': 0.7341819307688169}, Previous State: Folder_pub, Previous Action: Toggle
+  computed/file2_81/result/file2_81PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.6121358315043601, 'File_pub': 0.5957273485853204}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_19/result/file2_19PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.897964949583047, 'File_pub': 0.8552347570843304}, Previous State: N/A, Previous Action: N/A
+  computed/file2_19/result/file2_19PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8993637824991326, 'File_pub': 0.8776320820581932}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_19/result/file2_19PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.9001851480844985, 'File_pub': 0.8893362529729489}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_19/result/file2_19PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8830091464230069, 'Folder_pub': 0.8773919422506475}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_28/result/file2_28PostProcessed_Result.json - FMMFSM State: File_pub, Action: Select_file, States: {'File_pri': 0.8298596846434809, 'File_pub': 0.8734621812221731}, Previous State: N/A, Previous Action: N/A
+  computed/file2_28/result/file2_28PostProcessed_Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.8636616070458093, 'File_pub': 0.886749195952697}, Previous State: File_pub, Previous Action: Select_file
+  computed/file2_10/result/file2_10PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.897964949583047, 'File_pub': 0.8552347570843304}, Previous State: N/A, Previous Action: N/A
+  computed/file2_10/result/file2_10PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_folder, States: {'File_pri': 0.8993637824991326, 'File_pub': 0.8776320820581932}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_10/result/file2_10PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_file, States: {'Folder_pri': 0.8824732617542039, 'Folder_pub': 0.871159715118802}, Previous State: File_pri, Previous Action: Select_folder
+  computed/file2_10/result/file2_10PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.8912325648946897, 'File_pub': 0.8858079954891963}, Previous State: Folder_pri, Previous Action: Select_file
+  computed/file2_1/result/file2_1PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.8675852834287119, 'File_pub': 0.8297303666077165}, Previous State: N/A, Previous Action: N/A
+  computed/file2_9/result/file2_9PostProcessed_Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.8991972507593029, 'File_pub': 0.8600533894393287}, Previous State: N/A, Previous Action: N/A
+  computed/file2_9/result/file2_9PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Toggle, States: {'Folder_pri': 0.6402361282309208, 'Folder_pub': 0.6708123372407047}, Previous State: File_pri, Previous Action: Toggle
+  computed/file2_9/result/file2_9PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.6266803137136949, 'Folder_pub': 0.6028287549588525}, Previous State: Folder_pub, Previous Action: Toggle
+  computed/file2_9/result/file2_9PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.5694301020540176, 'Folder_pub': 0.5880490449605014}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_50/result/file2_50PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9025904652942129, 'Folder_pub': 0.8653256891865806}, Previous State: N/A, Previous Action: N/A
+  computed/file2_50/result/file2_50PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9038445664667099, 'Folder_pub': 0.8856350284127313}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_50/result/file2_50PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.9045408182934563, 'Folder_pub': 0.8958026089348374}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_50/result/file2_50PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8223021823531351, 'Folder_pub': 0.8289609231365749}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_95/result/file2_95PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.8943682365073102, 'Folder_pub': 0.8511933738491728}, Previous State: N/A, Previous Action: N/A
+  computed/file2_95/result/file2_95PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9000544215408623, 'Folder_pub': 0.8785749649034547}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_95/result/file2_95PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Select_folder, States: {'Folder_pri': 0.9027076614271017, 'Folder_pub': 0.8923095106286615}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_95/result/file2_95PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.9040301310999339, 'Folder_pub': 0.8990628996776698}, Previous State: Folder_pri, Previous Action: Select_folder
+  computed/file2_61/result/file2_61PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8663572668980307, 'Folder_pub': 0.8245115259026854}, Previous State: N/A, Previous Action: N/A
+  computed/file2_66/result/file2_66PostProcessed_Result.json - FMMFSM State: File_pub, Action: None, States: {'File_pri': 0.5751621661677786, 'File_pub': 0.6040108532192946}, Previous State: N/A, Previous Action: N/A
+  computed/file2_34/result/file2_34PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.8111253362773982, 'Folder_pub': 0.837137080835596}, Previous State: N/A, Previous Action: N/A
+  computed/file2_33/result/file2_33PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.8943682365073102, 'Folder_pub': 0.8511933738491728}, Previous State: N/A, Previous Action: N/A
+  computed/file2_33/result/file2_33PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Select_file, States: {'Folder_pri': 0.7869100933982587, 'Folder_pub': 0.8198319765634134}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_33/result/file2_33PostProcessed_Result.json - FMMFSM State: File_pub, Action: Select_folder, States: {'File_pri': 0.6402551559019328, 'File_pub': 0.6613665971626034}, Previous State: Folder_pub, Previous Action: Select_file
+  computed/file2_33/result/file2_33PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.734956830802134, 'Folder_pub': 0.7491653584279775}, Previous State: File_pub, Previous Action: Select_folder
+  computed/file2_93/result/file2_93PostProcessed_Result.json - FMMFSM State: File_pri, Action: Toggle, States: {'File_pri': 0.8996744943766313, 'File_pub': 0.8601825794031099}, Previous State: N/A, Previous Action: N/A
+  computed/file2_93/result/file2_93PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: Toggle, States: {'Folder_pri': 0.6405815600825684, 'Folder_pub': 0.6714609583098454}, Previous State: File_pri, Previous Action: Toggle
+  computed/file2_93/result/file2_93PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: Toggle, States: {'Folder_pri': 0.6272321205714926, 'Folder_pub': 0.6031440675151272}, Previous State: Folder_pub, Previous Action: Toggle
+  computed/file2_93/result/file2_93PostProcessed_Result.json - FMMFSM State: Folder_pub, Action: None, States: {'Folder_pri': 0.5697195871665741, 'Folder_pub': 0.5885231394663065}, Previous State: Folder_pri, Previous Action: Toggle
+  computed/file2_94/result/file2_94PostProcessed_Result.json - FMMFSM State: Folder_pri, Action: None, States: {'Folder_pri': 0.8611670653702291, 'Folder_pub': 0.8185854745932737}, Previous State: N/A, Previous Action: N/A
+  computed/file2_51/result/file2_51PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.897964949583047, 'File_pub': 0.8552347570843304}, Previous State: N/A, Previous Action: N/A
+  computed/file2_51/result/file2_51PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.8993637824991326, 'File_pub': 0.8776320820581932}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_51/result/file2_51PostProcessed_Result.json - FMMFSM State: File_pri, Action: Select_file, States: {'File_pri': 0.9001851480844985, 'File_pub': 0.8893362529729489}, Previous State: File_pri, Previous Action: Select_file
+  computed/file2_51/result/file2_51PostProcessed_Result.json - FMMFSM State: File_pri, Action: None, States: {'File_pri': 0.9006622407214608, 'File_pub': 0.8952953650523016}, Previous State: File_pri, Previous Action: Select_file
+
+Task Label Nondeterministic Confusion Check:
+  computed/file2_15/result/file2_15PostProcessed_Result.json - Task Labels: {'Secure': 0.923941800683165, 'Insecure': 0.8939420215671068}
+  computed/file2_15/result/file2_15PostProcessed_Result.json - Task Labels: {'Secure': 0.9383819794526637, 'Insecure': 0.9230421072413482}
+  computed/file2_12/result/file2_12PostProcessed_Result.json - Task Labels: {'Secure': 0.951371215677516, 'Insecure': 0.9254744771160734}
+  computed/file2_12/result/file2_12PostProcessed_Result.json - Task Labels: {'Secure': 0.9521616196186241, 'Insecure': 0.9392703282834156}
+  computed/file2_12/result/file2_12PostProcessed_Result.json - Task Labels: {'Secure': 0.9524121429905391, 'Insecure': 0.946061733688638}
+  computed/file2_12/result/file2_12PostProcessed_Result.json - Task Labels: {'Secure': 0.9525594203116546, 'Insecure': 0.9494403875413585}
+  computed/file2_12/result/file2_12PostProcessed_Result.json - Task Labels: {'Secure': 0.9526529377814206, 'Insecure': 0.951122374699343}
+  computed/file2_24/result/file2_24PostProcessed_Result.json - Task Labels: {'Secure': 0.9545522862829365, 'Insecure': 0.9282196504765327}
+  computed/file2_24/result/file2_24PostProcessed_Result.json - Task Labels: {'Secure': 0.9563430347496286, 'Insecure': 0.9437030669756945}
+  computed/file2_24/result/file2_24PostProcessed_Result.json - Task Labels: {'Secure': 0.9573000454966588, 'Insecure': 0.9513026884597666}
+  computed/file2_24/result/file2_24PostProcessed_Result.json - Task Labels: {'Secure': 0.9578012159942924, 'Insecure': 0.9549659707384773}
+  computed/file2_24/result/file2_24PostProcessed_Result.json - Task Labels: {'Secure': 0.9580602179637833, 'Insecure': 0.9567212192023457}
+  computed/file2_23/result/file2_23PostProcessed_Result.json - Task Labels: {'Secure': 0.9504100121518424, 'Insecure': 0.9236810861787261}
+  computed/file2_23/result/file2_23PostProcessed_Result.json - Task Labels: {'Secure': 0.9514204302962345, 'Insecure': 0.9381074450465398}
+  computed/file2_23/result/file2_23PostProcessed_Result.json - Task Labels: {'Secure': 0.9520101820195602, 'Insecure': 0.9454467202583009}
+  computed/file2_23/result/file2_23PostProcessed_Result.json - Task Labels: {'Secure': 0.9525825126411999, 'Insecure': 0.9493825970717207}
+  computed/file2_23/result/file2_23PostProcessed_Result.json - Task Labels: {'Secure': 0.9556363931880771, 'Insecure': 0.9541169600221685}
+  computed/file2_48/result/file2_48PostProcessed_Result.json - Task Labels: {'Secure': 0.9504100121518424, 'Insecure': 0.9236810861787261}
+  computed/file2_48/result/file2_48PostProcessed_Result.json - Task Labels: {'Secure': 0.9514204302962345, 'Insecure': 0.9381074450465398}
+  computed/file2_48/result/file2_48PostProcessed_Result.json - Task Labels: {'Secure': 0.9520101820195602, 'Insecure': 0.9454467202583009}
+  computed/file2_48/result/file2_48PostProcessed_Result.json - Task Labels: {'Secure': 0.9523533014458936, 'Insecure': 0.949128645020252}
+  computed/file2_48/result/file2_48PostProcessed_Result.json - Task Labels: {'Secure': 0.9525483496471709, 'Insecure': 0.9509658035763976}
+  computed/file2_77/result/file2_77PostProcessed_Result.json - Task Labels: {'Secure': 0.8634467946148697, 'Insecure': 0.8975439178361767}
+  computed/file2_77/result/file2_77PostProcessed_Result.json - Task Labels: {'Secure': 0.9100176705889051, 'Insecure': 0.9282516974724334}
+  computed/file2_77/result/file2_77PostProcessed_Result.json - Task Labels: {'Secure': 0.7502143024114591, 'Insecure': 0.72692929667975}
+  computed/file2_83/result/file2_83PostProcessed_Result.json - Task Labels: {'Secure': 0.808350497252717, 'Insecure': 0.7785820468005062}
+  computed/file2_83/result/file2_83PostProcessed_Result.json - Task Labels: {'Secure': 0.8734936426585623, 'Insecure': 0.8544837861350173}
+  computed/file2_70/result/file2_70PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_70/result/file2_70PostProcessed_Result.json - Task Labels: {'Secure': 0.956543701104141, 'Insecure': 0.9443995889393395}
+  computed/file2_70/result/file2_70PostProcessed_Result.json - Task Labels: {'Secure': 0.9573996254708772, 'Insecure': 0.9516400297444793}
+  computed/file2_70/result/file2_70PostProcessed_Result.json - Task Labels: {'Secure': 0.9578505015829367, 'Insecure': 0.9551279969997126}
+  computed/file2_70/result/file2_70PostProcessed_Result.json - Task Labels: {'Secure': 0.9580845627710874, 'Insecure': 0.9567988503137208}
+  computed/file2_79/result/file2_79PostProcessed_Result.json - Task Labels: {'Secure': 0.9541016921330483, 'Insecure': 0.9269227558908715}
+  computed/file2_79/result/file2_79PostProcessed_Result.json - Task Labels: {'Secure': 0.9561209995726452, 'Insecure': 0.9430582739816052}
+  computed/file2_79/result/file2_79PostProcessed_Result.json - Task Labels: {'Secure': 0.953750786482345, 'Insecure': 0.9473632395279059}
+  computed/file2_79/result/file2_79PostProcessed_Result.json - Task Labels: {'Secure': 0.9535015321976668, 'Insecure': 0.9503672716236261}
+  computed/file2_79/result/file2_79PostProcessed_Result.json - Task Labels: {'Secure': 0.9534082365017257, 'Insecure': 0.951881309652661}
+  computed/file2_46/result/file2_46PostProcessed_Result.json - Task Labels: {'Secure': 0.9299083182312541, 'Insecure': 0.8838980104716698}
+  computed/file2_46/result/file2_46PostProcessed_Result.json - Task Labels: {'Secure': 0.9409491633418101, 'Insecure': 0.9169007467301191}
+  computed/file2_46/result/file2_46PostProcessed_Result.json - Task Labels: {'Secure': 0.9466801385874625, 'Insecure': 0.9345852174192053}
+  computed/file2_46/result/file2_46PostProcessed_Result.json - Task Labels: {'Secure': 0.9496407776820784, 'Insecure': 0.943656051098434}
+  computed/file2_22/result/file2_22PostProcessed_Result.json - Task Labels: {'Secure': 0.8201449218671373, 'Insecure': 0.8608145347734466}
+  computed/file2_25/result/file2_25PostProcessed_Result.json - Task Labels: {'Secure': 0.8167552972231759, 'Insecure': 0.8492736654567057}
+  computed/file2_25/result/file2_25PostProcessed_Result.json - Task Labels: {'Secure': 0.8833522469935935, 'Insecure': 0.9023742263481818}
+  computed/file2_25/result/file2_25PostProcessed_Result.json - Task Labels: {'Secure': 0.9164398560253892, 'Insecure': 0.9265135124192316}
+  computed/file2_13/result/file2_13PostProcessed_Result.json - Task Labels: {'Secure': 0.9302970112279889, 'Insecure': 0.885066362912012}
+  computed/file2_13/result/file2_13PostProcessed_Result.json - Task Labels: {'Secure': 0.944617184744869, 'Insecure': 0.9215484253835988}
+  computed/file2_13/result/file2_13PostProcessed_Result.json - Task Labels: {'Secure': 0.9516146735630242, 'Insecure': 0.9404180198082526}
+  computed/file2_13/result/file2_13PostProcessed_Result.json - Task Labels: {'Secure': 0.7712644061611873, 'Insecure': 0.787959083654252}
+  computed/file2_14/result/file2_14PostProcessed_Result.json - Task Labels: {'Secure': 0.8922947343770229, 'Insecure': 0.924323800774945}
+  computed/file2_14/result/file2_14PostProcessed_Result.json - Task Labels: {'Secure': 0.6596259121047233, 'Insecure': 0.6908246291468094}
+  computed/file2_40/result/file2_40PostProcessed_Result.json - Task Labels: {'Secure': 0.8527821855353621, 'Insecure': 0.8894067732331372}
+  computed/file2_78/result/file2_78PostProcessed_Result.json - Task Labels: {'Secure': 0.9487176468838491, 'Insecure': 0.9189687797206728}
+  computed/file2_78/result/file2_78PostProcessed_Result.json - Task Labels: {'Secure': 0.7206112638269035, 'Insecure': 0.6873214509999117}
+  computed/file2_78/result/file2_78PostProcessed_Result.json - Task Labels: {'Secure': 0.6493070669454246, 'Insecure': 0.6753470842336089}
+  computed/file2_78/result/file2_78PostProcessed_Result.json - Task Labels: {'Secure': 0.7589004256736962, 'Insecure': 0.7759914133174567}
+  computed/file2_47/result/file2_47PostProcessed_Result.json - Task Labels: {'Secure': 0.9483031323202953, 'Insecure': 0.9187791949381521}
+  computed/file2_47/result/file2_47PostProcessed_Result.json - Task Labels: {'Secure': 0.9510707944250266, 'Insecure': 0.936473448274505}
+  computed/file2_47/result/file2_47PostProcessed_Result.json - Task Labels: {'Secure': 0.9514820995459866, 'Insecure': 0.9443069260925862}
+  computed/file2_47/result/file2_47PostProcessed_Result.json - Task Labels: {'Secure': 0.9523529815565911, 'Insecure': 0.94882474412397}
+  computed/file2_47/result/file2_47PostProcessed_Result.json - Task Labels: {'Secure': 0.9528290226789623, 'Insecure': 0.9511103073208529}
+  computed/file2_71/result/file2_71PostProcessed_Result.json - Task Labels: {'Secure': 0.9496002177367628, 'Insecure': 0.9220482506775748}
+  computed/file2_71/result/file2_71PostProcessed_Result.json - Task Labels: {'Secure': 0.950980428262684, 'Insecure': 0.9372380350462968}
+  computed/file2_71/result/file2_71PostProcessed_Result.json - Task Labels: {'Secure': 0.9517835095023842, 'Insecure': 0.9450043556562491}
+  computed/file2_71/result/file2_71PostProcessed_Result.json - Task Labels: {'Secure': 0.9522376887147902, 'Insecure': 0.9489063989627762}
+  computed/file2_71/result/file2_71PostProcessed_Result.json - Task Labels: {'Secure': 0.9524895044139522, 'Insecure': 0.9508545241041816}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Task Labels: {'Secure': 0.9490969783973165, 'Insecure': 0.9207104749950804}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Task Labels: {'Secure': 0.950718661533801, 'Insecure': 0.9365425059634832}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Task Labels: {'Secure': 0.6514969765248066, 'Insecure': 0.6720652992032491}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Task Labels: {'Secure': 0.6250728980936573, 'Insecure': 0.6084449919628614}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Task Labels: {'Secure': 0.7246232277454988, 'Insecure': 0.7131979964329196}
+  computed/file2_49/result/file2_49PostProcessed_Result.json - Task Labels: {'Secure': 0.9483031323202953, 'Insecure': 0.9187791949381521}
+  computed/file2_49/result/file2_49PostProcessed_Result.json - Task Labels: {'Secure': 0.9505938260598383, 'Insecure': 0.9357957774175739}
+  computed/file2_49/result/file2_49PostProcessed_Result.json - Task Labels: {'Secure': 0.9516113505164965, 'Insecure': 0.9443037630938407}
+  computed/file2_49/result/file2_49PostProcessed_Result.json - Task Labels: {'Secure': 0.9521505652650402, 'Insecure': 0.948558568559388}
+  computed/file2_49/result/file2_49PostProcessed_Result.json - Task Labels: {'Secure': 0.9524442872314595, 'Insecure': 0.9506812008790141}
+  computed/file2_76/result/file2_76PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_76/result/file2_76PostProcessed_Result.json - Task Labels: {'Secure': 0.956543701104141, 'Insecure': 0.9443995889393395}
+  computed/file2_76/result/file2_76PostProcessed_Result.json - Task Labels: {'Secure': 0.9573996254708772, 'Insecure': 0.9516400297444793}
+  computed/file2_76/result/file2_76PostProcessed_Result.json - Task Labels: {'Secure': 0.9544505678552788, 'Insecure': 0.9516382539922325}
+  computed/file2_76/result/file2_76PostProcessed_Result.json - Task Labels: {'Secure': 0.9538756907951212, 'Insecure': 0.9524979790718591}
+  computed/file2_5/result/file2_5PostProcessed_Result.json - Task Labels: {'Secure': 0.9304027044343823, 'Insecure': 0.9019854995729584}
+  computed/file2_5/result/file2_5PostProcessed_Result.json - Task Labels: {'Secure': 0.9446984168875916, 'Insecure': 0.9305021034303942}
+  computed/file2_4/result/file2_4PostProcessed_Result.json - Task Labels: {'Secure': 0.9518241515170311, 'Insecure': 0.9228683049242179}
+  computed/file2_4/result/file2_4PostProcessed_Result.json - Task Labels: {'Secure': 0.9550268160674532, 'Insecure': 0.9410435649805725}
+  computed/file2_4/result/file2_4PostProcessed_Result.json - Task Labels: {'Secure': 0.956660370462636, 'Insecure': 0.9500125614825758}
+  computed/file2_4/result/file2_4PostProcessed_Result.json - Task Labels: {'Secure': 0.9574898558315142, 'Insecure': 0.9543453103353131}
+  computed/file2_4/result/file2_4PostProcessed_Result.json - Task Labels: {'Secure': 0.7938274746874591, 'Insecure': 0.7988584309522426}
+  computed/file2_54/result/file2_54PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_54/result/file2_54PostProcessed_Result.json - Task Labels: {'Secure': 0.953058467725499, 'Insecure': 0.9405862434469059}
+  computed/file2_54/result/file2_54PostProcessed_Result.json - Task Labels: {'Secure': 0.9531117497572911, 'Insecure': 0.9469705662799922}
+  computed/file2_54/result/file2_54PostProcessed_Result.json - Task Labels: {'Secure': 0.9529388813773735, 'Insecure': 0.9499244307237825}
+  computed/file2_54/result/file2_54PostProcessed_Result.json - Task Labels: {'Secure': 0.9528471174792934, 'Insecure': 0.9513681740331309}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Task Labels: {'Secure': 0.838342266145627, 'Insecure': 0.8774334952779544}
+  computed/file2_65/result/file2_65PostProcessed_Result.json - Task Labels: {'Secure': 0.9263476640325202, 'Insecure': 0.9507453807466475}
+  computed/file2_65/result/file2_65PostProcessed_Result.json - Task Labels: {'Secure': 0.9389241391280871, 'Insecure': 0.9509725222745732}
+  computed/file2_65/result/file2_65PostProcessed_Result.json - Task Labels: {'Secure': 0.9461302784898337, 'Insecure': 0.9520726577274516}
+  computed/file2_65/result/file2_65PostProcessed_Result.json - Task Labels: {'Secure': 0.9495005846514714, 'Insecure': 0.9524188715608585}
+  computed/file2_91/result/file2_91PostProcessed_Result.json - Task Labels: {'Secure': 0.8982007020292966, 'Insecure': 0.9374187437925525}
+  computed/file2_91/result/file2_91PostProcessed_Result.json - Task Labels: {'Secure': 0.9284609205706762, 'Insecure': 0.9480291711287092}
+  computed/file2_91/result/file2_91PostProcessed_Result.json - Task Labels: {'Secure': 0.943848454629822, 'Insecure': 0.953267431105361}
+  computed/file2_91/result/file2_91PostProcessed_Result.json - Task Labels: {'Secure': 0.9513706377561509, 'Insecure': 0.9558435069378483}
+  computed/file2_96/result/file2_96PostProcessed_Result.json - Task Labels: {'Secure': 0.9484917425169359, 'Insecure': 0.9182960741804509}
+  computed/file2_96/result/file2_96PostProcessed_Result.json - Task Labels: {'Secure': 0.9503998469880719, 'Insecure': 0.9352865295483479}
+  computed/file2_96/result/file2_96PostProcessed_Result.json - Task Labels: {'Secure': 0.9514816447309754, 'Insecure': 0.9440164897352442}
+  computed/file2_96/result/file2_96PostProcessed_Result.json - Task Labels: {'Secure': 0.9520812746177897, 'Insecure': 0.9484112892824696}
+  computed/file2_96/result/file2_96PostProcessed_Result.json - Task Labels: {'Secure': 0.9524086333904052, 'Insecure': 0.950607177592862}
+  computed/file2_62/result/file2_62PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_62/result/file2_62PostProcessed_Result.json - Task Labels: {'Secure': 0.956543701104141, 'Insecure': 0.9443995889393395}
+  computed/file2_62/result/file2_62PostProcessed_Result.json - Task Labels: {'Secure': 0.9539699681124748, 'Insecure': 0.9480340068095596}
+  computed/file2_62/result/file2_62PostProcessed_Result.json - Task Labels: {'Secure': 0.9540820278587568, 'Insecure': 0.9511992725902458}
+  computed/file2_62/result/file2_62PostProcessed_Result.json - Task Labels: {'Secure': 0.9563573287490436, 'Insecure': 0.954990285345039}
+  computed/file2_31/result/file2_31PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_31/result/file2_31PostProcessed_Result.json - Task Labels: {'Secure': 0.953058467725499, 'Insecure': 0.9405862434469059}
+  computed/file2_31/result/file2_31PostProcessed_Result.json - Task Labels: {'Secure': 0.9531117497572911, 'Insecure': 0.9469705662799922}
+  computed/file2_31/result/file2_31PostProcessed_Result.json - Task Labels: {'Secure': 0.9529388813773735, 'Insecure': 0.9499244307237825}
+  computed/file2_31/result/file2_31PostProcessed_Result.json - Task Labels: {'Secure': 0.9528471174792934, 'Insecure': 0.9513681740331309}
+  computed/file2_38/result/file2_38PostProcessed_Result.json - Task Labels: {'Secure': 0.8910813386376648, 'Insecure': 0.9171421007575897}
+  computed/file2_63/result/file2_63PostProcessed_Result.json - Task Labels: {'Secure': 0.9518241515170311, 'Insecure': 0.9228683049242179}
+  computed/file2_63/result/file2_63PostProcessed_Result.json - Task Labels: {'Secure': 0.7290229219819555, 'Insecure': 0.6961434827843114}
+  computed/file2_63/result/file2_63PostProcessed_Result.json - Task Labels: {'Secure': 0.657058631017187, 'Insecure': 0.6827787960715803}
+  computed/file2_63/result/file2_63PostProcessed_Result.json - Task Labels: {'Secure': 0.7645110886549406, 'Insecure': 0.7811685370472934}
+  computed/file2_97/result/file2_97PostProcessed_Result.json - Task Labels: {'Secure': 0.7344062264405162, 'Insecure': 0.7115025060261096}
+  computed/file2_90/result/file2_90PostProcessed_Result.json - Task Labels: {'Secure': 0.8916878485174531, 'Insecure': 0.8560924763028955}
+  computed/file2_64/result/file2_64PostProcessed_Result.json - Task Labels: {'Secure': 0.9545522862829365, 'Insecure': 0.9282196504765327}
+  computed/file2_64/result/file2_64PostProcessed_Result.json - Task Labels: {'Secure': 0.9563430347496286, 'Insecure': 0.9437030669756945}
+  computed/file2_64/result/file2_64PostProcessed_Result.json - Task Labels: {'Secure': 0.9573000454966588, 'Insecure': 0.9513026884597666}
+  computed/file2_64/result/file2_64PostProcessed_Result.json - Task Labels: {'Secure': 0.9578012159942924, 'Insecure': 0.9549659707384773}
+  computed/file2_64/result/file2_64PostProcessed_Result.json - Task Labels: {'Secure': 0.9580602179637833, 'Insecure': 0.9567212192023457}
+  computed/file2_52/result/file2_52PostProcessed_Result.json - Task Labels: {'Secure': 0.903837804464484, 'Insecure': 0.93668386371922}
+  computed/file2_52/result/file2_52PostProcessed_Result.json - Task Labels: {'Secure': 0.9314180038627123, 'Insecure': 0.9477195504583502}
+  computed/file2_52/result/file2_52PostProcessed_Result.json - Task Labels: {'Secure': 0.9453102756611547, 'Insecure': 0.9531390906840247}
+  computed/file2_99/result/file2_99PostProcessed_Result.json - Task Labels: {'Secure': 0.9302970112279889, 'Insecure': 0.885066362912012}
+  computed/file2_99/result/file2_99PostProcessed_Result.json - Task Labels: {'Secure': 0.944617184744869, 'Insecure': 0.9215484253835988}
+  computed/file2_99/result/file2_99PostProcessed_Result.json - Task Labels: {'Secure': 0.9516146735630242, 'Insecure': 0.9404180198082526}
+  computed/file2_99/result/file2_99PostProcessed_Result.json - Task Labels: {'Secure': 0.7712644061611873, 'Insecure': 0.787959083654252}
+  computed/file2_39/result/file2_39PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_39/result/file2_39PostProcessed_Result.json - Task Labels: {'Secure': 0.956543701104141, 'Insecure': 0.9443995889393395}
+  computed/file2_39/result/file2_39PostProcessed_Result.json - Task Labels: {'Secure': 0.9573996254708772, 'Insecure': 0.9516400297444793}
+  computed/file2_39/result/file2_39PostProcessed_Result.json - Task Labels: {'Secure': 0.9578505015829367, 'Insecure': 0.9551279969997126}
+  computed/file2_39/result/file2_39PostProcessed_Result.json - Task Labels: {'Secure': 0.7951601455231257, 'Insecure': 0.7995344883870624}
+  computed/file2_30/result/file2_30PostProcessed_Result.json - Task Labels: {'Secure': 0.9518241515170311, 'Insecure': 0.9228683049242179}
+  computed/file2_30/result/file2_30PostProcessed_Result.json - Task Labels: {'Secure': 0.9550268160674532, 'Insecure': 0.9410435649805725}
+  computed/file2_30/result/file2_30PostProcessed_Result.json - Task Labels: {'Secure': 0.956660370462636, 'Insecure': 0.9500125614825758}
+  computed/file2_30/result/file2_30PostProcessed_Result.json - Task Labels: {'Secure': 0.9574898558315142, 'Insecure': 0.9543453103353131}
+  computed/file2_30/result/file2_30PostProcessed_Result.json - Task Labels: {'Secure': 0.7938274746874591, 'Insecure': 0.7988584309522426}
+  computed/file2_37/result/file2_37PostProcessed_Result.json - Task Labels: {'Secure': 0.8257265981220441, 'Insecure': 0.8662215511511522}
+  computed/file2_80/result/file2_80PostProcessed_Result.json - Task Labels: {'Secure': 0.9494003335436424, 'Insecure': 0.9211976984553033}
+  computed/file2_80/result/file2_80PostProcessed_Result.json - Task Labels: {'Secure': 0.9539568535774148, 'Insecure': 0.9402657037252432}
+  computed/file2_80/result/file2_80PostProcessed_Result.json - Task Labels: {'Secure': 0.9561566899533928, 'Insecure': 0.949640812228776}
+  computed/file2_80/result/file2_80PostProcessed_Result.json - Task Labels: {'Secure': 0.9572490895676256, 'Insecure': 0.954166137776128}
+  computed/file2_80/result/file2_80PostProcessed_Result.json - Task Labels: {'Secure': 0.7935088125074627, 'Insecure': 0.7984335355154515}
+  computed/file2_89/result/file2_89PostProcessed_Result.json - Task Labels: {'Secure': 0.9496002177367628, 'Insecure': 0.9220482506775748}
+  computed/file2_89/result/file2_89PostProcessed_Result.json - Task Labels: {'Secure': 0.950980428262684, 'Insecure': 0.9372380350462968}
+  computed/file2_89/result/file2_89PostProcessed_Result.json - Task Labels: {'Secure': 0.9517835095023842, 'Insecure': 0.9450043556562491}
+  computed/file2_89/result/file2_89PostProcessed_Result.json - Task Labels: {'Secure': 0.9522376887147902, 'Insecure': 0.9489063989627762}
+  computed/file2_89/result/file2_89PostProcessed_Result.json - Task Labels: {'Secure': 0.9524895044139522, 'Insecure': 0.9508545241041816}
+  computed/file2_45/result/file2_45PostProcessed_Result.json - Task Labels: {'Secure': 0.9263476640325202, 'Insecure': 0.9507453807466475}
+  computed/file2_45/result/file2_45PostProcessed_Result.json - Task Labels: {'Secure': 0.9389241391280871, 'Insecure': 0.9509725222745732}
+  computed/file2_45/result/file2_45PostProcessed_Result.json - Task Labels: {'Secure': 0.9466774939291223, 'Insecure': 0.9525507335381708}
+  computed/file2_45/result/file2_45PostProcessed_Result.json - Task Labels: {'Secure': 0.9528129884687959, 'Insecure': 0.955605634049061}
+  computed/file2_11/result/file2_11PostProcessed_Result.json - Task Labels: {'Secure': 0.6778515687820157, 'Insecure': 0.7119813782063037}
+  computed/file2_16/result/file2_16PostProcessed_Result.json - Task Labels: {'Secure': 0.8185794890018947, 'Insecure': 0.7888674598229624}
+  computed/file2_20/result/file2_20PostProcessed_Result.json - Task Labels: {'Secure': 0.8832686426894618, 'Insecure': 0.8477558595996186}
+  computed/file2_18/result/file2_18PostProcessed_Result.json - Task Labels: {'Secure': 0.9330451669789174, 'Insecure': 0.9057785033759371}
+  computed/file2_18/result/file2_18PostProcessed_Result.json - Task Labels: {'Secure': 0.7218897767963097, 'Insecure': 0.7568005265687057}
+  computed/file2_44/result/file2_44PostProcessed_Result.json - Task Labels: {'Secure': 0.7123835807857439, 'Insecure': 0.7497965034530221}
+  computed/file2_43/result/file2_43PostProcessed_Result.json - Task Labels: {'Secure': 0.6750515554883264, 'Insecure': 0.6490169736825664}
+  computed/file2_81/result/file2_81PostProcessed_Result.json - Task Labels: {'Secure': 0.9533181526310411, 'Insecure': 0.9252623676538332}
+  computed/file2_81/result/file2_81PostProcessed_Result.json - Task Labels: {'Secure': 0.9557401865062134, 'Insecure': 0.9422322027637318}
+  computed/file2_81/result/file2_81PostProcessed_Result.json - Task Labels: {'Secure': 0.774388424677436, 'Insecure': 0.7949528997947878}
+  computed/file2_81/result/file2_81PostProcessed_Result.json - Task Labels: {'Secure': 0.7371025461550978, 'Insecure': 0.7205851388391589}
+  computed/file2_81/result/file2_81PostProcessed_Result.json - Task Labels: {'Secure': 0.8012596989161367, 'Insecure': 0.7919752881604024}
+  computed/file2_75/result/file2_75PostProcessed_Result.json - Task Labels: {'Secure': 0.8674218504724193, 'Insecure': 0.8340929603448922}
+  computed/file2_75/result/file2_75PostProcessed_Result.json - Task Labels: {'Secure': 0.908001649891442, 'Insecure': 0.8887527308322093}
+  computed/file2_72/result/file2_72PostProcessed_Result.json - Task Labels: {'Secure': 0.3994668210192125, 'Insecure': 0.38170307064399733}
+  computed/file2_26/result/file2_26PostProcessed_Result.json - Task Labels: {'Secure': 0.9216535358932418, 'Insecure': 0.8905421390989947}
+  computed/file2_26/result/file2_26PostProcessed_Result.json - Task Labels: {'Secure': 0.9372190137423451, 'Insecure': 0.9212336397867035}
+  computed/file2_19/result/file2_19PostProcessed_Result.json - Task Labels: {'Secure': 0.9484917425169359, 'Insecure': 0.9182960741804509}
+  computed/file2_19/result/file2_19PostProcessed_Result.json - Task Labels: {'Secure': 0.9503998469880719, 'Insecure': 0.9352865295483479}
+  computed/file2_19/result/file2_19PostProcessed_Result.json - Task Labels: {'Secure': 0.9514816447309754, 'Insecure': 0.9440164897352442}
+  computed/file2_19/result/file2_19PostProcessed_Result.json - Task Labels: {'Secure': 0.9520812746177897, 'Insecure': 0.9484112892824696}
+  computed/file2_19/result/file2_19PostProcessed_Result.json - Task Labels: {'Secure': 0.952638799016712, 'Insecure': 0.9508497599662539}
+  computed/file2_28/result/file2_28PostProcessed_Result.json - Task Labels: {'Secure': 0.8967222281994655, 'Insecure': 0.9284405112732697}
+  computed/file2_28/result/file2_28PostProcessed_Result.json - Task Labels: {'Secure': 0.9239392842530757, 'Insecure': 0.9403236723422509}
+  computed/file2_28/result/file2_28PostProcessed_Result.json - Task Labels: {'Secure': 0.938227021664579, 'Insecure': 0.9464224951182678}
+  computed/file2_10/result/file2_10PostProcessed_Result.json - Task Labels: {'Secure': 0.9484917425169359, 'Insecure': 0.9182960741804509}
+  computed/file2_10/result/file2_10PostProcessed_Result.json - Task Labels: {'Secure': 0.9503998469880719, 'Insecure': 0.9352865295483479}
+  computed/file2_10/result/file2_10PostProcessed_Result.json - Task Labels: {'Secure': 0.9514816447309754, 'Insecure': 0.9440164897352442}
+  computed/file2_10/result/file2_10PostProcessed_Result.json - Task Labels: {'Secure': 0.9523107123178814, 'Insecure': 0.948670612056654}
+  computed/file2_10/result/file2_10PostProcessed_Result.json - Task Labels: {'Secure': 0.9521867034116962, 'Insecure': 0.9504077670670726}
+  computed/file2_1/result/file2_1PostProcessed_Result.json - Task Labels: {'Secure': 0.9330451669789174, 'Insecure': 0.9057785033759371}
+  computed/file2_1/result/file2_1PostProcessed_Result.json - Task Labels: {'Secure': 0.942130339212593, 'Insecure': 0.9283159108275425}
+  computed/file2_6/result/file2_6PostProcessed_Result.json - Task Labels: {'Secure': 0.576975638401847, 'Insecure': 0.603278932681781}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Task Labels: {'Secure': 0.9496002177367628, 'Insecure': 0.9220482506775748}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Task Labels: {'Secure': 0.950980428262684, 'Insecure': 0.9372380350462968}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Task Labels: {'Secure': 0.6526277180200188, 'Insecure': 0.672682370739387}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Task Labels: {'Secure': 0.6256530035557533, 'Insecure': 0.6094402125686584}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Task Labels: {'Secure': 0.5791096301225522, 'Insecure': 0.5917885522911571}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Task Labels: {'Secure': 0.9484917425169359, 'Insecure': 0.9182960741804509}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Task Labels: {'Secure': 0.5589301645798396, 'Insecure': 0.583904285422134}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Task Labels: {'Secure': 0.5540229822090516, 'Insecure': 0.5345104099325304}
+  computed/file2_50/result/file2_50PostProcessed_Result.json - Task Labels: {'Secure': 0.9549555558868338, 'Insecure': 0.9296229077897357}
+  computed/file2_50/result/file2_50PostProcessed_Result.json - Task Labels: {'Secure': 0.956543701104141, 'Insecure': 0.9443995889393395}
+  computed/file2_50/result/file2_50PostProcessed_Result.json - Task Labels: {'Secure': 0.9573996254708772, 'Insecure': 0.9516400297444793}
+  computed/file2_50/result/file2_50PostProcessed_Result.json - Task Labels: {'Secure': 0.9578505015829367, 'Insecure': 0.9551279969997126}
+  computed/file2_50/result/file2_50PostProcessed_Result.json - Task Labels: {'Secure': 0.7951601455231257, 'Insecure': 0.7995344883870624}
+  computed/file2_68/result/file2_68PostProcessed_Result.json - Task Labels: {'Secure': 0.8826941800726302, 'Insecure': 0.8509338508855724}
+  computed/file2_68/result/file2_68PostProcessed_Result.json - Task Labels: {'Secure': 0.9205389128657648, 'Insecure': 0.903102665907588}
+  computed/file2_95/result/file2_95PostProcessed_Result.json - Task Labels: {'Secure': 0.9487176468838491, 'Insecure': 0.9189687797206728}
+  computed/file2_95/result/file2_95PostProcessed_Result.json - Task Labels: {'Secure': 0.9536186417393208, 'Insecure': 0.9391416489878153}
+  computed/file2_95/result/file2_95PostProcessed_Result.json - Task Labels: {'Secure': 0.9559894433148888, 'Insecure': 0.949093602455898}
+  computed/file2_95/result/file2_95PostProcessed_Result.json - Task Labels: {'Secure': 0.9571665045539751, 'Insecure': 0.9539029241314725}
+  computed/file2_95/result/file2_95PostProcessed_Result.json - Task Labels: {'Secure': 0.9577523687948241, 'Insecure': 0.9562106317751804}
+  computed/file2_61/result/file2_61PostProcessed_Result.json - Task Labels: {'Secure': 0.9261912314578625, 'Insecure': 0.8962106511811824}
+  computed/file2_61/result/file2_61PostProcessed_Result.json - Task Labels: {'Secure': 0.9426377272719991, 'Insecure': 0.9275170287723181}
+  computed/file2_66/result/file2_66PostProcessed_Result.json - Task Labels: {'Secure': 0.9242618599473933, 'Insecure': 0.9497610638211196}
+  computed/file2_66/result/file2_66PostProcessed_Result.json - Task Labels: {'Secure': 0.7837697999470847, 'Insecure': 0.7478014780914206}
+  computed/file2_66/result/file2_66PostProcessed_Result.json - Task Labels: {'Secure': 0.6977942886073096, 'Insecure': 0.7266575328358639}
+  computed/file2_66/result/file2_66PostProcessed_Result.json - Task Labels: {'Secure': 0.7775102399039295, 'Insecure': 0.7942524437791539}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Task Labels: {'Secure': 0.9119776565444402, 'Insecure': 0.9380682896032406}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Task Labels: {'Secure': 0.6465692046034867, 'Insecure': 0.6150694447262048}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Task Labels: {'Secure': 0.5760951365851807, 'Insecure': 0.6015494509197564}
+  computed/file2_59/result/file2_59PostProcessed_Result.json - Task Labels: {'Secure': 0.576975638401847, 'Insecure': 0.603278932681781}
+  computed/file2_34/result/file2_34PostProcessed_Result.json - Task Labels: {'Secure': 0.8167552972231759, 'Insecure': 0.8492736654567057}
+  computed/file2_34/result/file2_34PostProcessed_Result.json - Task Labels: {'Secure': 0.8833522469935935, 'Insecure': 0.9023742263481818}
+  computed/file2_34/result/file2_34PostProcessed_Result.json - Task Labels: {'Secure': 0.9208521303794964, 'Insecure': 0.9307730044235154}
+  computed/file2_33/result/file2_33PostProcessed_Result.json - Task Labels: {'Secure': 0.9487176468838491, 'Insecure': 0.9189687797206728}
+  computed/file2_33/result/file2_33PostProcessed_Result.json - Task Labels: {'Secure': 0.9536186417393208, 'Insecure': 0.9391416489878153}
+  computed/file2_33/result/file2_33PostProcessed_Result.json - Task Labels: {'Secure': 0.7691876754629775, 'Insecure': 0.790848475510694}
+  computed/file2_33/result/file2_33PostProcessed_Result.json - Task Labels: {'Secure': 0.8239415069459556, 'Insecure': 0.834933434209253}
+  computed/file2_33/result/file2_33PostProcessed_Result.json - Task Labels: {'Secure': 0.8849785101477479, 'Insecure': 0.8914381655200183}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Task Labels: {'Secure': 0.9499731794618915, 'Insecure': 0.9222052294949672}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Task Labels: {'Secure': 0.9511931098085176, 'Insecure': 0.9373441863547468}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Task Labels: {'Secure': 0.6529461747454033, 'Insecure': 0.6731994420180066}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Task Labels: {'Secure': 0.6261125010431111, 'Insecure': 0.6097391662751154}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Task Labels: {'Secure': 0.5793865985372231, 'Insecure': 0.5921910972009615}
+  computed/file2_60/result/file2_60PostProcessed_Result.json - Task Labels: {'Secure': 0.903837804464484, 'Insecure': 0.93668386371922}
+  computed/file2_60/result/file2_60PostProcessed_Result.json - Task Labels: {'Secure': 0.6733093119517324, 'Insecure': 0.7072007450725755}
+  computed/file2_94/result/file2_94PostProcessed_Result.json - Task Labels: {'Secure': 0.9221667916595402, 'Insecure': 0.8915896644326882}
+  computed/file2_94/result/file2_94PostProcessed_Result.json - Task Labels: {'Secure': 0.9407206855956832, 'Insecure': 0.925135237185996}
+  computed/file2_56/result/file2_56PostProcessed_Result.json - Task Labels: {'Secure': 0.8354969943290911, 'Insecure': 0.8631277097473151}
+  computed/file2_51/result/file2_51PostProcessed_Result.json - Task Labels: {'Secure': 0.9484917425169359, 'Insecure': 0.9182960741804509}
+  computed/file2_51/result/file2_51PostProcessed_Result.json - Task Labels: {'Secure': 0.9503998469880719, 'Insecure': 0.9352865295483479}
+  computed/file2_51/result/file2_51PostProcessed_Result.json - Task Labels: {'Secure': 0.9514816447309754, 'Insecure': 0.9440164897352442}
+  computed/file2_51/result/file2_51PostProcessed_Result.json - Task Labels: {'Secure': 0.9520812746177897, 'Insecure': 0.9484112892824696}
+  computed/file2_51/result/file2_51PostProcessed_Result.json - Task Labels: {'Secure': 0.9524086333904052, 'Insecure': 0.950607177592862}
+
+Dominant Error State Check:
+  computed/file2_77/result/file2_77PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_83/result/file2_83PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6578961455775594}, Binary True State: {'File_pub': 0.04349427499205294}
+  computed/file2_84/result/file2_84PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4702562854358745}, Binary True State: {'File_pri': 0.025821010815767598}
+  computed/file2_84/result/file2_84PostProcessed_Result.json - Initial Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.27118430430409235}, Binary True State: {'File_pri': 0.01716230690480358}
+  computed/file2_25/result/file2_25PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6578961455775594}, Binary True State: {'File_pub': 0.04349427499205294}
+  computed/file2_14/result/file2_14PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6300624534279595}, Binary True State: {'File_pub': 0.03470836466686}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.670166431252779}, Binary True State: {'File_pub': 0.04805804907117417}
+  computed/file2_2/result/file2_2PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.606268403544049}, Binary True State: {'File_pub': 0.029440063388434634}
+  computed/file2_2/result/file2_2PostProcessed_Result.json - Initial Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.575894644515875}, Binary True State: {'File_pub': 0.039303074798853754}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.606268403544049}, Binary True State: {'File_pub': 0.029440063388434634}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5833950911079113}, Binary True State: {'File_pub': 0.024340386770584588}
+  computed/file2_55/result/file2_55PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4693672456878726}, Binary True State: {'File_pub': 0.03186352943904536}
+  computed/file2_73/result/file2_73PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6578961455775594}, Binary True State: {'File_pub': 0.04349427499205294}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.606268403544049}, Binary True State: {'File_pub': 0.029440063388434634}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_29/result/file2_29PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5833950911079113}, Binary True State: {'File_pub': 0.024340386770584588}
+  computed/file2_20/result/file2_20PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.606268403544049}, Binary True State: {'File_pub': 0.029440063388434634}
+  computed/file2_88/result/file2_88PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5102607095924686}, Binary True State: {'File_pri': 0.03327606314113185}
+  computed/file2_43/result/file2_43PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6605840508737485}, Binary True State: {'File_pub': 0.04387960069731833}
+  computed/file2_75/result/file2_75PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_72/result/file2_72PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6578961455775594}, Binary True State: {'File_pub': 0.04349427499205294}
+  computed/file2_72/result/file2_72PostProcessed_Result.json - Initial Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.39947353042559486}, Binary True State: {'File_pub': 0.026425480226370368}
+  computed/file2_86/result/file2_86PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.49389727858212185}, Binary True State: {'File_pri': 0.03352522745507713}
+  computed/file2_28/result/file2_28PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.606268403544049}, Binary True State: {'File_pub': 0.029440063388434634}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6708123372407047}, Binary True State: {'File_pub': 0.04814103946823323}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6650253747146089}, Binary True State: {'File_pub': 0.0462273525014304}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_68/result/file2_68PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5833950911079113}, Binary True State: {'File_pub': 0.024340386770584588}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Initial Error, Previous State: Folder_pub, Previous Action: Select_file, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6421572265176096}, Binary True State: {'File_pri': 0.045237221944115835}
+  computed/file2_34/result/file2_34PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6578961455775594}, Binary True State: {'File_pub': 0.04349427499205294}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6714609583098454}, Binary True State: {'File_pub': 0.04816369364172601}
+  computed/file2_67/result/file2_67PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.43602449825299694}, Binary True State: {'File_pri': 0.02860899216090207}
+  computed/file2_58/result/file2_58PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5833950911079113}, Binary True State: {'File_pub': 0.024340386770584588}
+  computed/file2_58/result/file2_58PostProcessed_Result.json - Initial Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.30358053126380247}, Binary True State: {'File_pub': 0.01740730543045399}
+  computed/file2_56/result/file2_56PostProcessed_Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.6467824802129565}, Binary True State: {'File_pub': 0.03957763548912685}
+
+Dominant Error State Check (Compound Errors) by Files:
+  computed/file2_83/result/file2_83PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6121417715625506}, Binary True State: {'File_pri': 0.0195735743963934}
+  computed/file2_84/result/file2_84PostProcessed_Result.json - Compound Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.44061462983542976}, Binary True State: {'File_pub': 0.012476796358515618}
+  computed/file2_84/result/file2_84PostProcessed_Result.json - Compound Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4150174776351283}, Binary True State: {'File_pri': 0.01171976997526325}
+  computed/file2_84/result/file2_84PostProcessed_Result.json - Compound Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.3929459764478602}, Binary True State: {'File_pub': 0.011407121939941978}
+  computed/file2_85/result/file2_85PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6260826098357399}, Binary True State: {'File_pri': 0.021499943256545362}
+  computed/file2_2/result/file2_2PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5573022164666694}, Binary True State: {'File_pri': 0.014011471702490619}
+  computed/file2_2/result/file2_2PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5410127192455649}, Binary True State: {'File_pri': 0.01761037115464481}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5573022164666694}, Binary True State: {'File_pri': 0.014011471702490619}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5157038074620945}, Binary True State: {'File_pub': 0.013158705433656825}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4804026746079654}, Binary True State: {'File_pri': 0.01283339063230493}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.45028472094137617}, Binary True State: {'File_pub': 0.012502272461178965}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4244198580152575}, Binary True State: {'File_pri': 0.012162717605048723}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4020453382223851}, Binary True State: {'File_pub': 0.011822741906236112}
+  computed/file2_3/result/file2_3PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.38254026613206327}, Binary True State: {'File_pri': 0.011487825654435735}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5339776178689287}, Binary True State: {'File_pri': 0.012229980334432677}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.492264823119001}, Binary True State: {'File_pub': 0.011652717203906149}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.45711941512754184}, Binary True State: {'File_pri': 0.011493287732370683}
+  computed/file2_53/result/file2_53PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.42737440203026167}, Binary True State: {'File_pub': 0.011297478433245356}
+  computed/file2_73/result/file2_73PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6121417715625506}, Binary True State: {'File_pri': 0.0195735743963934}
+  computed/file2_73/result/file2_73PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5724436403246914}, Binary True State: {'File_pub': 0.01784297648048383}
+  computed/file2_73/result/file2_73PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5379516414280119}, Binary True State: {'File_pri': 0.016929254435655627}
+  computed/file2_73/result/file2_73PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5077595192790485}, Binary True State: {'File_pub': 0.016121657014481094}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5573022164666694}, Binary True State: {'File_pri': 0.014011471702490619}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5157038074620945}, Binary True State: {'File_pub': 0.013158705433656825}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4804026746079654}, Binary True State: {'File_pri': 0.01283339063230493}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.45028472094137617}, Binary True State: {'File_pub': 0.012502272461178965}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4244198580152575}, Binary True State: {'File_pri': 0.012162717605048723}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4020453382223851}, Binary True State: {'File_pub': 0.011822741906236112}
+  computed/file2_74/result/file2_74PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.38254026613206327}, Binary True State: {'File_pri': 0.011487825654435735}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5591230558439632}, Binary True State: {'File_pub': 0.0165196515114574}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5241228517740195}, Binary True State: {'File_pri': 0.015782427341406446}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4937216758034224}, Binary True State: {'File_pub': 0.015117156717580738}
+  computed/file2_42/result/file2_42PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.46712168954891364}, Binary True State: {'File_pri': 0.014500367122875057}
+  computed/file2_29/result/file2_29PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5339776178689287}, Binary True State: {'File_pri': 0.012229980334432677}
+  computed/file2_20/result/file2_20PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5573022164666694}, Binary True State: {'File_pri': 0.014011471702490619}
+  computed/file2_20/result/file2_20PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5157038074620945}, Binary True State: {'File_pub': 0.013158705433656825}
+  computed/file2_20/result/file2_20PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.4804026746079654}, Binary True State: {'File_pri': 0.01283339063230493}
+  computed/file2_43/result/file2_43PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6146770962416754}, Binary True State: {'File_pri': 0.019740916232984573}
+  computed/file2_43/result/file2_43PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.57483850769084}, Binary True State: {'File_pub': 0.01798421610353118}
+  computed/file2_43/result/file2_43PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5402139670074515}, Binary True State: {'File_pri': 0.017052636929080656}
+  computed/file2_75/result/file2_75PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_72/result/file2_72PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6121417715625506}, Binary True State: {'File_pri': 0.0195735743963934}
+  computed/file2_72/result/file2_72PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.38256071604071507}, Binary True State: {'File_pri': 0.01249939690670232}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6266803137136949}, Binary True State: {'File_pri': 0.021537820525884044}
+  computed/file2_9/result/file2_9PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5880490449605014}, Binary True State: {'File_pub': 0.019482977222781583}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5591230558439632}, Binary True State: {'File_pub': 0.0165196515114574}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5241228517740195}, Binary True State: {'File_pri': 0.015782427341406446}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4937216758034224}, Binary True State: {'File_pub': 0.015117156717580738}
+  computed/file2_7/result/file2_7PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.46712168954891364}, Binary True State: {'File_pri': 0.014500367122875057}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6203028717206788}, Binary True State: {'File_pri': 0.02071102080519993}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5812961133119438}, Binary True State: {'File_pub': 0.018792610461468184}
+  computed/file2_32/result/file2_32PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.547216941969525}, Binary True State: {'File_pri': 0.017748893120744458}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5591230558439632}, Binary True State: {'File_pub': 0.0165196515114574}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5241228517740195}, Binary True State: {'File_pri': 0.015782427341406446}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.4937216758034224}, Binary True State: {'File_pub': 0.015117156717580738}
+  computed/file2_35/result/file2_35PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.46712168954891364}, Binary True State: {'File_pri': 0.014500367122875057}
+  computed/file2_68/result/file2_68PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_92/result/file2_92PostProcessed_Result.json - Compound Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.600802307272132}, Binary True State: {'File_pub': 0.020226721847392937}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.6272321205714926}, Binary True State: {'File_pri': 0.02155225576305564}
+  computed/file2_93/result/file2_93PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5885231394663065}, Binary True State: {'File_pub': 0.019495488999899502}
+  computed/file2_67/result/file2_67PostProcessed_Result.json - Compound Error, Previous State: Folder_pri, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.41559577039435314}, Binary True State: {'File_pub': 0.013485759252573781}
+  computed/file2_58/result/file2_58PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.5339776178689287}, Binary True State: {'File_pri': 0.012229980334432677}
+  computed/file2_58/result/file2_58PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.492264823119001}, Binary True State: {'File_pub': 0.011652717203906149}
+  computed/file2_58/result/file2_58PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.45711941512754184}, Binary True State: {'File_pri': 0.011493287732370683}
+  computed/file2_56/result/file2_56PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 0.599700213283251}, Binary True State: {'File_pri': 0.0179917982007618}
+  computed/file2_56/result/file2_56PostProcessed_Result.json - Compound Error, Previous State: Folder_pub, Previous Action: Toggle, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 0.5591230558439632}, Binary True State: {'File_pub': 0.0165196515114574}

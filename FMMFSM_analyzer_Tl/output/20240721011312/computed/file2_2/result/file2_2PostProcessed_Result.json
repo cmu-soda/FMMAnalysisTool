@@ -1,0 +1,94 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.606268403544049
+            },
+            "Binary True State": {
+                "File_pub": 0.029440063388434634
+            }
+        },
+        {
+            "Step": 4,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.5573022164666694
+            },
+            "Binary True State": {
+                "File_pri": 0.014011471702490619
+            }
+        },
+        {
+            "Step": 5,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.575894644515875
+            },
+            "Binary True State": {
+                "File_pub": 0.039303074798853754
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.5410127192455649
+            },
+            "Binary True State": {
+                "File_pri": 0.01761037115464481
+            }
+        }
+    ]
+}

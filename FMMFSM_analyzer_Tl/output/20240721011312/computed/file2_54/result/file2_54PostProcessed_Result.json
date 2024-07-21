@@ -1,0 +1,150 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 7,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "States": {
+                "File_pri": 0.8952881839035398,
+                "File_pub": 0.8583994423446254
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "States": {
+                "File_pri": 0.9024344624861498,
+                "File_pub": 0.8842379768905085
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "States": {
+                "File_pri": 0.90218444759332,
+                "File_pub": 0.8932022273301561
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "File_pri",
+            "States": {
+                "File_pri": 0.9017237494470149,
+                "File_pub": 0.897300976186888
+            }
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 6,
+            "Action": "Select_file",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9549555558868338,
+                "Insecure": 0.9296229077897357
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Select_file",
+            "FMMFSM Task Labels": {
+                "Secure": 0.953058467725499,
+                "Insecure": 0.9405862434469059
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_file",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9531117497572911,
+                "Insecure": 0.9469705662799922
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_file",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9529388813773735,
+                "Insecure": 0.9499244307237825
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Secure": 0.9528471174792934,
+                "Insecure": 0.9513681740331309
+            }
+        }
+    ]
+}

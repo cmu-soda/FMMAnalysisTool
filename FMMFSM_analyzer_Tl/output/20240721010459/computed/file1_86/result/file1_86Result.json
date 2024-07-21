@@ -1,0 +1,140 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8456754149140115
+            },
+            "Binary True State": {
+                "File_pub": 0.4037950926036671
+            }
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8380678207290053
+            },
+            "Binary True State": {
+                "File_pub": 0.42840589295746123
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8309251125132506
+            },
+            "Binary True State": {
+                "File_pub": 0.4508110679036944
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        }
+    ],
+    "Dominant Blocking State Check": [
+        {
+            "Step": 2,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        }
+    ],
+    "Task Label Mismatch Check": [
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        }
+    ]
+}

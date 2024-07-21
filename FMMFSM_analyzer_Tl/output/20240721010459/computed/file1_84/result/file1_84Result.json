@@ -1,0 +1,158 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8947561195139785
+            },
+            "Binary True State": {
+                "File_pub": 0.8249081385975656
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 9,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.8593416236592595,
+                "Folder_pub": 0.8272166647389801
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pub",
+            "States": {
+                "Folder_pri": 0.7670077948363652,
+                "Folder_pub": 0.7915050704966713
+            }
+        }
+    ],
+    "Dominant Blocking State Check": [
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        }
+    ],
+    "Task Label Mismatch Check": [
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM Task Labels": {
+                "Secure": 0.950091652358725,
+                "Insecure": 0.9232031152922557
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9368317919933961,
+                "Insecure": 0.9260524705616562
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9369134079415361,
+                "Insecure": 0.9129236844727924
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Toggle",
+            "FMMFSM Task Labels": {
+                "Secure": 0.943570363892422,
+                "Insecure": 0.9322593192267618
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Secure": 0.9231996610848436,
+                "Insecure": 0.9232057995873808
+            }
+        }
+    ]
+}

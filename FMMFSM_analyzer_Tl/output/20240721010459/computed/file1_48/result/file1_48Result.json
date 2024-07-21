@@ -1,0 +1,239 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8816198864378638
+            },
+            "Binary True State": {
+                "File_pub": 0.6566830007205945
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM State": "File_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "File_pri": 0.8552363360266763
+            },
+            "Binary True State": {
+                "File_pub": 0.8018194143852643
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.8512074648536551
+            },
+            "Binary True State": {
+                "Folder_pub": 0.8319732711159673
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.8820036189313791
+            },
+            "Binary True State": {
+                "Folder_pub": 0.8718924025944595
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.8944732884124904
+            },
+            "Binary True State": {
+                "Folder_pub": 0.8894837162994429
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.900406150228525
+            },
+            "Binary True State": {
+                "Folder_pub": 0.8980085121570145
+            }
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.8512074648536551,
+                "Folder_pub": 0.8319732711159673
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.8820036189313791,
+                "Folder_pub": 0.8718924025944595
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.8944732884124904,
+                "Folder_pub": 0.8894837162994429
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.900406150228525,
+                "Folder_pub": 0.8980085121570145
+            }
+        }
+    ],
+    "Dominant Blocking State Check": [
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri"
+        }
+    ],
+    "Task Label Mismatch Check": [
+        {
+            "Step": 5,
+            "Action": "Select_file",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Label": "Secure",
+            "System Task Label": "Insecure"
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 5,
+            "Action": "Select_file",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9126786646388888,
+                "Insecure": 0.8731811026140118
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9284238590908311,
+                "Insecure": 0.9127004025301033
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9405313294832258,
+                "Insecure": 0.9335852529783901
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9500893920624499,
+                "Insecure": 0.9467427786913665
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Select_folder",
+            "FMMFSM Task Labels": {
+                "Secure": 0.9546175243885151,
+                "Insecure": 0.9530342639471839
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Secure": 0.9567869765852056,
+                "Insecure": 0.9560415441045886
+            }
+        }
+    ]
+}

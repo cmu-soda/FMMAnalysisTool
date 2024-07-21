@@ -1,0 +1,118 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_file",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Select_file",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Toggle",
+            "FMMFSM State": "File_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.606268403544049
+            },
+            "Binary True State": {
+                "File_pub": 0.029440063388434634
+            }
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.5573022164666694
+            },
+            "Binary True State": {
+                "File_pri": 0.014011471702490619
+            }
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.5157038074620945
+            },
+            "Binary True State": {
+                "File_pub": 0.013158705433656825
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.4804026746079654
+            },
+            "Binary True State": {
+                "File_pri": 0.01283339063230493
+            }
+        },
+        {
+            "Step": 7,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.45028472094137617
+            },
+            "Binary True State": {
+                "File_pub": 0.012502272461178965
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.4244198580152575
+            },
+            "Binary True State": {
+                "File_pri": 0.012162717605048723
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pub": 0.4020453382223851
+            },
+            "Binary True State": {
+                "File_pub": 0.011822741906236112
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "Folder_pri",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "Folder_pri": 0.38254026613206327
+            },
+            "Binary True State": {
+                "File_pri": 0.011487825654435735
+            }
+        }
+    ]
+}

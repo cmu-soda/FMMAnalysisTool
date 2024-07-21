@@ -1,0 +1,82 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Select_folder",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "Result": "True"
+        }
+    ],
+    "Dominant Blocking State Check": [
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 4,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "States": {
+                "Folder_pri": 0.7633186476424478,
+                "Folder_pub": 0.7826002076455651
+            }
+        },
+        {
+            "Step": 5,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pri",
+            "States": {
+                "Folder_pri": 0.7279159536438797,
+                "Folder_pub": 0.7131674906298493
+            }
+        },
+        {
+            "Step": 6,
+            "Action": "Toggle",
+            "FMMFSM State": "Folder_pub",
+            "States": {
+                "Folder_pri": 0.6710013186548667,
+                "Folder_pub": 0.6823419165446913
+            }
+        }
+    ]
+}

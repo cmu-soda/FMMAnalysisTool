@@ -9,7 +9,7 @@ def load_json_file(file_path):
 '''
 Check for dominant error state:
 The human thinks the state category the automation is most possibly in 
-does not match the states actual category.
+does not match the state's actual category.
 '''
 def dominant_error_state_check(fuzzy_data, system_data):
     results = []
@@ -114,19 +114,24 @@ def task_label_mismatch_check(task_membership_history, system_data):
     return mismatch_steps
 
 '''
-TODO: Implement the following checks
-Check for threshold error state:
-The human thinks that an automation state category (task label) that mismatches 
-the actual automation category 
-is possible enough (above an analyst specified threshold) to cause trouble.
+Check for task label nondeterministic confusion:
+The human thinks two or more task labels are (effectively) equally the most possible.
 '''
+def task_label_nondeterministic_confusion_check(task_membership_history, threshold=0.05):
+    confusion_steps = []
+    for index, step in enumerate(task_membership_history):
+        # Find the maximum membership value
+        max_value = max(step.values())
 
-'''
-TODO: Implement the following checks
-Check for threshold blocking state:
-The human thinks that an automation state 
-where there is blocking is possible enough (above a specified threshold) to cause trouble.
-'''
+        # Find all task labels that are within the threshold of the maximum value
+        near_max_labels = {label: value for label, value in step.items()
+                           if max_value - value <= threshold * max_value}
+
+        # Check if multiple task labels are within this range
+        if len(near_max_labels) > 1:
+            confusion_steps.append((index + 1, near_max_labels))
+
+    return confusion_steps
 
 def get_fmmfsm_state(membership):
     return max(membership, key=membership.get) if membership else None
@@ -150,6 +155,7 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
     dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
     dominant_task_labels_blocking_states = dominant_task_labels_blocking_state_check(blocking_history, task_membership_history)
     task_label_mismatches = task_label_mismatch_check(task_membership_history, system_data)
+    task_label_nondeterministic_confusions = task_label_nondeterministic_confusion_check(task_membership_history)
 
     results = {}
 
@@ -201,6 +207,12 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
         results["Task Label Mismatch Check"] = [
             {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM Task Label": fmmfsm_task_label, "System Task Label": system_task_label}
             for step, fmmfsm_task_label, system_task_label in task_label_mismatches
+        ]
+
+    if task_label_nondeterministic_confusions:
+        results["Task Label Nondeterministic Confusion Check"] = [
+            {"Step": step - 1, "Action": expanded_schedule[step - 1] if step - 1 < len(expanded_schedule) else None, "FMMFSM Task Labels": labels}
+            for step, labels in task_label_nondeterministic_confusions
         ]
 
     result_path = os.path.join(result_directory, filename)

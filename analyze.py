@@ -19,10 +19,6 @@ def parse_arguments():
     return args
 
 def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, use_tl):
-    if args.tl:
-        print("Task labels related checks is activated.")
-    else:
-        print("Task labels related checks is not relevant.")
     computed_folder = os.path.join(experiment_folder, 'computed')
     
     if not os.path.exists(computed_folder):
@@ -53,7 +49,8 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
         "Vacuous Confusion Check": 0,
         "Dominant Blocking State Check": 0,
         "Dominant Task Labels Blocking State Check": 0,
-        "Task Label Mismatch Check": 0
+        "Task Label Mismatch Check": 0,
+        "Task Label Nondeterministic Confusion Check": 0  # New error type
     }
 
     state_errors = defaultdict(lambda: defaultdict(int))
@@ -63,6 +60,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
     blocking_errors = defaultdict(int)
     task_label_mismatch_errors = defaultdict(int)
     dominant_task_labels_blocking_errors = defaultdict(int)
+    task_label_nondeterministic_confusion_errors = defaultdict(int)  # New error tracking
     compound_errors_count = 0
     compound_errors_by_previous = defaultdict(lambda: defaultdict(int))
     error_files = defaultdict(list)
@@ -134,6 +132,13 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
                             error_info = {"file": relative_path, "FMMFSM Task Label": fmmfsm_task_label, "System Task Label": system_task_label}
                             task_label_mismatch_errors[(fmmfsm_task_label, system_task_label)] += 1
                             error_files[error_type].append(error_info)
+                        elif error_type == "Task Label Nondeterministic Confusion Check":
+                            has_error = True
+                            error_types[error_type] += 1
+                            task_labels = entry.get("FMMFSM Task Labels")
+                            error_info = {"file": relative_path, "FMMFSM Task Labels": task_labels}
+                            task_label_nondeterministic_confusion_errors[tuple(task_labels.keys())] += 1
+                            error_files[error_type].append(error_info)
                         else:
                             if entry.get("Result") != "True":
                                 has_error = True
@@ -204,6 +209,11 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
         for (fmmfsm_task_label, system_task_label), count in task_label_mismatch_errors.items():
             result_lines.append(f"FMMFSM Task Label {fmmfsm_task_label}, System Task Label {system_task_label}: {count} errors\n")
 
+    if task_label_nondeterministic_confusion_errors:
+        result_lines.append("\nTask Label Nondeterministic Confusion Check by FMMFSM Task Labels:\n")
+        for task_labels, count in task_label_nondeterministic_confusion_errors.items():
+            result_lines.append(f"Task Labels {task_labels}: {count} errors\n")
+
     result_lines.append("\n\nErrors by Files:\n")
     for error_type, files in error_files.items():
         result_lines.append(f"\n{error_type}:\n")
@@ -229,6 +239,9 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
                 fmmfsm_task_label = error_info["FMMFSM Task Label"]
                 system_task_label = error_info["System Task Label"]
                 result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
+            elif error_type == "Task Label Nondeterministic Confusion Check":
+                task_labels = error_info["FMMFSM Task Labels"]
+                result_lines.append(f"  {file} - Task Labels: {task_labels}\n")
             else:
                 state = error_info["state"]
                 action = error_info["action"]
