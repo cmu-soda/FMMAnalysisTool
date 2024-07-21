@@ -79,14 +79,14 @@ def load_configurations(file_path):
         content = file.read()
         print(content)
         data = json.loads(content)
-    return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['input_schedule']
+    return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['action_schedule']
 
-def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule):
+def evolve_state_over_time_with_blocking(initial_state_memberships, input_fuzzified, transition_probabilities, action_schedule):
     current_state_memberships = initial_state_memberships
     history = [current_state_memberships]
     blocking_history = []
 
-    for input_event, steps in input_schedule:
+    for input_event, steps in action_schedule:
         for _ in range(steps):
             B, C = calculate_blocking_states(
                 current_state_memberships, 
@@ -117,14 +117,14 @@ file_name = 'degani2.json'
 config_file = file_path + file_name
 
 # Load configurations
-initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule = load_configurations(config_file)
+initial_state_memberships, input_fuzzified, transition_probabilities, action_schedule = load_configurations(config_file)
 
 # Evolve state over time with blocking states
 history, blocking_history = evolve_state_over_time_with_blocking(
     initial_state_memberships, 
     input_fuzzified, 
     transition_probabilities, 
-    input_schedule
+    action_schedule
 )
 
 # Print the history and blocking states

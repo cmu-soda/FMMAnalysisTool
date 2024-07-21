@@ -128,17 +128,17 @@ def load_configurations(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
         data = json.loads(content)
-    return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['input_schedule'], data['task_labels']
+    return data['initial_state_memberships'], data['input_fuzzified'], data['transition_probabilities'], data['action_schedule'], data['task_labels']
 
 def evolve_state_over_time_from_file(config_file):
-    initial_state_memberships, input_fuzzified, transition_probabilities, input_schedule, task_labels = load_configurations(config_file)
+    initial_state_memberships, input_fuzzified, transition_probabilities, action_schedule, task_labels = load_configurations(config_file)
 
     current_state_memberships = initial_state_memberships
     history = [current_state_memberships]
     blocking_history = []
     task_membership_history = [calculate_task_memberships(current_state_memberships, task_labels)]
 
-    for input_event, steps in input_schedule:
+    for input_event, steps in action_schedule:
         for _ in range(steps):
             B, C = calculate_blocking_states(current_state_memberships, input_fuzzified, transition_probabilities, input_event)
             current_task_memberships = calculate_task_memberships(current_state_memberships, task_labels)

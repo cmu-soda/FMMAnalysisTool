@@ -86,7 +86,7 @@ def run_simulation(experiment_directory, args, iteration, modules):
 
     # Generate a random schedule and add it to both configurations
     random_schedule = generate_random_schedule(input_options, args.num)
-    FMMFSM_data['input_schedule'] = random_schedule
+    FMMFSM_data['action_schedule'] = random_schedule
     system_data['action_schedule'] = random_schedule
     
     config_directory = os.path.join(experiment_directory, 'config/')

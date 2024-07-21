@@ -1,5 +1,5 @@
 # FMMFSM_simulator
-There are three folders in this FMMFSM simulator tool: FMMFSM_tester, FMMFSM_analyzer, and FMMFSM_analyzer_Tl.
+There are three folders in this FMMFSM simulator: FMMFSM_tester, FMMFSM_analyzer, and FMMFSM_analyzer_Tl.
 There are three code files respectively for each folder.
 - FMMFSM.py: Code for calculating the degree of membership of an FMMFSM.
 - discreteSystemModel.py: Code for simulating the state transitions of a system model.
