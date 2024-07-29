@@ -1,0 +1,143 @@
+{
+    "initial_state_memberships": {
+        "Folder_pri": 0.8,
+        "Folder_pub": 0.2,
+        "File_pri": 0.5,
+        "File_pub": 0.1
+    },
+    "input_fuzzified": {
+        "Toggle": {
+            "Toggle": 1,
+            "Select_file": 0,
+            "Select_folder": 0
+        },
+        "Select_file": {
+            "Toggle": 0,
+            "Select_file": 1,
+            "Select_folder": 0
+        },
+        "Select_folder": {
+            "Toggle": 0,
+            "Select_file": 0,
+            "Select_folder": 1
+        }
+    },
+    "transition_probabilities": {
+        "Folder_pri": {
+            "Toggle": {
+                "Folder_pri": 0,
+                "Folder_pub": 1,
+                "File_pri": 0,
+                "File_pub": 0
+            },
+            "Select_file": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 1,
+                "File_pub": 0
+            },
+            "Select_folder": {
+                "Folder_pri": 1,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 0
+            }
+        },
+        "Folder_pub": {
+            "Toggle": {
+                "Folder_pri": 1,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 0
+            },
+            "Select_file": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 1
+            },
+            "Select_folder": {
+                "Folder_pri": 0,
+                "Folder_pub": 1,
+                "File_pri": 0,
+                "File_pub": 0
+            }
+        },
+        "File_pri": {
+            "Toggle": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 1,
+                "File_pub": 0
+            },
+            "Select_file": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 1,
+                "File_pub": 0
+            },
+            "Select_folder": {
+                "Folder_pri": 1,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 0
+            }
+        },
+        "File_pub": {
+            "Toggle": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 1
+            },
+            "Select_file": {
+                "Folder_pri": 0,
+                "Folder_pub": 0,
+                "File_pri": 0,
+                "File_pub": 1
+            },
+            "Select_folder": {
+                "Folder_pri": 0,
+                "Folder_pub": 1,
+                "File_pri": 0,
+                "File_pub": 0
+            }
+        }
+    },
+    "task_labels": {
+        "Secure": {
+            "Folder_pri": 1,
+            "Folder_pub": 0,
+            "File_pri": 1,
+            "File_pub": 0
+        },
+        "Insecure": {
+            "Folder_pri": 0,
+            "Folder_pub": 1,
+            "File_pri": 0,
+            "File_pub": 1
+        }
+    },
+    "action_schedule": [
+        [
+            "Select_file",
+            1
+        ],
+        [
+            "Select_folder",
+            2
+        ],
+        [
+            "Select_folder",
+            3
+        ],
+        [
+            "Select_file",
+            3
+        ],
+        [
+            "Toggle",
+            1
+        ]
+    ]
+}
