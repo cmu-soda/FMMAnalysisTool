@@ -74,11 +74,17 @@ def dominant_blocking_state_check(blocking_history, system_data):
         B = blocking['B']
         C = blocking['C']
         if B > C:
-            current_task_label = current_system_state['task_label']
-            if i + 1 < len(system_data):
-                next_task_label = system_data[i + 1]['task_label']
-                if current_task_label != next_task_label:
-                    blocking_steps.append(i)
+            # Filter out non-numeric values and find the max state
+            numeric_states = {k: v for k, v in current_system_state.items() if isinstance(v, (int, float))}
+            if numeric_states:
+                current_state = max(numeric_states, key=numeric_states.get)
+                if i + 1 < len(system_data):
+                    next_system_state = system_data[i + 1]
+                    numeric_next_states = {k: v for k, v in next_system_state.items() if isinstance(v, (int, float))}
+                    if numeric_next_states:
+                        next_state = max(numeric_next_states, key=numeric_next_states.get)
+                        if current_state != next_state:
+                            blocking_steps.append(i)
     return blocking_steps
 
 '''
@@ -86,16 +92,17 @@ Check for dominant task labels blocking state:
 The human thinks the most possible task label(s) 
 does not allow for a specific action that would cause a system change.
 '''
-def dominant_task_labels_blocking_state_check(blocking_history, task_membership_history):
+def dominant_task_labels_blocking_state_check(blocking_history, system_data):
     blocking_steps = []
-    for i, blocking in enumerate(blocking_history):
+    for i, (blocking, current_system_state) in enumerate(zip(blocking_history, system_data)):
         B_task = blocking['B_task']
         C_task = blocking['C_task']
         if B_task > C_task:
-            current_task_label = max(task_membership_history[i], key=task_membership_history[i].get)
-            if i + 1 < len(task_membership_history):
-                next_task_label = max(task_membership_history[i + 1], key=task_membership_history[i + 1].get)
-                if current_task_label != next_task_label:
+            # Check if 'task_label' exists in current_system_state
+            current_task_label = current_system_state.get('task_label')
+            if current_task_label is not None and i + 1 < len(system_data):
+                next_task_label = system_data[i + 1].get('task_label')
+                if next_task_label is not None and current_task_label != next_task_label:
                     blocking_steps.append(i)
     return blocking_steps
 
@@ -153,7 +160,7 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
     nondeterministic_confusions = nondeterministic_confusion_check(state_membership_history)
     vacuous_confusions = vacuous_confusion_check(state_membership_history)
     dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
-    dominant_task_labels_blocking_states = dominant_task_labels_blocking_state_check(blocking_history, task_membership_history)
+    dominant_task_labels_blocking_states = dominant_task_labels_blocking_state_check(blocking_history, system_data)
     task_label_mismatches = task_label_mismatch_check(task_membership_history, system_data)
     task_label_nondeterministic_confusions = task_label_nondeterministic_confusion_check(task_membership_history)
 

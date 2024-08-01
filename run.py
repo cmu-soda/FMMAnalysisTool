@@ -56,11 +56,18 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Monte Carlo simulation for FMMFSM")
     parser.add_argument("FMMFSM_config_file", help="Path to the input FMMFSM JSON configuration file")
     parser.add_argument("system_config_file", help="Path to the input system JSON configuration file")
-    parser.add_argument("--num", type=int, help="Total number of steps in the generated path", required=True)
-    parser.add_argument("--iter", type=int, help="Number of iterations to run", required=True)
+    parser.add_argument("--num", type=int, help="Total number of steps in the generated path")
+    parser.add_argument("--iter", type=int, help="Number of iterations to run")
     parser.add_argument("--postp", action="store_true", help="Enable post-processing to remove steps after blocking states are found")
     parser.add_argument("--tl", action="store_true", help="Enable task labels (only use this if you include task labels in both the FMMFSM and the system configurations)")
+    parser.add_argument("--test", action="store_true", help="Test mode, use the action schedule provided in the config file")
     args = parser.parse_args()
+
+    if not args.test and args.iter is None:
+        parser.error("--iter is required unless --test is specified")
+    if args.test and args.num is not None:
+        parser.error("--num should not be specified in test mode")
+
     return args
 
 def find_next_index(directory, base_filename):
@@ -82,13 +89,16 @@ def run_simulation(experiment_directory, args, iteration, modules):
     FMMFSM_data = load_configurations(args.FMMFSM_config_file)
     system_data = load_configurations(args.system_config_file)
     
-    input_options = list(FMMFSM_data['input_fuzzified'].keys())
+    if not args.test:
+        input_options = list(FMMFSM_data['input_fuzzified'].keys())
+        # Generate a random schedule and add it to both configurations
+        random_schedule = generate_random_schedule(input_options, args.num)
+        FMMFSM_data['action_schedule'] = random_schedule
+        system_data['action_schedule'] = random_schedule
+    else:
+        # Use the action schedule provided in the config file
+        random_schedule = FMMFSM_data['action_schedule']
 
-    # Generate a random schedule and add it to both configurations
-    random_schedule = generate_random_schedule(input_options, args.num)
-    FMMFSM_data['action_schedule'] = random_schedule
-    system_data['action_schedule'] = random_schedule
-    
     config_directory = os.path.join(experiment_directory, 'config/')
     os.makedirs(config_directory, exist_ok=True)
     
@@ -195,7 +205,8 @@ def main():
     log_execution()  # Log the execution command
 
     first_file_logged = False
-    for i in range(args.iter):
+    iterations = args.iter if args.iter is not None else 1
+    for i in range(iterations):
         run_simulation(experiment_directory, args, i, modules)
         if not first_file_logged:
             logging.info(f"First file created: {find_next_index(experiment_directory + 'config/', os.path.splitext(os.path.basename(args.FMMFSM_config_file))[0]) - 1}")

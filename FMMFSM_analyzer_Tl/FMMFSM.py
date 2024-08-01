@@ -158,12 +158,25 @@ def evolve_state_over_time_from_file(config_file):
     }
     return results
 
+def convert_numpy(obj):
+    if isinstance(obj, np.integer):
+        return int(obj)
+    if isinstance(obj, np.floating):
+        return float(obj)
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, dict):
+        return {k: convert_numpy(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [convert_numpy(v) for v in obj]
+    return obj
+
 def save_results_to_file(folder_path, data, input_filename):
     base_filename = os.path.basename(input_filename)
     base_filename = os.path.splitext(base_filename)[0]
     output_filename = f"{base_filename}FMMFSM_Result.json"
     os.makedirs(folder_path, exist_ok=True)
     output_file_path = os.path.join(folder_path, output_filename)
-
+    converted_data = convert_numpy(data)
     with open(output_file_path, 'w') as f:
-        json.dump(data, f, indent=4)
+        json.dump(converted_data, f, indent=4)
