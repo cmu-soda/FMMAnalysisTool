@@ -140,10 +140,24 @@ def task_label_nondeterministic_confusion_check(task_membership_history, thresho
 
     return confusion_steps
 
+'''
+Check for task label mismatch with threshold:
+The human thinks the task label category the automation is most possibly in 
+does not match the system task label, considering a threshold for mismatch.
+'''
+def threshold_task_label_mismatch_check(task_membership_history, system_data, threshold):
+    mismatch_steps = []
+    for i, task_membership in enumerate(task_membership_history):
+        fmmfsm_task_label = max(task_membership, key=task_membership.get)
+        system_task_label = system_data[i]['task_label']
+        if abs(task_membership[fmmfsm_task_label] - task_membership[system_task_label]) > threshold:
+            mismatch_steps.append((i, fmmfsm_task_label, system_task_label))
+    return mismatch_steps
+
 def get_fmmfsm_state(membership):
     return max(membership, key=membership.get) if membership else None
 
-def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule):
+def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule, threshold=0.1):
     fuzzy_data = load_json_file(fuzzy_data_path)
     system_data = load_json_file(system_data_path)
 
@@ -162,6 +176,7 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
     dominant_blocking_states = dominant_blocking_state_check(blocking_history, system_data)
     dominant_task_labels_blocking_states = dominant_task_labels_blocking_state_check(blocking_history, system_data)
     task_label_mismatches = task_label_mismatch_check(task_membership_history, system_data)
+    threshold_task_label_mismatches = threshold_task_label_mismatch_check(task_membership_history, system_data, threshold)
     task_label_nondeterministic_confusions = task_label_nondeterministic_confusion_check(task_membership_history)
 
     results = {}
@@ -214,6 +229,12 @@ def check_and_save_results(fuzzy_data_path, system_data_path, expanded_schedule)
         results["Task Label Mismatch Check"] = [
             {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM Task Label": fmmfsm_task_label, "System Task Label": system_task_label}
             for step, fmmfsm_task_label, system_task_label in task_label_mismatches
+        ]
+
+    if threshold_task_label_mismatches:
+        results["Threshold Task Label Mismatch Check"] = [
+            {"Step": step, "Action": expanded_schedule[step] if step < len(expanded_schedule) else None, "FMMFSM Task Label": fmmfsm_task_label, "System Task Label": system_task_label}
+            for step, fmmfsm_task_label, system_task_label in threshold_task_label_mismatches
         ]
 
     if task_label_nondeterministic_confusions:
