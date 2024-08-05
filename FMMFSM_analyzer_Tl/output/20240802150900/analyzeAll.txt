@@ -1,0 +1,458 @@
+Total result files found: 100
+Total files analyzed: 100
+Dominant Error State Check: 25.00% of files contain this error
+Nondeterministic Confusion Check: 0.00% of files contain this error
+Vacuous Confusion Check: 0.00% of files contain this error
+Dominant Blocking State Check: 25.00% of files contain this error
+Dominant Task Labels Blocking State Check: 25.00% of files contain this error
+Task Label Mismatch Check: 25.00% of files contain this error
+Task Label Nondeterministic Confusion Check: 0.00% of files contain this error
+Threshold Task Label Mismatch Check: 25.00% of files contain this error
+
+Total Number of Each Error Type:
+Dominant Error State Check (Compound Errors): 29
+Dominant Error State Check: 48 occurrences
+Nondeterministic Confusion Check: 0 occurrences
+Vacuous Confusion Check: 0 occurrences
+Dominant Blocking State Check: 83 occurrences
+Dominant Task Labels Blocking State Check: 83 occurrences
+Task Label Mismatch Check: 77 occurrences
+Task Label Nondeterministic Confusion Check: 0 occurrences
+Threshold Task Label Mismatch Check: 77 occurrences
+
+Dominant Error Check by Previous State and Previous Action:
+Previous State File_pub, Previous Action Toggle -> State File_pub: 46 errors
+Previous State File_pri, Previous Action Toggle -> State File_pri: 2 errors
+
+Compound Errors by Previous State and Previous Action:
+Previous State File_pub, Previous Action Select_folder -> State Folder_pub: 16 compound errors
+Previous State File_pub, Previous Action Select_folder -> State Folder_pri: 6 compound errors
+Previous State File_pub, Previous Action Select_file -> State File_pub: 7 compound errors
+
+Dominant Blocking State Check by State and Action:
+State File_pub, Action Toggle: 80 errors
+State File_pri, Action Toggle: 3 errors
+
+Dominant Task Labels Blocking State Check by State and Action:
+State File_pub, Action Toggle: 80 errors
+State File_pri, Action Toggle: 3 errors
+
+Task Label Mismatch Check by FMMFSM Task Label and System Task Label:
+FMMFSM Task Label Insecure, System Task Label Secure: 69 errors
+FMMFSM Task Label Secure, System Task Label Insecure: 8 errors
+
+Threshold Task Label Mismatch Check by FMMFSM Task Label and System Task Label:
+FMMFSM Task Label Insecure, System Task Label Secure: 69 errors
+FMMFSM Task Label Secure, System Task Label Insecure: 8 errors
+
+
+Errors by Files:
+
+Dominant Error State Check:
+  computed/file4_0/result/file4_0Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_59/result/file4_59Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_59/result/file4_59Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_95/result/file4_95Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_93/result/file4_93Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_93/result/file4_93Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_93/result/file4_93Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_69/result/file4_69Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_69/result/file4_69Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_69/result/file4_69Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_74/result/file4_74Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pri, Fuzzy Max State: {'File_pri': 1}, Binary True State: {'File_pub': 0}
+  computed/file4_74/result/file4_74Result.json - Initial Error, Previous State: File_pri, Previous Action: Toggle, FMMFSM State: File_pri, Fuzzy Max State: {'File_pri': 1}, Binary True State: {'File_pub': 0}
+  computed/file4_87/result/file4_87Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_87/result/file4_87Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_87/result/file4_87Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_29/result/file4_29Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_29/result/file4_29Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_29/result/file4_29Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_16/result/file4_16Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_18/result/file4_18Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_18/result/file4_18Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_19/result/file4_19Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_28/result/file4_28Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_17/result/file4_17Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_3/result/file4_3Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_99/result/file4_99Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_24/result/file4_24Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_83/result/file4_83Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_83/result/file4_83Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_83/result/file4_83Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_14/result/file4_14Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_14/result/file4_14Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_49/result/file4_49Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_49/result/file4_49Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_49/result/file4_49Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_71/result/file4_71Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_71/result/file4_71Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_85/result/file4_85Result.json - Initial Error, Previous State: N/A, Previous Action: N/A, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_85/result/file4_85Result.json - Initial Error, Previous State: File_pub, Previous Action: Toggle, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+
+Dominant Blocking State Check:
+  computed/file4_0/result/file4_0Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_95/result/file4_95Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_16/result/file4_16Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_16/result/file4_16Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_19/result/file4_19Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_19/result/file4_19Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_28/result/file4_28Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_17/result/file4_17Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_17/result/file4_17Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_3/result/file4_3Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_99/result/file4_99Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_24/result/file4_24Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+
+Dominant Task Labels Blocking State Check:
+  computed/file4_0/result/file4_0Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_59/result/file4_59Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_95/result/file4_95Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_93/result/file4_93Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_69/result/file4_69Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_74/result/file4_74Result.json - FMMFSM State: File_pri, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_87/result/file4_87Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_29/result/file4_29Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_16/result/file4_16Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_16/result/file4_16Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_18/result/file4_18Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_19/result/file4_19Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_19/result/file4_19Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_10/result/file4_10Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_28/result/file4_28Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_17/result/file4_17Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_17/result/file4_17Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_3/result/file4_3Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_63/result/file4_63Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_99/result/file4_99Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_12/result/file4_12Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_23/result/file4_23Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_24/result/file4_24Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_83/result/file4_83Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_14/result/file4_14Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_49/result/file4_49Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_71/result/file4_71Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+  computed/file4_85/result/file4_85Result.json - FMMFSM State: File_pub, Action: Toggle
+
+Task Label Mismatch Check:
+  computed/file4_0/result/file4_0Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_59/result/file4_59Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_59/result/file4_59Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_74/result/file4_74Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_74/result/file4_74Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_16/result/file4_16Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_18/result/file4_18Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_18/result/file4_18Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_19/result/file4_19Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_28/result/file4_28Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_17/result/file4_17Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_99/result/file4_99Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_24/result/file4_24Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_14/result/file4_14Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_14/result/file4_14Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_71/result/file4_71Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_71/result/file4_71Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_85/result/file4_85Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_85/result/file4_85Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+
+Threshold Task Label Mismatch Check:
+  computed/file4_0/result/file4_0Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_59/result/file4_59Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_59/result/file4_59Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_95/result/file4_95Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_93/result/file4_93Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_69/result/file4_69Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_74/result/file4_74Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_74/result/file4_74Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_87/result/file4_87Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_29/result/file4_29Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_16/result/file4_16Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_18/result/file4_18Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_18/result/file4_18Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_19/result/file4_19Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_10/result/file4_10Result.json - FMMFSM Task Label: Secure, System Task Label: Insecure
+  computed/file4_28/result/file4_28Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_17/result/file4_17Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_3/result/file4_3Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_63/result/file4_63Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_99/result/file4_99Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_12/result/file4_12Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_23/result/file4_23Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_24/result/file4_24Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_83/result/file4_83Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_14/result/file4_14Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_14/result/file4_14Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_49/result/file4_49Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_71/result/file4_71Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_71/result/file4_71Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_85/result/file4_85Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+  computed/file4_85/result/file4_85Result.json - FMMFSM Task Label: Insecure, System Task Label: Secure
+
+Dominant Error State Check (Compound Errors) by Files:
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_95/result/file4_95Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_69/result/file4_69Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_10/result/file4_10Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pri, Fuzzy Max State: {'Folder_pri': 1}, Binary True State: {'Folder_pub': 0}
+  computed/file4_3/result/file4_3Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_3/result/file4_3Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_3/result/file4_3Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_3/result/file4_3Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_3/result/file4_3Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_63/result/file4_63Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_12/result/file4_12Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_folder, FMMFSM State: Folder_pub, Fuzzy Max State: {'Folder_pub': 1}, Binary True State: {'Folder_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
+  computed/file4_23/result/file4_23Result.json - Compound Error, Previous State: File_pub, Previous Action: Select_file, FMMFSM State: File_pub, Fuzzy Max State: {'File_pub': 1}, Binary True State: {'File_pri': 0}
