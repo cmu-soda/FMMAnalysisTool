@@ -1,0 +1,98 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "Gas",
+            "FMMFSM State": "Active",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": null,
+            "FMMFSM State": "Active",
+            "Result": "True"
+        }
+    ],
+    "Task Label Mismatch Check": [
+        {
+            "Step": 9,
+            "Action": null,
+            "FMMFSM Task Label": "Parking",
+            "System Task Label": "Driving"
+        }
+    ],
+    "Task Label Nondeterministic Confusion Check": [
+        {
+            "Step": 7,
+            "Action": "Gas",
+            "FMMFSM Task Labels": {
+                "Driving": 0.5658519801952099,
+                "Parking": 0.537831897137951
+            }
+        },
+        {
+            "Step": 8,
+            "Action": "Gas",
+            "FMMFSM Task Labels": {
+                "Driving": 0.5535163414820725,
+                "Parking": 0.5429697980571018
+            }
+        },
+        {
+            "Step": 9,
+            "Action": null,
+            "FMMFSM Task Labels": {
+                "Driving": 0.5442907828659647,
+                "Parking": 0.545866679654399
+            }
+        }
+    ]
+}
