@@ -142,41 +142,132 @@ def post_process_results(result_log_file):
     with open(result_log_file, 'r') as file:
         fuzzy_data = json.load(file)
     
-    # Identify the first blocking state step
-    blocking_history = fuzzy_data.get('Dominant Blocking State Check', [])
-    first_blocking_state_step = next((step['Step'] for step in blocking_history if 'Step' in step), None)
+    # Identify the first blocking state or task step (dominant or threshold)
+    dominant_blocking_state_history = fuzzy_data.get('Dominant Blocking State', [])
+    threshold_blocking_state_history = fuzzy_data.get('Threshold Blocking State', [])
+    dominant_blocking_task_history = fuzzy_data.get('Dominant Blocking Task', [])
+    threshold_blocking_task_history = fuzzy_data.get('Threshold Blocking Task', [])
 
-    logging.info(f"First blocking state step: {first_blocking_state_step}")
+    # Collect the first blocking steps from all types
+    first_dominant_blocking_state_step = next((step['Step'] for step in dominant_blocking_state_history if 'Step' in step), None)
+    first_threshold_blocking_state_step = next((step['Step'] for step in threshold_blocking_state_history if 'Step' in step), None)
+    first_dominant_blocking_task_step = next((step['Step'] for step in dominant_blocking_task_history if 'Step' in step), None)
+    first_threshold_blocking_task_step = next((step['Step'] for step in threshold_blocking_task_history if 'Step' in step), None)
 
-    # Truncate all relevant data up to and including the first blocking state step if it exists
+    # Find the earliest step across all blocking conditions
+    blocking_steps = [
+        first_dominant_blocking_state_step,
+        first_threshold_blocking_state_step,
+        first_dominant_blocking_task_step,
+        first_threshold_blocking_task_step
+    ]
+    first_blocking_step = min([step for step in blocking_steps if step is not None], default=None)
+
+    logging.info(f"First blocking step: {first_blocking_step}")
+
+    # Truncate all relevant data up to and including the first blocking state/task step if it exists
     truncated_results = {}
 
-    if first_blocking_state_step is not None:
-        if 'Dominant Error State Check' in fuzzy_data:
-            truncated_results['Dominant Error State Check'] = [
-                result for result in fuzzy_data['Dominant Error State Check']
-                if result['Step'] <= first_blocking_state_step
+    if first_blocking_step is not None:
+        # Truncate based on the earliest blocking step
+        if 'Dominant Error State' in fuzzy_data:
+            truncated_results['Dominant Error State'] = [
+                result for result in fuzzy_data['Dominant Error State']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Threshold Error State' in fuzzy_data:
+            truncated_results['Threshold Error State Check'] = [
+                result for result in fuzzy_data['Threshold Error State']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Dominant Error Task' in fuzzy_data:
+            truncated_results['Dominant Error Task'] = [
+                result for result in fuzzy_data['Dominant Error Task']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Threshold Error Task' in fuzzy_data:
+            truncated_results['Threshold Error Task'] = [
+                result for result in fuzzy_data['Threshold Error Task']
+                if result['Step'] <= first_blocking_step
             ]
 
-        if 'Dominant Blocking State Check' in fuzzy_data:
-            truncated_results['Dominant Blocking State Check'] = [
-                result for result in fuzzy_data['Dominant Blocking State Check']
-                if result['Step'] <= first_blocking_state_step
+        if 'Dominant Blocking State' in fuzzy_data:
+            truncated_results['Dominant Blocking State'] = [
+                result for result in fuzzy_data['Dominant Blocking State']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Threshold Blocking State' in fuzzy_data:
+            truncated_results['Threshold Blocking State'] = [
+                result for result in fuzzy_data['Threshold Blocking State']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Dominant Blocking Task' in fuzzy_data:
+            truncated_results['Dominant Blocking Task'] = [
+                result for result in fuzzy_data['Dominant Blocking Task']
+                if result['Step'] <= first_blocking_step
+            ]
+        
+        if 'Threshold Blocking Task' in fuzzy_data:
+            truncated_results['Threshold Blocking Task'] = [
+                result for result in fuzzy_data['Threshold Blocking Task']
+                if result['Step'] <= first_blocking_step
             ]
 
-        if 'Nondeterministic Confusion Check' in fuzzy_data:
-            truncated_results['Nondeterministic Confusion Check'] = [
-                result for result in fuzzy_data['Nondeterministic Confusion Check']
-                if result['Step'] <= first_blocking_state_step
+        if 'Dominant Nondeterministic State Confusion' in fuzzy_data:
+            truncated_results['Dominant Nondeterministic State Confusion'] = [
+                result for result in fuzzy_data['Dominant Nondeterministic State Confusion']
+                if result['Step'] <= first_blocking_step
             ]
 
-        if 'Vacuous Confusion Check' in fuzzy_data:
-            truncated_results['Vacuous Confusion Check'] = [
-                result for result in fuzzy_data['Vacuous Confusion Check']
-                if result['Step'] <= first_blocking_state_step
+        if 'Threshold Nondeterministic State Confusion' in fuzzy_data:
+            truncated_results['Threshold Nondeterministic State Confusion'] = [
+                result for result in fuzzy_data['Threshold Nondeterministic State Confusion']
+                if result['Step'] <= first_blocking_step
             ]
+
+        if 'Dominant Nondeterministic Task Confusion' in fuzzy_data:
+            truncated_results['Dominant Nondeterministic Task Confusion'] = [
+                result for result in fuzzy_data['Dominant Nondeterministic Task Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
+        if 'Threshold Nondeterministic Task Confusion' in fuzzy_data:
+            truncated_results['Threshold Nondeterministic Task Confusion'] = [
+                result for result in fuzzy_data['Threshold Nondeterministic Task Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
+        if 'Vacuous State Confusion' in fuzzy_data:
+            truncated_results['Vacuous State Confusion'] = [
+                result for result in fuzzy_data['Vacuous State Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
+        if 'Threshold Vacuous State Confusion' in fuzzy_data:
+            truncated_results['Threshold Vacuous State Confusion'] = [
+                result for result in fuzzy_data['Threshold Vacuous State Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
+        if 'Vacuous Task Confusion' in fuzzy_data:
+            truncated_results['Vacuous Task Confusion'] = [
+                result for result in fuzzy_data['Vacuous Task Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
+        if 'Threshold Vacuous Task Confusion' in fuzzy_data:
+            truncated_results['Threshold Vacuous Task Confusion'] = [
+                result for result in fuzzy_data['Threshold Vacuous Task Confusion']
+                if result['Step'] <= first_blocking_step
+            ]
+
     else:
-        # If no blocking state is found, use the full results
+        # If no blocking step is found, use the full results
         truncated_results = fuzzy_data
 
     result_directory = os.path.dirname(result_log_file)

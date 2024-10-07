@@ -1,0 +1,87 @@
+{
+    "Dominant Error State Check": [
+        {
+            "Step": 0,
+            "Action": "down3",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 1,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 2,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 3,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 4,
+            "Action": "down3",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 5,
+            "Action": "up2",
+            "FMMFSM State": "D",
+            "Result": "True"
+        },
+        {
+            "Step": 6,
+            "Action": "up2",
+            "FMMFSM State": "R",
+            "Result": "True"
+        },
+        {
+            "Step": 7,
+            "Action": "down1",
+            "FMMFSM State": "P",
+            "Result": "True"
+        },
+        {
+            "Step": 8,
+            "Action": "down1",
+            "FMMFSM State": "R",
+            "Result": "True"
+        },
+        {
+            "Step": 9,
+            "Action": "up1",
+            "FMMFSM State": "D",
+            "Result": "False",
+            "Fuzzy Max State": {
+                "D": 0.7875303839307363
+            },
+            "Binary True State": {
+                "N": 0.7368082446746729
+            }
+        },
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "R",
+            "Result": "True"
+        }
+    ],
+    "Nondeterministic Confusion Check": [
+        {
+            "Step": 10,
+            "Action": null,
+            "FMMFSM State": "R",
+            "States": {
+                "R": 0.77328885546606,
+                "N": 0.7351059002562962
+            }
+        }
+    ]
+}

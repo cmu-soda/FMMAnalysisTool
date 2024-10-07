@@ -1,0 +1,171 @@
+Total result files found: 5
+Total files analyzed: 5
+Dominant State Error: 40.00% of files contain this error
+Threshold State Error: 60.00% of files contain this error
+Dominant Task Error: 0.00% of files contain this error
+Threshold Task Error: 60.00% of files contain this error
+Dominant Blocking State: 20.00% of files contain this error
+Threshold Blocking State: 20.00% of files contain this error
+Dominant Blocking Task: 20.00% of files contain this error
+Threshold Blocking Task: 0.00% of files contain this error
+Dominant Nondeterministic State Confusion: 0.00% of files contain this error
+Threshold Nondeterministic State Confusion: 40.00% of files contain this error
+Dominant Nondeterministic Task Confusion: 0.00% of files contain this error
+Threshold Nondeterministic Task Confusion: 20.00% of files contain this error
+Vacuous State Confusion: 0.00% of files contain this error
+Threshold Vacuous State Confusion: 0.00% of files contain this error
+Vacuous Task Confusion: 0.00% of files contain this error
+Threshold Vacuous Task Confusion: 0.00% of files contain this error
+
+Total Number of Each Error Type:
+Dominant State Error Check (Compound Errors): 0
+Dominant State Error: 2 occurrences
+Threshold State Error: 3 occurrences
+Dominant Task Error: 0 occurrences
+Threshold Task Error: 27 occurrences
+Dominant Blocking State: 1 occurrences
+Threshold Blocking State: 5 occurrences
+Dominant Blocking Task: 1 occurrences
+Threshold Blocking Task: 0 occurrences
+Dominant Nondeterministic State Confusion: 0 occurrences
+Threshold Nondeterministic State Confusion: 2 occurrences
+Dominant Nondeterministic Task Confusion: 0 occurrences
+Threshold Nondeterministic Task Confusion: 1 occurrences
+Vacuous State Confusion: 0 occurrences
+Threshold Vacuous State Confusion: 0 occurrences
+Vacuous Task Confusion: 0 occurrences
+Threshold Vacuous Task Confusion: 0 occurrences
+Threshold State Error Check (Compound Errors): 22
+Dominant State Error: 2 occurrences
+Threshold State Error: 3 occurrences
+Dominant Task Error: 0 occurrences
+Threshold Task Error: 27 occurrences
+Dominant Blocking State: 1 occurrences
+Threshold Blocking State: 5 occurrences
+Dominant Blocking Task: 1 occurrences
+Threshold Blocking Task: 0 occurrences
+Dominant Nondeterministic State Confusion: 0 occurrences
+Threshold Nondeterministic State Confusion: 2 occurrences
+Dominant Nondeterministic Task Confusion: 0 occurrences
+Threshold Nondeterministic Task Confusion: 1 occurrences
+Vacuous State Confusion: 0 occurrences
+Threshold Vacuous State Confusion: 0 occurrences
+Vacuous Task Confusion: 0 occurrences
+Threshold Vacuous Task Confusion: 0 occurrences
+
+Dominant State Error by Previous State and Previous Action:
+Previous State N, Previous Action up1 -> State P: 1 errors
+Previous State R, Previous Action down1 -> State D: 1 errors
+
+Threshold Error State by Previous State and Previous Action:
+Previous State P, Previous Action up3 -> State P: 1 threshold errors
+Previous State D, Previous Action down3 -> State D: 1 threshold errors
+Previous State P, Previous Action down2 -> State N: 1 threshold errors
+
+Dominant Blocking State by State and Action:
+State D, Action down1: 1 errors
+
+Threshold Blocking State by State and Action:
+State P, Action down3: 2 errors
+State D, Action up3: 1 errors
+State D, Action up1: 1 errors
+State N, Action up1: 1 errors
+
+Dominant Blocking Task Check by State and Action:
+State D, Action down1: 1 errors
+
+Threshold Error Task by FMMFSM Task Label and System Task Label:
+FMMFSM Task Label Parking, System Task Label Parking: 6 errors
+FMMFSM Task Label Driving, System Task Label Driving: 21 errors
+
+Threshold Nondeterministic Task by FMMFSM Task Labels:
+Task Labels ('Driving', 'Parking'): 1 errors
+
+
+Errors by Files:
+
+Dominant State Error:
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: P, Action: down2
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: P, Action: down2
+  computed/gear_3/result/gear_3PostProcessed_Result.json - FMMFSM State: D, Action: down1
+  computed/gear_3/result/gear_3PostProcessed_Result.json - FMMFSM State: D, Action: down1
+
+Threshold State Error:
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: P, Action: up3
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: D, Action: down3
+  computed/gear_1/result/gear_1PostProcessed_Result.json - FMMFSM State: N, Action: down2
+
+Threshold Task Error:
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_2/result/gear_2PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+  computed/gear_0/result/gear_0PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+
+Threshold Blocking State:
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: P, Action: down3
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: D, Action: up3
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: P, Action: down3
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: D, Action: up1
+  computed/gear_4/result/gear_4PostProcessed_Result.json - FMMFSM State: N, Action: up1
+
+Dominant Blocking State:
+  computed/gear_3/result/gear_3PostProcessed_Result.json - FMMFSM State: D, Action: down1
+
+Dominant Blocking Task:
+  computed/gear_3/result/gear_3PostProcessed_Result.json - FMMFSM State: D, Action: down1
+
+Threshold Nondeterministic State Confusion:
+  computed/gear_3/result/gear_3PostProcessed_Result.json - FMMFSM State: None, Action: down1
+  computed/gear_0/result/gear_0PostProcessed_Result.json - FMMFSM State: None, Action: down1
+
+Threshold Nondeterministic Task Confusion:
+  computed/gear_0/result/gear_0PostProcessed_Result.json - FMMFSM State: N/A, Action: N/A
+
+Dominant Error State Check (Compound Errors) by Files:
+
+Threshold Error State Check (Compound Errors) by Files:
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: N, Fuzzy Max State: None, Binary True State: None
+  computed/gear_4/result/gear_4PostProcessed_Result.json - Compound Error, Previous State: P, Previous Action: up3, FMMFSM State: P, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
+  computed/gear_2/result/gear_2PostProcessed_Result.json - Compound Error, Previous State: D, Previous Action: down3, FMMFSM State: D, Fuzzy Max State: None, Binary True State: None
