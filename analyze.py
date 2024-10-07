@@ -330,7 +330,8 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
     for error_type, count in error_types.items():
         if error_type == "Dominant Task Error" or error_type == "Threshold Task Error":
             result_lines.append(f"Total {error_type}: {count} errors\n")
-        result_lines.append(f"{error_type}: {count} occurrences\n")
+        else:  
+            result_lines.append(f"{error_type}: {count} occurrences\n")
         
     dominant_task_error_compound = compound_error_types.get("Dominant Task Error", 0)
     threshold_task_error_compound = compound_error_types.get("Threshold Task Error", 0)
