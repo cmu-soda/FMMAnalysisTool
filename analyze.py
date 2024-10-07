@@ -9,7 +9,6 @@ def parse_arguments():
     parser.add_argument("--postp", action="store_true", help="Analyze only post-processed files")
     parser.add_argument("--all", action="store_true", help="Analyze only non-post-processed files")
     parser.add_argument("--save", action="store_true", help="Save the analysis results to a file")
-    parser.add_argument("--tl", action="store_true", help="Use the code in FMMFSM_analyzer_Tl")
     
     args = parser.parse_args()
 
@@ -19,7 +18,7 @@ def parse_arguments():
 
     return args
 
-def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, use_tl):
+def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
     computed_folder = os.path.join(experiment_folder, 'computed')
     
     if not os.path.exists(computed_folder):
@@ -232,6 +231,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
                                 threshold_task_label_mismatch_errors[(fmmfsm_task_label, system_task_label)] += 1
 
                             error_files[error_type].append(error_info)
+
                         elif error_type == "Dominant Nondeterministic Task Confusion":
                             has_error = True
                             error_types[error_type] += 1
@@ -327,12 +327,15 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
 
     # Error type
     result_lines.append("\nTotal Number of Each Error Type:\n")
-    result_lines.append(f"Dominant State Error Check (Compound Errors): {compound_errors_count}\n")
     for error_type, count in error_types.items():
+        if error_type == "Dominant Task Error" or error_type == "Threshold Task Error":
+            result_lines.append(f"Total {error_type}: {count} errors\n")
         result_lines.append(f"{error_type}: {count} occurrences\n")
+        
     dominant_task_error_compound = compound_error_types.get("Dominant Task Error", 0)
     threshold_task_error_compound = compound_error_types.get("Threshold Task Error", 0)
-
+    result_lines.append(f"Dominant State Error (Compound Errors): {compound_errors_count}\n")
+    result_lines.append(f"Threshold State Error (Compound Errors): {compound_errors_count_t}\n")
     result_lines.append(f"Dominant Task Error (Compound Errors): {dominant_task_error_compound}\n")
     result_lines.append(f"Threshold Task Error (Compound Errors): {threshold_task_error_compound}\n")
 
@@ -427,7 +430,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
                 previous_action = error_info.get("Previous Action", "N/A")
                 compound_status = "Compound Error" if error_info.get("is_compound_error", False) else "Initial Error"
                 result_lines.append(f"  {file} - {compound_status}, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
-            elif error_type == "Dominant Nondeterministic State Confusion":
+            elif error_type == "Dominant Nondeterministic State":
                 state = error_info.get("state", "N/A")
                 action = error_info.get("action", "N/A")
                 states = error_info.get("States", [])
@@ -441,43 +444,41 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
             elif error_type == "Dominant Nondeterministic Task Confusion":
                 task_labels = error_info.get("FMMFSM Task Labels", [])
                 result_lines.append(f"  {file} - Task Labels: {task_labels}\n")
-            elif error_type == "Threshold Error Task":
+            elif error_type == "Threshold Task Error":
                 fmmfsm_task_label = error_info.get("FMMFSM Task Label", "N/A")
                 system_task_label = error_info.get("System Task Label", "N/A")
                 result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
+            elif error_type == "Threshold Vacuous Task Confusion":
+                result_lines.append(f"  {file}\n")
             else:
                 state = error_info.get("state", "N/A")
                 action = error_info.get("action", "N/A")
                 result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}\n")
-
-    result_lines.append("\nDominant Error State Check (Compound Errors) by Files:\n")
+    result_lines.append("\nDominant State Error Check (Compound Errors) by Files:\n")
     for error_type, files in compound_error_files.items():
         for error_info in files:
             file = error_info["file"]
             state = error_info["state"]
             action = error_info["action"]
             if error_type == "Dominant Error State":
-                fuzzy_max_state = error_info.get("Fuzzy Max State")
-                binary_true_state = error_info.get("Binary True State")
                 previous_state = error_info.get("Previous State", "N/A")
                 previous_action = error_info.get("Previous Action", "N/A")
-                result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
-    result_lines.append("\nThreshold Error State Check (Compound Errors) by Files:\n")
+                result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}\n")
+    result_lines.append("\nThreshold State Error Check (Compound Errors) by Files:\n")
     for error_type, files in compound_error_files_t.items():
         for error_info in files:
             file = error_info["file"]
             state = error_info["state"]
             action = error_info["action"]
             if error_type == "Threshold State Error":
-                fuzzy_max_state = error_info.get("Fuzzy Max State")
-                binary_true_state = error_info.get("Binary True State")
                 previous_state = error_info.get("Previous State", "N/A")
                 previous_action = error_info.get("Previous Action", "N/A")
-                result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
+                result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}\n")
 
     result_text = ''.join(result_lines)
     print(result_text)
 
+    # Save analysis results to a file
     if save_results:
         analysis_filename = "analyzePostp.txt" if analyze_postp else "analyzeAll.txt"
         analysis_filepath = os.path.join(experiment_folder, analysis_filename)
@@ -487,7 +488,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results, us
 
 def main():
     args = parse_arguments()
-    analyze_experiment_folder(args.experiment_folder, args.postp, args.save, args.tl)
+    analyze_experiment_folder(args.experiment_folder, args.postp, args.save)
 
 if __name__ == "__main__":
     main()

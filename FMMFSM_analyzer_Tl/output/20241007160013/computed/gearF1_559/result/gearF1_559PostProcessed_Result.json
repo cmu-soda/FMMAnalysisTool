@@ -1,0 +1,51 @@
+{
+    "Threshold Blocking State": [
+        {
+            "Step": 9,
+            "Action": "down2",
+            "FMMFSM State": "P"
+        }
+    ],
+    "Threshold Vacuous State Confusion": [
+        {
+            "Step": 8,
+            "Action": "up3",
+            "FMMFSM State": "P",
+            "State Memberships": {
+                "P": 0.2961179167088128,
+                "R": 0.006348437646757077,
+                "N": 0.002354610980300098,
+                "D": 0.03785525600889861
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "down2",
+            "FMMFSM State": "P",
+            "State Memberships": {
+                "P": 0.26540617702668023,
+                "R": 0.005611354640428945,
+                "N": 0.0020813942213060432,
+                "D": 0.03370594248533165
+            }
+        }
+    ],
+    "Threshold Vacuous Task Confusion": [
+        {
+            "Step": 8,
+            "Action": "up3",
+            "FMMFSM Task Memberships": {
+                "Driving": 0.04071936122591058,
+                "Parking": 0.29315673754172467
+            }
+        },
+        {
+            "Step": 9,
+            "Action": "down2",
+            "FMMFSM Task Memberships": {
+                "Driving": 0.0362363981436451,
+                "Parking": 0.2627521152564134
+            }
+        }
+    ]
+}
