@@ -10,13 +10,9 @@ import sys
 # Dynamically import based on the flag
 def import_modules(use_tl):
     if use_tl:
-        from FMMFSM_analyzer_Tl.discreteSystemModel import simulate_actions_from_file
-        from FMMFSM_analyzer_Tl.FMMFSM import evolve_state_over_time_from_file, save_results_to_file
-        from FMMFSM_analyzer_Tl.outputChecker import check_and_save_results
-    else:
-        from FMMFSM_analyzer.discreteSystemModel import simulate_actions_from_file
-        from FMMFSM_analyzer.FMMFSM import evolve_state_over_time_from_file, save_results_to_file
-        from FMMFSM_analyzer.outputChecker import check_and_save_results
+        from FMM_Analysis_TL.discreteSystemModel import simulate_actions_from_file
+        from FMM_Analysis_TL.FMMFSM import evolve_state_over_time_from_file, save_results_to_file
+        from FMM_Analysis_TL.outputChecker import check_and_save_results
 
     return simulate_actions_from_file, evolve_state_over_time_from_file, save_results_to_file, check_and_save_results
 
@@ -285,10 +281,7 @@ def main():
     modules = import_modules(args.tl)
 
     experiment_timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
-    if args.tl:
-        experiment_directory = f'./FMMFSM_analyzer_Tl/output/{experiment_timestamp}/'
-    else:
-        experiment_directory = f'./FMMFSM_analyzer/output/{experiment_timestamp}/'
+    experiment_directory = f'./FMM_Analysis_TL/output/{experiment_timestamp}/'
     
     os.makedirs(experiment_directory, exist_ok=True)
     log_filename = os.path.join(experiment_directory, 'run_log.log')

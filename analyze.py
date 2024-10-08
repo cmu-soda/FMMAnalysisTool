@@ -92,6 +92,7 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
     vacuous_task_confusion = defaultdict(int)
     vacuous_task_confusion_t = defaultdict(int)
     compound_error_types = defaultdict(int)
+    compound_error_t = False
 
     for result_file in result_files:
         relative_path = os.path.relpath(result_file, experiment_folder)
@@ -420,48 +421,62 @@ def analyze_experiment_folder(experiment_folder, analyze_postp, save_results):
     result_lines.append("\n\nErrors by Files:\n")
     for error_type, files in error_files.items():
         result_lines.append(f"\n{error_type}:\n")
+        
+        seen_files = set()  # Reset seen_files for each error type
         for error_info in files:
             file = error_info["file"]
-            if error_type == "Dominant Error State":
-                state = error_info.get("state", "N/A")
-                action = error_info.get("action", "N/A")
-                fuzzy_max_state = error_info.get("Fuzzy Max State", "N/A")
-                binary_true_state = error_info.get("Binary True State", "N/A")
-                previous_state = error_info.get("Previous State", "N/A")
-                previous_action = error_info.get("Previous Action", "N/A")
-                compound_status = "Compound Error" if error_info.get("is_compound_error", False) else "Initial Error"
-                result_lines.append(f"  {file} - {compound_status}, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}, Fuzzy Max State: {fuzzy_max_state}, Binary True State: {binary_true_state}\n")
-            elif error_type == "Dominant Nondeterministic State":
-                state = error_info.get("state", "N/A")
-                action = error_info.get("action", "N/A")
-                states = error_info.get("States", [])
-                previous_state = error_info.get("Previous State", "N/A")
-                previous_action = error_info.get("Previous Action", "N/A")
-                result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}, States: {states}, Previous State: {previous_state}, Previous Action: {previous_action}\n")
-            elif error_type == "Dominant Error Task":
-                fmmfsm_task_label = error_info.get("FMMFSM Task Label", "N/A")
-                system_task_label = error_info.get("System Task Label", "N/A")
-                result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
-            elif error_type == "Dominant Nondeterministic Task Confusion":
-                task_labels = error_info.get("FMMFSM Task Labels", [])
-                result_lines.append(f"  {file} - Task Labels: {task_labels}\n")
-            elif error_type == "Threshold Task Error":
-                fmmfsm_task_label = error_info.get("FMMFSM Task Label", "N/A")
-                system_task_label = error_info.get("System Task Label", "N/A")
-                result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
-            elif error_type == "Threshold Vacuous Task Confusion":
-                result_lines.append(f"  {file}\n")
-            else:
-                state = error_info.get("state", "N/A")
-                action = error_info.get("action", "N/A")
-                result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}\n")
+            
+            if file not in seen_files:
+                seen_files.add(file)  # Track file processing for this error type
+
+                # Process each error type block
+                if error_type == "Dominant State Error":
+                    state = error_info.get("state", "N/A")
+                    action = error_info.get("action", "N/A")
+                    fuzzy_max_state = error_info.get("Fuzzy Max State", "N/A")
+                    binary_true_state = error_info.get("Binary True State", "N/A")
+                    previous_state = error_info.get("Previous State", "N/A")
+                    previous_action = error_info.get("Previous Action", "N/A")
+                    compound_status = "Compound Error" if error_info.get("is_compound_error", False) else "Initial Error"
+                    
+                    result_lines.append(f"  {file} - {compound_status}, FMMFSM State: {state}, Binary True State: {binary_true_state}\n")
+                    
+                elif error_type == "Dominant Nondeterministic State":
+                    state = error_info.get("state", "N/A")
+                    action = error_info.get("action", "N/A")
+                    states = error_info.get("States", [])
+                    previous_state = error_info.get("Previous State", "N/A")
+                    previous_action = error_info.get("Previous Action", "N/A")
+                    result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}, States: {states}, Previous State: {previous_state}, Previous Action: {previous_action}\n")
+                    
+                elif error_type == "Dominant Error Task":
+                    fmmfsm_task_label = error_info.get("FMMFSM Task Label", "N/A")
+                    system_task_label = error_info.get("System Task Label", "N/A")
+                    result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
+                    
+                elif error_type == "Dominant Nondeterministic Task Confusion":
+                    task_labels = error_info.get("FMMFSM Task Labels", [])
+                    result_lines.append(f"  {file} - Task Labels: {task_labels}\n")
+                    
+                elif error_type == "Threshold Task Error":
+                    fmmfsm_task_label = error_info.get("FMMFSM Task Label", "N/A")
+                    system_task_label = error_info.get("System Task Label", "N/A")
+                    result_lines.append(f"  {file} - FMMFSM Task Label: {fmmfsm_task_label}, System Task Label: {system_task_label}\n")
+                    
+                elif error_type == "Threshold Vacuous Task Confusion":
+                    result_lines.append(f"  {file}\n")
+                    
+                else:
+                    state = error_info.get("state", "N/A")
+                    action = error_info.get("action", "N/A")
+                    result_lines.append(f"  {file} - FMMFSM State: {state}, Action: {action}\n")
     result_lines.append("\nDominant State Error Check (Compound Errors) by Files:\n")
     for error_type, files in compound_error_files.items():
         for error_info in files:
             file = error_info["file"]
             state = error_info["state"]
             action = error_info["action"]
-            if error_type == "Dominant Error State":
+            if error_type == "Dominant State Error":
                 previous_state = error_info.get("Previous State", "N/A")
                 previous_action = error_info.get("Previous Action", "N/A")
                 result_lines.append(f"  {file} - Compound Error, Previous State: {previous_state}, Previous Action: {previous_action}, FMMFSM State: {state}\n")

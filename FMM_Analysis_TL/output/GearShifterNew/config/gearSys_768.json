@@ -1,0 +1,73 @@
+{
+    "initial_state": "P",
+    "transitions": {
+        "P": {
+            "up1": "P",
+            "up2": "P",
+            "up3": "P",
+            "down1": "R",
+            "down2": "N",
+            "down3": "D"
+        },
+        "R": {
+            "up1": "P",
+            "up2": "P",
+            "up3": "P",
+            "down1": "N",
+            "down2": "D",
+            "down3": "D"
+        },
+        "N": {
+            "up1": "R",
+            "up2": "P",
+            "up3": "P",
+            "down1": "D",
+            "down2": "D",
+            "down3": "D"
+        },
+        "D": {
+            "up1": "N",
+            "up2": "R",
+            "up3": "P",
+            "down1": "D",
+            "down2": "D",
+            "down3": "D"
+        }
+    },
+    "task_labels": {
+        "P": "Parking",
+        "R": "Driving",
+        "N": "Driving",
+        "D": "Driving"
+    },
+    "action_schedule": [
+        [
+            "up1",
+            3
+        ],
+        [
+            "down1",
+            4
+        ],
+        [
+            "down2",
+            4
+        ],
+        [
+            "up2",
+            2
+        ],
+        [
+            "up2",
+            1
+        ],
+        [
+            "up1",
+            3
+        ],
+        [
+            "down2",
+            3
+        ]
+    ]
+}
