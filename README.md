@@ -1,31 +1,26 @@
-# FMMFSM_simulator
-There are three folders in this FMMFSM simulator: FMMFSM_tester, FMMFSM_analyzer, and FMMFSM_analyzer_Tl.
+# FMM Analysis Tool
+There are two folders in this FMMFSM simulator: FMMFSM_analyzer, and FMMFSM_analyzer_Tl.
 There are three code files respectively for each folder.
 - FMMFSM.py: Code for calculating the degree of membership of an FMMFSM.
 - discreteSystemModel.py: Code for simulating the state transitions of a system model.
 - outputChecker.py: Code for checking for mode confusions by comparing the FMMFSM and the system model.
 The usage and code is different for each directory as detailed below.
 
-## FMMFSM_tester
-FMMFSM_tester is the minimal tester you can use to analyze a single pair of FMMFSM and system model.
-For FMMFSM, you need to specify:
-- "initial_state_memberships": m_0 vector
-- "input_fuzzified": alpha
-- "transition_probabilities": phi
-- "action_schedule"
-
-For system model, you need to specify:
-- "initial_state": m_0
-- "transitions"
-- "action_schedule"
-
-"action_schedule" should be the same for a pair of FMMFSM and system model.
 Please refer to the FMMFSM paper to more information about how to specify a FMMFSM and system model. Examples can be found in FMMFSM_tester/use_cases
 
 ## FMMFSM_analyzer & FMMFSM_analyzer_Tl
 FMMFSM_analyzer and FMMFSM_analyzer_Tl together make the FMMFSM analysis tool. FMMFSM_analyzer includes scripts that does not handle task labels, while FMMFSM_analyzer_Tl handle task labels.
 
-Input for FMMFSM_analyzer is the same as for the FMMFSM_tester expect the user should not include "action_schedule". FMMFSM_analyzer handles the random generatioin of action schedule.
+FMMFSM_analyzer handles the random generatioin of action schedule. Please refer to the FMMFSM paper to more information about how to specify a FMMFSM and system model. Examples can be found in FMMFSM_tester/use_cases. Input for FMMFSM_analyzer should include the below information:
+
+For FMMFSM, you need to specify:
+- "initial_state_memberships": m_0 vector
+- "input_fuzzified": alpha
+- "transition_probabilities": phi
+
+For system model, you need to specify:
+- "initial_state": m_0
+- "transitions"
 
 Input for FMMFSM_analyzer_Tl is the same as for the FMMFSM_analyzer expect the user need to specify "task_labels" for both FMMFSM and system model. You could find an example in the FMMFSM_analyzer_Tl/config directory.
 
@@ -61,4 +56,17 @@ Use flag --all to save the summarization for pre-processed results.
 
 Use flag --save to save the summarization to a file in the output folder: we recommand you do this every time since the summarization could be too long to read in the terminal.
 
-Use flag --tl if you include task labels in the analysis.
+## To test a FMM
+You can apply -test flag to analyze a single pair of FMMFSM and system model.
+For FMMFSM, you need to specify:
+- "initial_state_memberships": m_0 vector
+- "input_fuzzified": alpha
+- "transition_probabilities": phi
+- "action_schedule"
+
+For system model, you need to specify:
+- "initial_state": m_0
+- "transitions"
+- "action_schedule"
+
+"action_schedule" should be the same for a pair of FMMFSM and system model.
